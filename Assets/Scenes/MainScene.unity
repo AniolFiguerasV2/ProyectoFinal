@@ -273,7 +273,7 @@ MonoBehaviour:
   - {fileID: 937892272}
   - {fileID: 1818928692}
   offset: {x: 0, y: 10, z: -15}
-  smoothTime: 0.15
+  smoothTime: 0.01
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,6 @@ GameObject:
   - component: {fileID: 937892277}
   - component: {fileID: 937892274}
   - component: {fileID: 937892276}
-  - component: {fileID: 937892278}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -647,18 +646,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &937892278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937892268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94d81b67d9b98834090935f08f112940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1527293925
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +695,6 @@ GameObject:
   - component: {fileID: 1818928688}
   - component: {fileID: 1818928687}
   - component: {fileID: 1818928686}
-  - component: {fileID: 1818928693}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -896,18 +882,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1527293926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1818928693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818928685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94d81b67d9b98834090935f08f112940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1890230183
 GameObject:
   m_ObjectHideFlags: 0
