@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 780136645}
   - component: {fileID: 780136646}
   m_Layer: 0
-  m_Name: Player1
+  m_Name: Handle1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 1427066615}
   - component: {fileID: 1427066616}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: Handle2
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
