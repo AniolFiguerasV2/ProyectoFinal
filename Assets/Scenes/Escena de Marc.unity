@@ -385,8 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ambulance: {fileID: 249503568}
-  seat: {fileID: 1335746888}
-  exitPoint: {fileID: 988468074}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +753,8 @@ GameObject:
   - component: {fileID: 433871341}
   - component: {fileID: 433871343}
   - component: {fileID: 433871342}
+  - component: {fileID: 433871345}
+  - component: {fileID: 433871344}
   m_Layer: 0
   m_Name: PlayersInteractions
   m_TagString: Untagged
@@ -819,6 +819,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58831626, y: 1, z: 1}
   m_Center: {x: -1.2441672, y: 0, z: 0}
+--- !u!114 &433871344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433871340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e3f5ac14d92e941b3e5a746ea1f7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambulance: {fileID: 3437266065914666023}
+--- !u!114 &433871345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433871340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f7d55c20f8b0f478b2ffcad78829e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &664501487
 GameObject:
   m_ObjectHideFlags: 0
