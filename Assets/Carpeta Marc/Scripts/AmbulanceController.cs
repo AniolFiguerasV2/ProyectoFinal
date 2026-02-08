@@ -14,17 +14,19 @@ public class AmbulanceController : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rb;
-
-    private PlayerController carControls;
+    private bool Allplayersin = false;
+    private int currentPlayerin = 0;
+    public int RequiredPlayerin = 2;
+    private PlayerActions carControls;
 
     void Awake()
     {
-        carControls = new PlayerController();
+        carControls = new PlayerActions();
     }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
         Vector3 centerOfMass = rb.centerOfMass;
         centerOfMass.y += centreOfGravityOffset;
         rb.centerOfMass = centerOfMass;
@@ -34,10 +36,16 @@ public class AmbulanceController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Vector2 inputVector = carControls.
+        if (!Allplayersin)
+        {
+            return;
+        }
 
-        //float vInput = inputVector.y;
-        //float hInput = inputVector.x;
+        Vector2 inputPlayer1 = carControls.Player1.Move.ReadValue<Vector2>();
+        Vector2 inputPlayer2 = carControls.Player2.Move.ReadValue<Vector2>();
+
+        float vInput = inputPlayer1.y;
+        float hInput = inputPlayer2.x;
 
         float forwardSpeed = Vector3.Dot(transform.forward, rb.linearVelocity);
         float speedFactor =Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
@@ -45,57 +53,56 @@ public class AmbulanceController : MonoBehaviour
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, speedFactor);
         float currentSteerRange = Mathf.Lerp(steerinRange, steeringRangeAtMaxSpeed, speedFactor);
 
-        //bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
+        bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
 
         foreach (var wheel in wheels)
         {
             if(wheel.steerable)
             {
-                //wheel.wheelCollider.steerAngle = hInput * currentSteerRange;
+                wheel.wheelCollider.steerAngle = hInput * currentSteerRange;
             }
-            /*
             if(isAccelerating)
             {
                 if(wheel.motorized)
                 {
-                    wheel.WheelCollider.notorTorque = vInput * currentMotorTorque;
+                    wheel.wheelCollider.motorTorque = vInput * currentMotorTorque;
                 }
-                wheel.WheelCollider.brakeTorque = 0f;
+                wheel.wheelCollider.brakeTorque = 0f;
             }
             else
             {
-                wheel.WheelCollider.motorTorque = 0f;
-                wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
+                wheel.wheelCollider.motorTorque = 0f;
+                wheel.wheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
             }
-            */
         }
     }
     public void EnterVehicle(InteractPlayers player)
     {
         player.transform.SetParent(transform);
-        //player.transform.position = seat.position;
         player.DrivenMode();
-        //player.playervisual.SetActive(false);
-        //player.movementscript.enabled = false;
+        currentPlayerin++;
+        if(currentPlayerin >= RequiredPlayerin)
+        {
+            Allplayersin = true;
+        }
     }
 
     public void ExitVehicle(InteractPlayers player)
     {
         player.transform.SetParent(null);
-        //player.transform.position = exitPoint.position;
         player.WalkMode();
-        //player.playervisual.SetActive(true);
-        //player.movementscript.enabled = true;
+        currentPlayerin--;
+        Allplayersin = false;
     }
 
 
     void OnEnable()
     {
-        carControls.enabled = true;
+        carControls.Enable();
     }
 
     void OnDisable()
     {
-        carControls.enabled = false;
+        carControls.Disable();
     }
 }

@@ -25,7 +25,8 @@ public class InteractPlayers : MonoBehaviour
     {
         if (currentEntry == null) return;
         currentAmbulance = currentEntry.ambulance;
-
+        currentEntry.Available = false;
+        currentEntry.visuals.SetActive(false);
         currentAmbulance.EnterVehicle(this);
 
         isInsideVehicle = true;
@@ -34,7 +35,8 @@ public class InteractPlayers : MonoBehaviour
     void ExitVehicle()
     {
         currentAmbulance.ExitVehicle(this);
-
+        currentEntry.Available = true;
+        currentEntry.visuals.SetActive(true);
         isInsideVehicle = false;
         currentAmbulance = null;
     }
@@ -42,7 +44,12 @@ public class InteractPlayers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out AmbulanceEntry entry))
-            currentEntry = entry;
+        {
+            if (entry.Available)
+            {
+                currentEntry = entry;
+            }
+        }      
     }
 
     private void OnTriggerExit(Collider other)
@@ -50,7 +57,9 @@ public class InteractPlayers : MonoBehaviour
         if (other.TryGetComponent(out AmbulanceEntry entry))
         {
             if (currentEntry == entry)
+            {
                 currentEntry = null;
+            }
         }
     }
 
@@ -59,6 +68,7 @@ public class InteractPlayers : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<PlayerController>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
     }
 
     public void WalkMode()
@@ -66,6 +76,7 @@ public class InteractPlayers : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<PlayerController>().enabled = true;
         GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<CharacterController>().enabled = true;
     }
 
 }
