@@ -44,8 +44,28 @@ public class AmbulanceController : MonoBehaviour
         Vector2 inputPlayer1 = carControls.Player1.Move.ReadValue<Vector2>();
         Vector2 inputPlayer2 = carControls.Player2.Move.ReadValue<Vector2>();
 
-        float vInput = inputPlayer1.y;
-        float hInput = inputPlayer2.x;
+        float vInput = 0f;
+        float hInput = 0f;
+
+        //Movimeinto jugador 1 adelante y izquierda
+        if(inputPlayer1.y > 0)
+        {
+            vInput += inputPlayer1.y;
+        }
+        if (inputPlayer1.x < 0)
+        {
+            hInput += inputPlayer1.x;
+        }
+
+        //Movimiento jugador 2 atras y derecha
+        if(inputPlayer2.y < 0)
+        {
+            vInput += inputPlayer2.y;
+        }
+        if(inputPlayer2.x > 0)
+        {
+            hInput += inputPlayer2.x;
+        }
 
         float forwardSpeed = Vector3.Dot(transform.forward, rb.linearVelocity);
         float speedFactor =Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
