@@ -664,6 +664,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6f7ae0d2-4a7c-405f-bb76-083991a540e4
     m_ActionName: 'Player2/Grab[/Keyboard/l]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c6e1a0b-03c4-41c9-a7f1-35322c65b277
+    m_ActionName: 'Ambulance/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1
@@ -823,6 +827,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6f7ae0d2-4a7c-405f-bb76-083991a540e4
     m_ActionName: 'Player2/Grab[/Keyboard/l]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c6e1a0b-03c4-41c9-a7f1-35322c65b277
+    m_ActionName: 'Ambulance/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player2
