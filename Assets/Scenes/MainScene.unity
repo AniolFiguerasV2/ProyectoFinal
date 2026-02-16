@@ -334,8 +334,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 986278138}
-  - {fileID: 780136645}
-  - {fileID: 1427066615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
@@ -485,13 +483,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780136644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.145, y: -3.396, z: 1.074}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0681497, y: -0.46523207, z: 0.6320855}
+  m_LocalScale: {x: 0.73780537, y: 8.802042, z: 0.32336235}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1996108808}
-  m_Father: {fileID: 369301924}
+  m_Father: {fileID: 986278138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &780136646
 BoxCollider:
@@ -527,6 +525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1996108808}
+  player1InZone: 0
+  player2InZone: 0
+  holder: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +808,7 @@ GameObject:
   - component: {fileID: 986278136}
   - component: {fileID: 986278135}
   - component: {fileID: 986278139}
+  - component: {fileID: 986278140}
   m_Layer: 0
   m_Name: Camilla
   m_TagString: Untagged
@@ -900,7 +902,9 @@ Transform:
   m_LocalPosition: {x: -3.0526319, y: -3.343145, z: -0.8807281}
   m_LocalScale: {x: 1.355371, y: 0.11361, z: 3.0925062}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 780136645}
+  - {fileID: 1427066615}
   m_Father: {fileID: 369301924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &986278139
@@ -930,6 +934,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &986278140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986278134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379eb31f368bbb648803ad7d03226de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handle1: {fileID: 0}
+  handle2: {fileID: 0}
 --- !u!1 &1427066614
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,13 +974,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427066614}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.145, y: -3.396, z: -3.007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0681497, y: -0.46523207, z: -0.6875562}
+  m_LocalScale: {x: 0.73780537, y: 8.802042, z: 0.32336235}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2053726801}
-  m_Father: {fileID: 369301924}
+  m_Father: {fileID: 986278138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1427066616
 BoxCollider:
@@ -998,6 +1016,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 2053726801}
+  player1InZone: 0
+  player2InZone: 0
+  holder: 0
 --- !u!1 &1527293925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996108808}
   m_Layer: 0
-  m_Name: PlayerSnap
+  m_Name: PlayerSnap1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1399,7 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2053726801}
   m_Layer: 0
-  m_Name: PlayerSnap
+  m_Name: PlayerSnap2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1414,7 +1435,7 @@ Transform:
   m_GameObject: {fileID: 2053726800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.081}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour
             bounds.Encapsulate(targets[i].position);
         }
         return bounds.center;*/
-        BoxCollider c;
+        //BoxCollider c;
 
         //c.closedpoint
 

@@ -5,24 +5,26 @@ using UnityEngine.UI;
 public class Handles : MonoBehaviour
 {
     public Transform snapPoint;
-
-    private PlayerActions player1;
-    private PlayerActions player2;
+    private static PlayerActions players; // Static para evitar conflictos entre objetos
 
     private Transform player1Transform;
     private Transform player2Transform;
 
-    private bool player1InZone;
-    private bool player2InZone;
+    // Referencias a sus controladores
+    private CharacterController cc1;
+    private CharacterController cc2;
 
-    private int holder = 0;
+    public bool player1InZone;
+    public bool player2InZone;
+    public int holder = 0;
 
     private void Awake()
     {
-        player1 = new PlayerActions();
-        player2 = new PlayerActions();
-        player1.Enable();
-        player2.Enable();
+        if (players == null)
+        {
+            players = new PlayerActions();
+            players.Enable();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,11 +33,13 @@ public class Handles : MonoBehaviour
         {
             player1InZone = true;
             player1Transform = other.transform;
+            cc1 = other.GetComponent<CharacterController>();
         }
         if (other.CompareTag("Player2"))
         {
             player2InZone = true;
             player2Transform = other.transform;
+            cc2 = other.GetComponent<CharacterController>();
         }
     }
 
@@ -44,75 +48,61 @@ public class Handles : MonoBehaviour
         if (other.CompareTag("Player1"))
         {
             player1InZone = false;
-            if (holder == 1)
-            {
-                Release();
-            }
+            if (holder == 1) Release();
         }
-
         if (other.CompareTag("Player2"))
         {
             player2InZone = false;
-            if (holder == 2)
-            {
-                Release();
-            }
+            if (holder == 2) Release();
         }
     }
 
     private void Update()
     {
-        float grab1 = player1.Player1.Grab.ReadValue<float>();
-        float grab2 = player2.Player2.Grab.ReadValue<float>();
+        float grab1 = players.Player1.Grab.ReadValue<float>();
+        float grab2 = players.Player2.Grab.ReadValue<float>();
 
-
-        if (holder == 1)
-        {
-            player1Transform.position = snapPoint.position;
-            player1Transform.rotation = snapPoint.rotation;
-        }
-        else if (holder == 2)
-        {
-            player2Transform.position = snapPoint.position;
-            player2Transform.rotation = snapPoint.rotation;
-        }
-
+        // Lógica de AGARRE
         if (holder == 0)
         {
-            if (player1InZone && grab1 > 0.5f)
-            {
-                Grab(1);
-            }
-            else if (player2InZone && grab2 > 0.5f)
-            {
-                Grab(2);
-            }
+            if (player1InZone && grab1 > 0.5f) Grab(1);
+            else if (player2InZone && grab2 > 0.5f) Grab(2);
         }
         else
         {
-            if (holder == 1 && grab1 < 0.5f)
-            {
-                Release();
-            }
-            if (holder == 2 && grab2 < 0.5f)
-            {
-                Release();
-            }   
+            // Lógica de SNAP FORZADO
+            ApplySnap();
+
+            // Lógica de SOLTAR
+            if (holder == 1 && grab1 < 0.5f) Release();
+            else if (holder == 2 && grab2 < 0.5f) Release();
         }
     }
 
-    private void Grab(int player)
+    private void Grab(int playerNum)
     {
-        holder = player;
-
-        Transform snap = (player == 1) ? player1Transform : player2Transform;
-
-        snap.position = snapPoint.position;
-        snap.rotation = snapPoint.rotation;
+        holder = playerNum;
+        // DESACTIVAMOS el CharacterController para que no bloquee el movimiento
+        if (holder == 1 && cc1 != null) cc1.enabled = false;
+        if (holder == 2 && cc2 != null) cc2.enabled = false;
     }
 
     private void Release()
     {
-            holder = 0;
+        // REACTIVAMOS el CharacterController para que vuelva a caminar
+        if (holder == 1 && cc1 != null) cc1.enabled = true;
+        if (holder == 2 && cc2 != null) cc2.enabled = true;
+
+        holder = 0;
+    }
+
+    private void ApplySnap()
+    {
+        Transform target = (holder == 1) ? player1Transform : player2Transform;
+        if (target != null)
+        {
+            target.position = snapPoint.position;
+            target.rotation = snapPoint.rotation;
+        }
     }
 }
