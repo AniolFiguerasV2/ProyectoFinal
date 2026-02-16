@@ -484,8 +484,8 @@ Transform:
   m_GameObject: {fileID: 780136644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0681497, y: -0.46523207, z: 0.6320855}
-  m_LocalScale: {x: 0.73780537, y: 8.802042, z: 0.32336235}
+  m_LocalPosition: {x: 0, y: 0, z: 0.6320855}
+  m_LocalScale: {x: 1, y: 8.802042, z: 0.32336235}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1996108808}
@@ -525,9 +525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 1996108808}
-  player1InZone: 0
-  player2InZone: 0
-  holder: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,8 +585,8 @@ GameObject:
   - component: {fileID: 937892272}
   - component: {fileID: 937892271}
   - component: {fileID: 937892270}
-  - component: {fileID: 937892275}
   - component: {fileID: 937892277}
+  - component: {fileID: 937892278}
   - component: {fileID: 937892276}
   - component: {fileID: 937892274}
   m_Layer: 0
@@ -661,7 +658,7 @@ Transform:
   m_GameObject: {fileID: 937892268}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 0}
+  m_LocalPosition: {x: 1.514, y: 1.54, z: 0.838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -680,32 +677,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  gravity: -9.8
---- !u!143 &937892275
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937892268}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &937892276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +750,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937892268}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f3b19f7e44fbd3545963b13108aa69bf, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -795,6 +766,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &937892278
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937892268}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &986278134
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +930,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &986278140
 MonoBehaviour:
@@ -946,8 +944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379eb31f368bbb648803ad7d03226de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handle1: {fileID: 0}
-  handle2: {fileID: 0}
+  handle1: {fileID: 780136645}
+  handle2: {fileID: 1427066615}
 --- !u!1 &1427066614
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,8 +973,8 @@ Transform:
   m_GameObject: {fileID: 1427066614}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0681497, y: -0.46523207, z: -0.6875562}
-  m_LocalScale: {x: 0.73780537, y: 8.802042, z: 0.32336235}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6875562}
+  m_LocalScale: {x: 1, y: 8.802042, z: 0.32336235}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2053726801}
@@ -1016,9 +1014,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapPoint: {fileID: 2053726801}
-  player1InZone: 0
-  player2InZone: 0
-  holder: 0
 --- !u!1 &1527293925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,8 +1059,8 @@ GameObject:
   - component: {fileID: 1818928692}
   - component: {fileID: 1818928691}
   - component: {fileID: 1818928690}
-  - component: {fileID: 1818928689}
   - component: {fileID: 1818928688}
+  - component: {fileID: 1818928693}
   - component: {fileID: 1818928687}
   - component: {fileID: 1818928686}
   m_Layer: 0
@@ -1088,7 +1083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  gravity: -9.8
 --- !u!114 &1818928687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,7 +1109,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1818928686}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 07ab93ad-6d8f-42da-8c83-579d4f717485
     m_ActionName: 'Controls/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -1162,7 +1168,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818928685}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f3b19f7e44fbd3545963b13108aa69bf, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1177,31 +1183,6 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &1818928689
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818928685}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1818928690
 MeshRenderer:
@@ -1265,12 +1246,39 @@ Transform:
   m_GameObject: {fileID: 1818928685}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 1.54, z: 0}
+  m_LocalPosition: {x: 1.84, y: 1.54, z: -3.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527293926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1818928693
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818928685}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1890230183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1305,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890230183}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f3b19f7e44fbd3545963b13108aa69bf, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

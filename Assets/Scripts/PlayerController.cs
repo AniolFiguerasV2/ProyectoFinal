@@ -3,29 +3,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private float gravity = -9.8f;
+    private Rigidbody rb;
 
-    private CharacterController controller;
-    private Vector3 moveInput;
-    private Vector3 velocity;
-    
-    void Start()
+    private float movementX;
+    private float movementY;
+
+    public float speed = 0;
+
+    private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        Vector2 movementVector = context.ReadValue<Vector2>();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
-        controller.Move(move * speed * Time.deltaTime);
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        rb.linearVelocity = movement * speed;
     }
 }

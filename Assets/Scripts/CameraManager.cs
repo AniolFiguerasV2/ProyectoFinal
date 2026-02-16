@@ -9,7 +9,7 @@ public class CameraManager : MonoBehaviour
     public float smoothTime = 0.5f;
     private Vector3 velocity;
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 centerPoint = GetCenterPoint();
         centerPoint.y = 0;
