@@ -52,7 +52,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -63,7 +63,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -74,7 +74,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -85,7 +85,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -96,7 +96,7 @@
                     "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -107,7 +107,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -118,7 +118,7 @@
                     "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -129,7 +129,7 @@
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -186,7 +186,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -197,7 +197,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -208,7 +208,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -219,7 +219,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -230,7 +230,7 @@
                     "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -241,7 +241,7 @@
                     "path": "<Keyboard>/numpad0",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -252,7 +252,7 @@
                     "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -263,7 +263,7 @@
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -302,7 +302,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -313,7 +313,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -324,7 +324,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -335,7 +335,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";KeyBoard",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -357,7 +357,7 @@
                     "path": "<XInputController>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -368,7 +368,7 @@
                     "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -379,7 +379,7 @@
                     "path": "<XInputController>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -390,7 +390,7 @@
                     "path": "<XInputController>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";GamePad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -398,5 +398,28 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "KeyBoard",
+            "bindingGroup": "KeyBoard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "GamePad",
+            "bindingGroup": "GamePad",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
