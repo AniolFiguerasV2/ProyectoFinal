@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public float speed = 0;
+    public float speed = 5f;
+    public float gravityMultiplier = 0.5f;
 
     private void Start()
     {
@@ -18,15 +19,18 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 movementVector = context.ReadValue<Vector2>();
-
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        Vector3 movement = new Vector3(movementX, 0f, movementY);
+        movement = movement.normalized * speed * Time.fixedDeltaTime;
 
-        rb.linearVelocity = movement * speed;
+        rb.MovePosition(rb.position + rb.transform.TransformDirection(movement));
+
+        Vector3 gravityForce = Physics.gravity * gravityMultiplier;
+        rb.AddForce(gravityForce, ForceMode.Acceleration);
     }
 }

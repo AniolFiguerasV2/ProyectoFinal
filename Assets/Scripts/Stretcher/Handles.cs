@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Handles : MonoBehaviour
 {
-    public Transform snapPoint;
-
     private PlayerActions players;
 
     private Transform player1Transform;
@@ -14,11 +12,14 @@ public class Handles : MonoBehaviour
 
     private int holder = 0;
 
+    public bool IsBeingHeld => holder != 0;
+
     private void Awake()
     {
         players = new PlayerActions();
         players.Enable();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player1"))
@@ -32,6 +33,7 @@ public class Handles : MonoBehaviour
             player2Transform = other.transform;
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player1"))
@@ -52,22 +54,11 @@ public class Handles : MonoBehaviour
             }
         }
     }
+
     private void Update()
     {
         float grab1 = players.Player1.Grab.ReadValue<float>();
         float grab2 = players.Player2.Grab.ReadValue<float>();
-
-
-        if (holder == 1)
-        {
-            player1Transform.position = snapPoint.position;
-            player1Transform.rotation = snapPoint.rotation;
-        }
-        else if (holder == 2)
-        {
-            player2Transform.position = snapPoint.position;
-            player2Transform.rotation = snapPoint.rotation;
-        }
 
         if (holder == 0)
         {
@@ -92,14 +83,10 @@ public class Handles : MonoBehaviour
             }
         }
     }
+
     private void Grab(int player)
     {
         holder = player;
-
-        Transform snap = (player == 1) ? player1Transform : player2Transform;
-
-        snap.position = snapPoint.position;
-        snap.rotation = snapPoint.rotation;
     }
 
     private void Release()
