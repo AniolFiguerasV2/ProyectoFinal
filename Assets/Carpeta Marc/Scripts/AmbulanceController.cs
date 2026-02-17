@@ -79,7 +79,8 @@ public class AmbulanceController : MonoBehaviour
     }
     public void EnterVehicle(InteractPlayers player)
     {
-        player.transform.SetParent(transform);
+        player.transform.position = Vector3.zero;
+        //player.transform.SetParent(transform);
         player.DrivenMode();
         currentPlayerin++;
         if(currentPlayerin >= RequiredPlayerin)
@@ -90,7 +91,8 @@ public class AmbulanceController : MonoBehaviour
 
     public void ExitVehicle(InteractPlayers player)
     {
-        player.transform.SetParent(null);
+        //player.transform.SetParent(null);
+        player.transform.position = player.currentEntry.transform.position;
         player.WalkMode();
         currentPlayerin--;
         Allplayersin = false;

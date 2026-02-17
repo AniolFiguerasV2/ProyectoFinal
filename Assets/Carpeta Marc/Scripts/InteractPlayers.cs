@@ -5,7 +5,7 @@ public class InteractPlayers : MonoBehaviour
 {
     private bool isInsideVehicle = false;
 
-    private AmbulanceEntry currentEntry;
+    public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
 
     public GameObject playervisual;
