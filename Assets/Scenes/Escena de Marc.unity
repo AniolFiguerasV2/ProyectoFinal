@@ -2909,8 +2909,8 @@ GameObject:
   - component: {fileID: 1818928694}
   - component: {fileID: 1818928688}
   - component: {fileID: 1818928693}
-  - component: {fileID: 1818928687}
   - component: {fileID: 1818928695}
+  - component: {fileID: 1818928687}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -2949,7 +2949,7 @@ MonoBehaviour:
     m_ActionName: 'Controls/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1818928695}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
