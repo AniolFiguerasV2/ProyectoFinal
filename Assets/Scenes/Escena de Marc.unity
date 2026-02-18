@@ -1540,7 +1540,6 @@ GameObject:
   - component: {fileID: 937892270}
   - component: {fileID: 937892279}
   - component: {fileID: 937892277}
-  - component: {fileID: 937892274}
   - component: {fileID: 937892278}
   - component: {fileID: 937892276}
   m_Layer: 0
@@ -1618,19 +1617,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1527293926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &937892274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937892268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a4c35f47c2cb7b45b8dc5de27d8810c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &937892276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,7 +1644,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937892274}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -1750,7 +1736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEntry: {fileID: 0}
   playervisual: {fileID: 937892268}
-  movementscript: {fileID: 937892274}
+  movementscript: {fileID: 0}
 --- !u!54 &937892279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2908,29 +2894,15 @@ GameObject:
   - component: {fileID: 1818928690}
   - component: {fileID: 1818928694}
   - component: {fileID: 1818928688}
-  - component: {fileID: 1818928686}
   - component: {fileID: 1818928693}
   - component: {fileID: 1818928687}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Player2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1818928686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818928685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a4c35f47c2cb7b45b8dc5de27d8810c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &1818928687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2962,7 +2934,7 @@ MonoBehaviour:
     m_ActionName: 'Controls/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1818928686}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -3118,7 +3090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEntry: {fileID: 0}
   playervisual: {fileID: 1818928685}
-  movementscript: {fileID: 1818928686}
+  movementscript: {fileID: 0}
 --- !u!54 &1818928694
 Rigidbody:
   m_ObjectHideFlags: 0
