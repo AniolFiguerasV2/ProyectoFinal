@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class InteractPlayers : MonoBehaviour
 {
     private bool isInsideVehicle = false;
+    private bool inStretcherRange = false;
 
     public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
@@ -11,6 +12,11 @@ public class InteractPlayers : MonoBehaviour
     public GameObject playervisual;
     public PlayerController movementscript;
 
+
+    public void Start()
+    {
+        currentEntry = null;
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
@@ -79,4 +85,13 @@ public class InteractPlayers : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
     }
 
+    public void SetstretcherRange(bool newState)
+    {
+        inStretcherRange = newState;
+    }
+
+    public bool IsinStretcherRange()
+    {
+        return inStretcherRange;
+    }
 }
