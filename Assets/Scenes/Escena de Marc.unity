@@ -872,6 +872,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1520019309}
     m_Modifications:
+    - target: {fileID: 199026231264696535, guid: abd33ade5de74cf449555f46cf4f9870, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 937892268}
+    - target: {fileID: 199026231264696535, guid: abd33ade5de74cf449555f46cf4f9870, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1818928685}
     - target: {fileID: 7601375449388817006, guid: abd33ade5de74cf449555f46cf4f9870, type: 3}
       propertyPath: m_Name
       value: CamillaPrefab
@@ -3189,6 +3197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camilla: {fileID: 416057631}
+  StretcherPivot: {fileID: 0}
 --- !u!1 &1527293925
 GameObject:
   m_ObjectHideFlags: 0
