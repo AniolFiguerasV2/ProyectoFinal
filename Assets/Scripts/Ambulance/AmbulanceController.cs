@@ -12,6 +12,8 @@ public class AmbulanceController : MonoBehaviour
     public float steeringRangeAtMaxSpeed = 10f;
     public float centreOfGravityOffset = -1f;
 
+    public GameObject spawnpoint;
+
     private WheelControl[] wheels;
     private Rigidbody rb;
     private bool Allplayersin = false;
@@ -79,7 +81,7 @@ public class AmbulanceController : MonoBehaviour
     }
     public void EnterVehicle(InteractPlayers player)
     {
-        player.transform.position = Vector3.zero;
+        player.transform.position = spawnpoint.transform.position;
         //player.transform.SetParent(transform);
         player.DrivenMode();
         currentPlayerin++;
