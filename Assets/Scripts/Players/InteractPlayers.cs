@@ -4,22 +4,19 @@ using UnityEngine.InputSystem;
 public class InteractPlayers : MonoBehaviour
 {
     private bool isInsideVehicle = false;
-    public bool Isleft = false;
-    public bool Isright = false;
-    public bool Isback = false;
+    private bool inStretcherRange = false;
+
     public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
-
-    public Transform spawncamilla;
-
-    bool IsOutC = false;
-    public GameObject camilla;
-    public Transform BackDoor;
-    public MoveObject cargacamilla;
 
     public GameObject playervisual;
     public PlayerController movementscript;
 
+
+    public void Start()
+    {
+        currentEntry = null;
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
@@ -27,39 +24,9 @@ public class InteractPlayers : MonoBehaviour
         if (isInsideVehicle)
             ExitVehicle();
         else
-        {
-            if (Isleft || Isright)
-            {
-                TryEnterVehicle();
-            }
-            if (Isback)
-            {
-                Strecher();
-            }
-        }
-            
+            TryEnterVehicle();
     }
 
-    void Strecher()
-    {
-        if (!IsOutC)
-        {
-            Debug.Log(BackDoor.transform.position);
-            camilla.transform.position = BackDoor.transform.position;
-            Debug.Log(camilla.transform.position);
-            IsOutC = true;
-        }
-        else
-        {
-            if (cargacamilla.IsInside)
-            {
-                camilla.transform.position = spawncamilla.transform.position;
-                IsOutC =false;
-            }
-        }
-        //camilla.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-        //camilla.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-    }
     void TryEnterVehicle()
     {
         if (currentEntry == null) return;
@@ -82,32 +49,12 @@ public class InteractPlayers : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 9)
+        if (other.TryGetComponent(out AmbulanceEntry entry))
         {
-            Debug.Log("Estoy en puerta");
-            Isleft = true;
-            if (other.TryGetComponent(out AmbulanceEntry entry))
+            if (entry.Available)
             {
-                if (entry.Available)
-                {
-                    currentEntry = entry;
-                }
+                currentEntry = entry;
             }
-        }
-        if(other.gameObject.layer == 8)
-        {
-            Isright=true;
-            if (other.TryGetComponent(out AmbulanceEntry entry))
-            {
-                if (entry.Available)
-                {
-                    currentEntry = entry;
-                }
-            }
-        }
-        if (other.gameObject.layer == 10)
-        {
-            Isback = true;
         }
     }
 
@@ -119,10 +66,6 @@ public class InteractPlayers : MonoBehaviour
             {
                 currentEntry = null;
             }
-        }
-        if (other.gameObject.layer == 10)
-        {
-            Isback = false;
         }
     }
 
@@ -142,4 +85,13 @@ public class InteractPlayers : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
     }
 
+    public void SetstretcherRange(bool newState)
+    {
+        inStretcherRange = newState;
+    }
+
+    public bool IsinStretcherRange()
+    {
+        return inStretcherRange;
+    }
 }
