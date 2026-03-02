@@ -1428,6 +1428,7 @@ GameObject:
   - component: {fileID: 937892277}
   - component: {fileID: 937892278}
   - component: {fileID: 937892276}
+  - component: {fileID: 937892280}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -1622,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEntry: {fileID: 0}
   playervisual: {fileID: 937892268}
-  movementscript: {fileID: 0}
+  movementscript: {fileID: 937892280}
 --- !u!54 &937892279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1650,6 +1651,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &937892280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937892268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4c35f47c2cb7b45b8dc5de27d8810c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  gravityMultiplier: 0.5
 --- !u!1 &943507214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3148,7 @@ GameObject:
   - component: {fileID: 1818928688}
   - component: {fileID: 1818928693}
   - component: {fileID: 1818928687}
+  - component: {fileID: 1818928695}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -3327,7 +3343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEntry: {fileID: 0}
   playervisual: {fileID: 1818928685}
-  movementscript: {fileID: 0}
+  movementscript: {fileID: 1818928695}
 --- !u!54 &1818928694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3355,6 +3371,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1818928695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818928685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4c35f47c2cb7b45b8dc5de27d8810c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  gravityMultiplier: 0.5
 --- !u!1 &1841057721
 GameObject:
   m_ObjectHideFlags: 0
