@@ -5,8 +5,6 @@ public class WheelControl : MonoBehaviour
     public Transform wheelModel;
 
     [HideInInspector] public WheelCollider wheelCollider;
-
-
     public bool steerable;
     public bool motorized;
 
