@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 227018955}
   wheelCollider: {fileID: 0}
-  steerable: 0
+  steerable: 1
   motorized: 0
 --- !u!1 &465114256
 GameObject:
