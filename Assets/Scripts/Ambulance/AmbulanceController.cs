@@ -12,11 +12,16 @@ public class AmbulanceController : MonoBehaviour
     public float steeringRangeAtMaxSpeed = 10f;
     public float centreOfGravityOffset = -1f;
 
+    [Header("Auto Frenado")]
+    public float autoBrakeForce = 3000f; //Fuerza del frenado automatico
+    public float stopThreshold = 0.5f; //Velocidad minima para ser considerado ser detenido
+
     public GameObject spawnpoint;
 
     private WheelControl[] wheels;
     private Rigidbody rb;
     private bool Allplayersin = false;
+    public bool autoBraking = false;
     private int currentPlayerin = 0;
     public int RequiredPlayerin = 2;
     private PlayerActions carControls;
@@ -40,6 +45,10 @@ public class AmbulanceController : MonoBehaviour
     {
         if (!Allplayersin)
         {
+            if (autoBraking)
+            {
+                ApplyAutoBrake();
+            }
             return;
         }
 
@@ -79,6 +88,34 @@ public class AmbulanceController : MonoBehaviour
             }
         }
     }
+
+    //Funcion para detener la ambulancia
+    void ApplyAutoBrake()
+    {
+        float speed = rb.linearVelocity.magnitude;
+
+        if (speed > stopThreshold)
+        {
+            foreach (var wheel in wheels)
+            {
+                wheel.wheelCollider.motorTorque = 0f;
+                wheel.wheelCollider.brakeTorque = autoBrakeForce;
+            }
+        }
+        else
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            foreach (var wheel in wheels)
+            {
+                wheel.wheelCollider.brakeTorque = 0f;   
+            }
+
+            autoBraking = false;
+        }
+    }
+
+
     public void EnterVehicle(InteractPlayers player)
     {
         player.transform.position = spawnpoint.transform.position;
@@ -87,6 +124,7 @@ public class AmbulanceController : MonoBehaviour
         if(currentPlayerin >= RequiredPlayerin)
         {
             Allplayersin = true;
+            autoBraking = false;
         }
     }
 
@@ -95,7 +133,12 @@ public class AmbulanceController : MonoBehaviour
         player.transform.position = player.currentEntry.transform.position;
         player.WalkMode();
         currentPlayerin--;
-        Allplayersin = false;
+        if (currentPlayerin <= 0)
+        {
+            Allplayersin = false;
+            autoBraking = true;
+        }
+        
     }
 
 

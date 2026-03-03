@@ -5,11 +5,22 @@ public class InteractPlayers : MonoBehaviour
 {
     private bool isInsideVehicle = false;
     private bool inStretcherRange = false;
+    public bool Isback = false;
+    public bool IsOutC = false;
 
     public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
 
+    public MoveObject chargeStrecher;
+
+    public Transform spawnStrecher;
+
+    //Objeto donde se spawneara la camilla
+    public Transform backDoor;
+
     public GameObject playervisual;
+    //Objeto de camilla 
+    public GameObject strecher;
     public PlayerController movementscript;
 
 
@@ -25,7 +36,32 @@ public class InteractPlayers : MonoBehaviour
             ExitVehicle();
         else
             TryEnterVehicle();
+            if (Isback)
+            {
+                Strecher();
+            }
     }
+
+    void Strecher()
+    {
+        if (!IsOutC)
+        {
+            strecher.transform.position = backDoor.transform.position;
+            IsOutC = true;
+        }
+        else
+        {
+            if (chargeStrecher.IsInside)
+            {
+                Debug.Log(strecher.transform.position);
+                strecher.transform.position = spawnStrecher.transform.position;
+                IsOutC = false;
+            }
+        }
+    }
+
+
+
 
     void TryEnterVehicle()
     {
@@ -56,6 +92,10 @@ public class InteractPlayers : MonoBehaviour
                 currentEntry = entry;
             }
         }
+        if (other.gameObject.layer == 10)
+        {
+            Isback = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -66,6 +106,10 @@ public class InteractPlayers : MonoBehaviour
             {
                 currentEntry = null;
             }
+        }
+        if (other.gameObject.layer == 10)
+        {
+            Isback = false;
         }
     }
 
