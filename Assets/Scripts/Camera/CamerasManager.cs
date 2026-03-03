@@ -2,17 +2,46 @@ using UnityEngine;
 
 public class CamerasManager : MonoBehaviour
 {
-    public GameObject ambulanceCamera;
-    public GameObject playersCamera;
-    public AmbulanceController ambulance;
-    private bool changedState = false;
-    void Update()
+    public static CamerasManager Instance
     {
-        if(ambulance.Allplayersin != changedState)
+        get; private set;
+    }
+
+    [SerializeField] private Camera _ambulanceCamera;
+    [SerializeField] private Camera _playersCamera;
+
+    private void Awake()
+    {
+        if (Instance != null)
         {
-            ambulanceCamera.SetActive(ambulance.Allplayersin);
-            playersCamera.SetActive(!ambulance.Allplayersin);
-            changedState = ambulance.Allplayersin;
+            Destroy(this.gameObject);
+            return;
         }
+
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        if (Instance == this)
+        {
+            ActivePlayersCamera();
+        }
+    }
+
+    public static void ActiveAmbulanceCamera()
+    {
+        CamerasManager instance = Instance;
+
+        instance._playersCamera.gameObject.SetActive(false);
+        instance._ambulanceCamera.gameObject.SetActive(true);
+    }
+
+    public static void ActivePlayersCamera()
+    {
+        CamerasManager instance = Instance;
+
+        instance._ambulanceCamera.gameObject.SetActive(false);
+        instance._playersCamera.gameObject.SetActive(true);
     }
 }

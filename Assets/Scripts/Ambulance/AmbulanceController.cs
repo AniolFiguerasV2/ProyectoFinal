@@ -20,7 +20,25 @@ public class AmbulanceController : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rb;
-    private bool Allplayersin = false;
+
+    private bool _allplayersin;
+    public bool Allplayersin
+    {
+        get => _allplayersin;
+        set
+        {
+            if (value)
+            {
+                CamerasManager.ActiveAmbulanceCamera();
+            }
+            else
+            {
+                CamerasManager.ActivePlayersCamera();
+            }
+            _allplayersin = value;
+        }
+    }
+
     public bool autoBraking = false;
     private int currentPlayerin = 0;
     public int RequiredPlayerin = 2;
