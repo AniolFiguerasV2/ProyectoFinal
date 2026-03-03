@@ -16,7 +16,7 @@ public class AmbulanceController : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rb;
-    private bool Allplayersin = false;
+    [SerializeField] public bool Allplayersin = false;
     private int currentPlayerin = 0;
     public int RequiredPlayerin = 2;
     private PlayerActions carControls;
