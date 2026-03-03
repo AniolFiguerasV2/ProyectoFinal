@@ -10,18 +10,6 @@ public class PutPacientStrecher : MonoBehaviour
 
     public GameObject panelwin;
 
-
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Strecher"))

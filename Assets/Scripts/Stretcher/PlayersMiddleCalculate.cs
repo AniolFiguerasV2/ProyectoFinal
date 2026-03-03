@@ -13,8 +13,6 @@ public class PlayersMiddleCalculate : MonoBehaviour
     {
         Vector3 pos1 = player1.transform.position;
         Vector3 pos2 = player2.transform.position;
-        //pos1.y = pickedHeight;
-        //pos2.y = pickedHeight;
 
         middleObject.transform.position = (pos1 + pos2)/2;
 
