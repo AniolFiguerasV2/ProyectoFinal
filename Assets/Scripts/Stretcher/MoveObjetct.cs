@@ -35,16 +35,7 @@ public class MoveObject : MonoBehaviour
     {
         if(other.gameObject.layer == 10)
         {
-            Debug.Log("zona camilla");
             IsInside = true;
-
-
-            /*if (Input.GetKeyDown(KeyCode.J))
-            {
-                Debug.Log("entrar camilla");
-                transform.position = spawpoint.transform.position;
-            }*/
-
         }
     }
 
@@ -52,16 +43,8 @@ public class MoveObject : MonoBehaviour
     {
         if (other.gameObject.layer == 10)
         {
-            Debug.Log("zona camilla");
             IsInside = false;
-
-
-            /*if (Input.GetKeyDown(KeyCode.J))
-            {
-                Debug.Log("entrar camilla");
-                transform.position = spawpoint.transform.position;
-            }*/
-
+            
         }
     }
 }
