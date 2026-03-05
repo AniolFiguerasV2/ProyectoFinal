@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PatientSpawner : MonoBehaviour
@@ -10,6 +12,8 @@ public class PatientSpawner : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float maxSlope = 45f;
 
+    public List<PatientDeathTime> patients;
+
     private int currentNPCs;
 
     private void Start()
@@ -18,6 +22,7 @@ public class PatientSpawner : MonoBehaviour
         {
             SpawnNPC();
         }
+        patients = new List<PatientDeathTime>();
     }
     private void SpawnNPC()
     {
@@ -40,7 +45,11 @@ public class PatientSpawner : MonoBehaviour
 
                     currentNPCs++;
 
-                    npc.AddComponent<PatientDeathTime>().spawner = this;
+                    PatientDeathTime patientdtComp =  npc.AddComponent<PatientDeathTime>();
+
+                    patientdtComp.spawner = this;
+
+                    patients.Add(patientdtComp);
 
                     return;
                 }
