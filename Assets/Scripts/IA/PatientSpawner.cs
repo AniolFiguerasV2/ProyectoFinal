@@ -6,7 +6,7 @@ public class PatientSpawner : MonoBehaviour
     [SerializeField] private GameObject npcPrefab;
     [SerializeField] private int maxNPCs = 3;
     [SerializeField] private float spawnRadius = 40f;
-    [SerializeField] private float spawnHeight = 50f;
+    [SerializeField] private float spawnHeight = 100f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float maxSlope = 45f;
 
@@ -64,3 +64,9 @@ public class PatientSpawner : MonoBehaviour
         }
     }
 }
+/*
+ * Este script sirve para que spawnen 3 pacientes random por el mapa.
+ * 
+ * Para que funcione este script se tiene que assiganar a un Game Object vacio en la escena y rellenar los campos con un prefab del paciente que solo tiene que tener el
+ * PutPatientStretcher. Es necessario que tambien exsista el script PatientDeathTime sino el script va a petar.
+ */

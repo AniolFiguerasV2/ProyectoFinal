@@ -1115,6 +1115,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
+  sidewaysGrip: 2
+  forwardGrip: 1.5
 --- !u!146 &550120185
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -1225,6 +1227,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
+  sidewaysGrip: 2
+  forwardGrip: 1.5
 --- !u!146 &637966730
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -1905,15 +1909,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ffa0026db0d894a84403378dbb80b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Isleft: 0
-  Isright: 0
   Isback: 0
+  IsOutC: 0
   currentEntry: {fileID: 1053635526}
-  spawncamilla: {fileID: 1670116734}
-  camilla: {fileID: 986278134}
-  BackDoor: {fileID: 2083224986}
-  cargacamilla: {fileID: 986278140}
+  chargeStrecher: {fileID: 0}
+  spawnStrecher: {fileID: 0}
+  backDoor: {fileID: 0}
   playervisual: {fileID: 937892268}
+  strecher: {fileID: 0}
   movementscript: {fileID: 937892274}
 --- !u!1 &958209521
 GameObject:
@@ -1964,6 +1967,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
+  sidewaysGrip: 2
+  forwardGrip: 1.5
 --- !u!146 &958209524
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -2661,9 +2666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7a365901019b648a833f7bed50f262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambulanceCamera: {fileID: 456750829}
-  playersCamera: {fileID: 196033791}
-  ambulance: {fileID: 1558832002}
+  _ambulanceCamera: {fileID: 313364148}
+  _playersCamera: {fileID: 330585545}
 --- !u!4 &1179602850
 Transform:
   m_ObjectHideFlags: 0
@@ -2694,7 +2698,7 @@ MonoBehaviour:
   npcPrefab: {fileID: 1354030806}
   maxNPCs: 3
   spawnRadius: 150
-  spawnHeight: 50
+  spawnHeight: 100
   groundLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -3186,8 +3190,10 @@ MonoBehaviour:
   steerinRange: 30
   steeringRangeAtMaxSpeed: 10
   centreOfGravityOffset: -1
+  autoBrakeForce: 3000
+  stopThreshold: 0.5
   spawnpoint: {fileID: 1670116733}
-  Allplayersin: 0
+  autoBraking: 0
   RequiredPlayerin: 2
 --- !u!54 &1558832003
 Rigidbody:
@@ -3595,15 +3601,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ffa0026db0d894a84403378dbb80b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Isleft: 0
-  Isright: 0
   Isback: 0
+  IsOutC: 0
   currentEntry: {fileID: 1200040211}
-  spawncamilla: {fileID: 1670116734}
-  camilla: {fileID: 986278134}
-  BackDoor: {fileID: 2083224986}
-  cargacamilla: {fileID: 986278140}
+  chargeStrecher: {fileID: 0}
+  spawnStrecher: {fileID: 0}
+  backDoor: {fileID: 0}
   playervisual: {fileID: 1818928685}
+  strecher: {fileID: 0}
   movementscript: {fileID: 1818928686}
 --- !u!1 &1822202582
 GameObject:
@@ -3973,6 +3978,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
+  sidewaysGrip: 2
+  forwardGrip: 1.5
 --- !u!146 &1999676002
 WheelCollider:
   m_ObjectHideFlags: 0
