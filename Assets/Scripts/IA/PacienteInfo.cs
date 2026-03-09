@@ -7,23 +7,19 @@ public class PacienteInfo : MonoBehaviour
     public Image spritePaciente;
     public Image barhealth;
 
-    public float lifeInseconds;
-    public float currentlifeInseconds;
-
-    public TextMeshProUGUI timerText;
-    
-    void Start()
+    private PatientDeathTime patient;
+    public void Init(PatientDeathTime p)
     {
-        
+        patient = p;
     }
-
     
     void Update()
     {
-        currentlifeInseconds -= Time.deltaTime;
-        int minutes = Mathf.FloorToInt(currentlifeInseconds / 60);
-        int seconds = Mathf.FloorToInt(currentlifeInseconds % 60);
+        if (patient == null) return;
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        float remaining = patient.Lifetime - patient.Timer;
+        remaining = Mathf.Max(0, remaining);
+
+        barhealth.fillAmount = remaining / patient.Lifetime;
     }
 }

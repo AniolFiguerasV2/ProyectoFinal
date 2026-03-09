@@ -13,6 +13,8 @@ public class PatientDeathTime : MonoBehaviour
     public float hardTime = 150f;
 
     private float lifetime;
+    public float Lifetime => lifetime;
+    public float Timer => timer;
     private float timer = 0f;
 
     public PatientSpawner spawner;

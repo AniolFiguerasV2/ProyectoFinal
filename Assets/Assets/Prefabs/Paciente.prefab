@@ -171,4 +171,4 @@ MonoBehaviour:
   easyTime: 600
   normalTime: 300
   hardTime: 150
-  spawner: {fileID: 0}
+  spawner: {fileID: 2553039957644161658, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}

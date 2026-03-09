@@ -18,11 +18,11 @@ public class PatientSpawner : MonoBehaviour
 
     private void Start()
     {
+        patients = new List<PatientDeathTime>();
         for (int i = 0; i < maxNPCs; i++)
         {
             SpawnNPC();
         }
-        patients = new List<PatientDeathTime>();
     }
     private void SpawnNPC()
     {
