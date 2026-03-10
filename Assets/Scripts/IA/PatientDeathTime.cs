@@ -3,11 +3,12 @@ using UnityEngine;
 public class PatientDeathTime : MonoBehaviour
 {
     [Header("Porcentaje de dificultad")]
-    public float easyDificulty = 30f;
-    public float normalDificulty = 60f;
-    public float hardDificulty = 10f;
+    public float easyDificulty = 3f;
+    public float normalDificulty = 6f;
+    public float hardDificulty = 1f;
 
     [Header("Tiempos por dificultad (segundos)")]
+    public bool debugTime = false;
     public float easyTime = 600f;
     public float normalTime = 300f;
     public float hardTime = 150f;
@@ -22,20 +23,24 @@ public class PatientDeathTime : MonoBehaviour
     private void Start()
     {
 
-        int numeroRandom = Random.Range(1, 101);
+        float numeroRandom = Random.Range(0f, easyDificulty + normalDificulty + hardDificulty);
 
-        if (numeroRandom >= 1 && numeroRandom <= easyDificulty)
+        if (numeroRandom <= easyDificulty)
         {
             lifetime = easyTime;
         }
-        else if (numeroRandom >= (easyDificulty + 1) && numeroRandom <= (easyDificulty + normalDificulty))
+        else if (numeroRandom <= easyDificulty + normalDificulty)
         {
             lifetime = normalTime;
         }
-        else if (numeroRandom >= (easyDificulty + normalDificulty + 1) && numeroRandom <= (easyDificulty + normalDificulty + hardDificulty))
+        else if (numeroRandom <= easyDificulty + normalDificulty + hardDificulty)
         {
             lifetime = hardTime;
         }
+
+
+        if (debugTime)
+            lifetime *= 0.01f;
     }
 
     private void Update()
@@ -43,7 +48,7 @@ public class PatientDeathTime : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= lifetime)
         {
-            spawner.NotifyNPCDeath();
+            spawner.NotifyNPCDeath(this);
             Destroy(gameObject);
         }
     }

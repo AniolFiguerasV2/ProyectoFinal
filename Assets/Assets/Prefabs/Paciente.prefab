@@ -165,9 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db60bb3e96b78a34590cfb3db278bacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easyDificulty: 30
-  normalDificulty: 20
-  hardDificulty: 10
+  easyDificulty: 3
+  normalDificulty: 6
+  hardDificulty: 1
+  debugTime: 0
   easyTime: 600
   normalTime: 300
   hardTime: 150
