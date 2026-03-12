@@ -222,6 +222,7 @@ MonoBehaviour:
   middleObject: {fileID: 840169062}
   body: {fileID: 0}
   animator: {fileID: 933617460}
+  animator1: {fileID: 2045194261}
 --- !u!54 &26391209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3984,6 +3985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   gravityMultiplier: 0.5
+  rotationSpeed: 10
   animator: {fileID: 2045194261}
 --- !u!1 &5257352038484082375
 GameObject:
@@ -4702,6 +4704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   gravityMultiplier: 0.5
+  rotationSpeed: 10
   animator: {fileID: 933617460}
 --- !u!33 &9168730341839506925
 MeshFilter:

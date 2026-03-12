@@ -15,6 +15,8 @@ public class MoveObject : MonoBehaviour
     public Transform middleObject;
     public Rigidbody body;
     public Animator animator;
+    public Animator animator1;
+    public bool interactPlayed = false;
 
     private void Start()
     {
@@ -29,7 +31,18 @@ public class MoveObject : MonoBehaviour
             transform.position = middleObject.position;
             transform.rotation = middleObject.rotation;
             body.linearVelocity = Vector3.zero;
-            animator.SetTrigger("Interact");
+
+            if (!interactPlayed)
+            {
+                animator.SetTrigger("Intercat");
+                animator1.SetTrigger("Intercat");
+                interactPlayed = true;
+            }
+
+        }
+        else
+        {
+            interactPlayed = false;
         }
     }
 
