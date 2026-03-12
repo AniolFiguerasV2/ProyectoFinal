@@ -115,7 +115,6 @@ public class InteractPlayers : MonoBehaviour
 
     public void DrivenMode()
     {
-        GetComponent<MeshRenderer>().enabled = false;
         GetComponent<PlayerController>().enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
@@ -123,7 +122,6 @@ public class InteractPlayers : MonoBehaviour
 
     public void WalkMode()
     {
-        GetComponent<MeshRenderer>().enabled = true;
         GetComponent<PlayerController>().enabled = true;
         GetComponent<CapsuleCollider>().enabled = true;
         GetComponent<Rigidbody>().useGravity = true;

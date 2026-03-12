@@ -7,6 +7,8 @@ public class PacienteInfo : MonoBehaviour
     public Image spritePaciente;
     public Image barhealth;
 
+    public TextMeshProUGUI timerText;
+
     private PatientDeathTime patient;
     public void Init(PatientDeathTime p)
     {
@@ -19,6 +21,11 @@ public class PacienteInfo : MonoBehaviour
 
         float remaining = patient.Lifetime - patient.Timer;
         remaining = Mathf.Max(0, remaining);
+
+        int minutes = Mathf.FloorToInt(remaining / 60);
+        int seconds = Mathf.FloorToInt(remaining % 60);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         barhealth.fillAmount = remaining / patient.Lifetime;
     }
