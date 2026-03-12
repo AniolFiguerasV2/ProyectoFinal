@@ -17,7 +17,10 @@ public class PacienteInfo : MonoBehaviour
     
     void Update()
     {
-        if (patient == null) return;
+        if (patient == null){
+            Destroy(gameObject);
+            return;
+        }
 
         float remaining = patient.Lifetime - patient.Timer;
         remaining = Mathf.Max(0, remaining);
