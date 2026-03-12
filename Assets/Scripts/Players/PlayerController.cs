@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
@@ -10,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5f;
     public float gravityMultiplier = 0.5f;
+    public Animator animator;
 
     private void Start()
     {
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
         Vector2 movementVector = context.ReadValue<Vector2>();
         movementX = movementVector.x;
         movementY = movementVector.y;
+        animator.SetTrigger("Walking");
     }
 
     private void FixedUpdate()

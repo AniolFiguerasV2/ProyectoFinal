@@ -14,6 +14,7 @@ public class MoveObject : MonoBehaviour
     public bool IsInside = false;
     public Transform middleObject;
     public Rigidbody body;
+    public Animator animator;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class MoveObject : MonoBehaviour
             transform.position = middleObject.position;
             transform.rotation = middleObject.rotation;
             body.linearVelocity = Vector3.zero;
+            animator.SetTrigger("Interact");
         }
     }
 
