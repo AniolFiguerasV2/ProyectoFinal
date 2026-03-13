@@ -59,12 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42dfe75ae38420c4f92f2e52cc6592a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 297902738064353503, guid: 77636c3f48653b44babc76f965ad3f59, type: 3}
+  npcPrefab: {fileID: 5382713541919062787, guid: 77636c3f48653b44babc76f965ad3f59, type: 3}
   maxNPCs: 3
   spawnRadius: 150
   spawnHeight: 100
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 2048
   maxSlope: 45
   patients: []
