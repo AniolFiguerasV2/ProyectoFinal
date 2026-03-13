@@ -136,8 +136,12 @@ public class AmbulanceController : MonoBehaviour
 
     public void EnterVehicle(InteractPlayers player)
     {
-        player.transform.position = spawnpoint.transform.position;
+        player.transform.position = rb.transform.position;
         player.DrivenMode();
+        player.transform.parent = rb.transform;
+        player.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        player.playervisual.SetActive(false);
         currentPlayerin++;
         if(currentPlayerin >= RequiredPlayerin)
         {
@@ -150,6 +154,10 @@ public class AmbulanceController : MonoBehaviour
     {
         player.transform.position = player.currentEntry.transform.position;
         player.WalkMode();
+        player.transform.parent = null;
+        player.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        player.playervisual.SetActive(true);
         currentPlayerin--;
         if (currentPlayerin <= 0)
         {

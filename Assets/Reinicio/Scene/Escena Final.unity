@@ -1469,6 +1469,16 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 0f747e9bbcaeadb4ea8ca49a9e923cd2, type: 3}
   m_PrefabInstance: {fileID: 1318047010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &935504363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 576f9a7158c057940b3411ef5e9d3485, type: 3}
+  m_PrefabInstance: {fileID: 1723718328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &959737016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f747e9bbcaeadb4ea8ca49a9e923cd2, type: 3}
+  m_PrefabInstance: {fileID: 1318047010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1056939699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3911,7 @@ MonoBehaviour:
   chargeStrecher: {fileID: 26391208}
   spawnStrecher: {fileID: 1777267094}
   backDoor: {fileID: 358618474}
-  playervisual: {fileID: 5189765719122592164}
+  playervisual: {fileID: 935504363}
   strecher: {fileID: 26391204}
   movementscript: {fileID: 5189765719122592165}
 --- !u!23 &4914754528511951684
@@ -4688,7 +4698,7 @@ MonoBehaviour:
   chargeStrecher: {fileID: 26391208}
   spawnStrecher: {fileID: 1777267094}
   backDoor: {fileID: 358618474}
-  playervisual: {fileID: 8491427034782760440}
+  playervisual: {fileID: 959737016}
   strecher: {fileID: 26391204}
   movementscript: {fileID: 9092805695951081963}
 --- !u!114 &9092805695951081963
