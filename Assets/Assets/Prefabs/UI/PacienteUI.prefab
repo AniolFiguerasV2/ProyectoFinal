@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 442.3075, y: 99.1017}
+  m_SizeDelta: {x: 516.3612, y: 99.1017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7490036438903392889
 CanvasRenderer:
@@ -314,7 +314,7 @@ RectTransform:
   m_GameObject: {fileID: 7527245969677948201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8587588037668119544}
@@ -344,7 +344,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: -127
+  m_Spacing: -101.11
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -366,6 +366,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritePaciente: {fileID: 6441957264185889591}
   barhealth: {fileID: 7993373638640960584}
-  lifeInseconds: 0
-  currentlifeInseconds: 0
   timerText: {fileID: 2319334766420185613}
