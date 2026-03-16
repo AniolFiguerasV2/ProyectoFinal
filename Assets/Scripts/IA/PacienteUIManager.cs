@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PacienteUIManager : MonoBehaviour
 {
@@ -6,7 +8,12 @@ public class PacienteUIManager : MonoBehaviour
     [SerializeField] private GameObject pacienteWidgerPrefab;
     [SerializeField] private Transform widgetParent;
 
+    [SerializeField] private RectTransform selectionFrame;
+
     private int lastPatientCount = 0;
+
+    private List<PacienteInfo> widgets = new List<PacienteInfo>();
+    private int selectedIndex = 0;
 
     void Update()
     {
@@ -20,6 +27,26 @@ public class PacienteUIManager : MonoBehaviour
             }
 
             lastPatientCount = spawner.patients.Count;
+
+            MoveSelection();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (widgets.Count == 0) return;
+
+            selectedIndex++;
+
+            if (selectedIndex >= widgets.Count)
+                selectedIndex = 0;
+            MoveSelection();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (widgets.Count == 0) return;
+
+            PatientDeathTime selectedPatient = widgets[selectedIndex].GetPatient();
+
+            //Logica de Mover la Flecha al paciente selecionado
         }
     }
     void CreateWidget(PatientDeathTime patient)
@@ -33,6 +60,19 @@ public class PacienteUIManager : MonoBehaviour
         if (info != null)
         {
             info.Init(patient);
+            widgets.Add(info);
         }
+    }
+
+    void MoveSelection()
+    {
+        if (widgets.Count == 0) return;
+
+        RectTransform widgetRect = widgets[selectedIndex].GetComponent<RectTransform>();
+
+        selectionFrame.SetParent(widgetRect);
+        selectionFrame.SetAsLastSibling();
+        selectionFrame.offsetMin = Vector2.zero;
+        selectionFrame.offsetMax = Vector2.zero;
     }
 }

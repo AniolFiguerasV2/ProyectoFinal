@@ -32,4 +32,9 @@ public class PacienteInfo : MonoBehaviour
 
         barhealth.fillAmount = remaining / patient.Lifetime;
     }
+
+    public PatientDeathTime GetPatient()
+    {
+        return patient;
+    }
 }
