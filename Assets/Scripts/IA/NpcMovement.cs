@@ -6,10 +6,6 @@ public class NpcMovement : MonoBehaviour
 {
     public List<GameObject> wayPoints;
     public float speed = 2;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
