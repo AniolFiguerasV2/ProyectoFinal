@@ -72,6 +72,10 @@ public class PacienteUIManager : MonoBehaviour
 
         selectionFrame.SetParent(widgetRect);
         selectionFrame.SetAsLastSibling();
+
+        selectionFrame.anchorMin = Vector2.zero;
+        selectionFrame.anchorMax = Vector2.one;
+
         selectionFrame.offsetMin = Vector2.zero;
         selectionFrame.offsetMax = Vector2.zero;
     }
