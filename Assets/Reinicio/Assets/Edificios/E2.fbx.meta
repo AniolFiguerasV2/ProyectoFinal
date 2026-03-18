@@ -3,7 +3,52 @@ guid: 6b2fa2038520b914e803c89dfd057c49
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Balcon
+    second: {fileID: 2100000, guid: 793911ac045a85147b53f69ce2919d7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bordes
+    second: {fileID: 2100000, guid: 8c7b28ebb8898fb4c9d93191cb1fd225, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escalera entrada_
+    second: {fileID: 2100000, guid: 88dfa416adff16446bc11360e954e812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Extras E2
+    second: {fileID: 2100000, guid: 9443552600bfc4442b01305719118af8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pared E2
+    second: {fileID: 2100000, guid: 2b588437e6ca0814bb7326202d96b656, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pared Ventana E2
+    second: {fileID: 2100000, guid: ec6b69715aa2c654e823980ca44e129a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pared puerta E2
+    second: {fileID: 2100000, guid: 5b930db9f7219d745a03c79c91a53590, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Techo edificio
+    second: {fileID: 2100000, guid: ecccb34846193fa4b879055be6a93c7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Varandilla Escaleras
+    second: {fileID: 2100000, guid: f3233f556d5aff04a902ac84159d8133, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
