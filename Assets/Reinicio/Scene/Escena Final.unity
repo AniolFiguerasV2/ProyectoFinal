@@ -312,7 +312,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!23 &26391210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1887,6 +1887,92 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &624964605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624964606}
+  - component: {fileID: 624964609}
+  - component: {fileID: 624964608}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624964606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624964605}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: -0, y: 3, z: -1.2700003}
+  m_LocalScale: {x: 60, y: 30, z: 30}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1225593683}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!23 &624964608
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624964605}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -6478536213147159724, guid: b47cd0618d664024bbefa209ee642074, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &624964609
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624964605}
+  m_Mesh: {fileID: -462981019419857548, guid: b47cd0618d664024bbefa209ee642074, type: 3}
 --- !u!1001 &640405428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2444,6 +2530,7 @@ MonoBehaviour:
   pacienteWidgerPrefab: {fileID: 7527245969677948201, guid: 1db609b93e5eb514985b0b62ecf74aa5, type: 3}
   widgetParent: {fileID: 749689601}
   selectionFrame: {fileID: 527993325}
+  arrowController: {fileID: 1225593684}
 --- !u!114 &749689603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2919,7 +3006,7 @@ MonoBehaviour:
   player1: {fileID: 8491427034782760440}
   player2: {fileID: 5189765719122592164}
   middleObject: {fileID: 840169061}
-  pickedHeight: -0.4
+  pickedHeight: 0.5
 --- !u!1001 &840834543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4223,6 +4310,14 @@ PrefabInstance:
       propertyPath: npcPrefab
       value: 
       objectReference: {fileID: 5382713541919062787, guid: 77636c3f48653b44babc76f965ad3f59, type: 3}
+    - target: {fileID: 2553039957644161658, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
+      propertyPath: refTrCamilla
+      value: 
+      objectReference: {fileID: 1790225070}
+    - target: {fileID: 2553039957644161658, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
+      propertyPath: refTrSalaEspera
+      value: 
+      objectReference: {fileID: 1777267094}
     - target: {fileID: 4721542239415901038, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -4456,6 +4551,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.67, y: 11, z: 6.75}
   m_Center: {x: 0, y: 5, z: 0}
+--- !u!1 &1225593682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225593683}
+  - component: {fileID: 1225593684}
+  m_Layer: 0
+  m_Name: Arrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225593683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225593682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 624964606}
+  m_Father: {fileID: 6700341297244328624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225593684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225593682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c548477a1a2df438563bb29717370d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 0}
+  rotationSpeed: 10
 --- !u!1001 &1228466746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9594,6 +9736,7 @@ Transform:
   - {fileID: 6779844861526739111}
   - {fileID: 623254535}
   - {fileID: 216335576}
+  - {fileID: 1225593683}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &6700341297244328625
@@ -9604,9 +9747,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6320718807976413194}
   serializedVersion: 4
-  m_Mass: 1500
+  m_Mass: 2000
   m_Drag: 0.1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -9637,9 +9780,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motorTorque: 2000
   brakeTorque: 2000
-  maxSpeed: 20
+  maxSpeed: 50
   steerinRange: 30
-  steeringRangeAtMaxSpeed: 10
+  steeringRangeAtMaxSpeed: 30
   centreOfGravityOffset: -1
   autoBrakeForce: 3000
   stopThreshold: 0.5

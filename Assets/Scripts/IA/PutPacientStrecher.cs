@@ -8,7 +8,12 @@ public class PutPacientStrecher : MonoBehaviour
     public Transform refcamilla;
     public Transform salaespera;
 
-    public GameObject panelwin;
+    private void Start()
+    {
+        refcamilla = PatientSpawner.Instance.refTrCamilla;
+        salaespera = PatientSpawner.Instance.refTrSalaEspera;
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,7 +29,6 @@ public class PutPacientStrecher : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Hospital"))
         {
-            panelwin.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }

@@ -14,6 +14,21 @@ public class PatientSpawner : MonoBehaviour
 
     public List<PatientDeathTime> patients = new();
 
+    public Transform refTrCamilla;
+    public Transform refTrSalaEspera;
+
+    public static PatientSpawner Instance { get; private set; }
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            return;
+        }
+        Destroy(this);
+    }
+
     private void Start()
     {
         RefillNPCS();
