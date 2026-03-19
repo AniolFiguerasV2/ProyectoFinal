@@ -10,6 +10,8 @@ public class PacienteUIManager : MonoBehaviour
 
     [SerializeField] private RectTransform selectionFrame;
 
+    [SerializeField] private ArrowController arrowController;
+
     private int lastPatientCount = 0;
 
     private List<PacienteInfo> widgets = new List<PacienteInfo>();
@@ -46,7 +48,7 @@ public class PacienteUIManager : MonoBehaviour
 
             PatientDeathTime selectedPatient = widgets[selectedIndex].GetPatient();
 
-            //Logica de Mover la Flecha al paciente selecionado
+            arrowController.SetTarget(selectedPatient.transform);
         }
     }
     void CreateWidget(PatientDeathTime patient)
