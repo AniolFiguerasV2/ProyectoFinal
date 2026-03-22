@@ -7,9 +7,9 @@ public class AmbulanceController : MonoBehaviour
     [Header("Ambulance Properties")]
     public float motorTorque = 2000f;
     public float brakeTorque = 2000f;
-    public float maxSpeed = 20f;
-    public float steerinRange = 35f;
-    public float steeringRangeAtMaxSpeed = 18f;
+    public float maxSpeed = 90f;
+    public float steerinRange = 30f;
+    public float steeringRangeAtMaxSpeed = 10f;
     public float centreOfGravityOffset = -1f;
 
     [Header("Auto Frenado")]
@@ -81,7 +81,7 @@ public class AmbulanceController : MonoBehaviour
         float speedFactor =Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
 
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, speedFactor);
-        float currentSteerRange = steerinRange;
+        float currentSteerRange = Mathf.Lerp(steerinRange, steeringRangeAtMaxSpeed, speedFactor);
 
         bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
 
@@ -89,8 +89,7 @@ public class AmbulanceController : MonoBehaviour
         {
             if(wheel.steerable)
             {
-                float smoothSteer = Mathf.Lerp(0, hInput, 0.8f);
-                wheel.wheelCollider.steerAngle = smoothSteer * currentSteerRange;
+                wheel.wheelCollider.steerAngle = hInput * currentSteerRange;
             }
             if(isAccelerating)
             {

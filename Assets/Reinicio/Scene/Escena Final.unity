@@ -11754,7 +11754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980924559477548426, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: m_ImplicitCom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6382346669758010068, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: m_Name
@@ -11777,16 +11777,20 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+      propertyPath: maxSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: spawnpoint
       value: 
       objectReference: {fileID: 1777267093}
     - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: brakeTorque
-      value: 1500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: motorTorque
-      value: 3500
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: steerinRange
