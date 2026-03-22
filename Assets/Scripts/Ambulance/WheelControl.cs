@@ -29,14 +29,20 @@ public class WheelControl : MonoBehaviour
 
     void ApplyGripSettings()
     {
-        //Controla el derrape
-        WheelFrictionCurve sideways = wheelCollider.sidewaysFriction;
-        sideways.stiffness = sidewaysGrip;
-        wheelCollider.sidewaysFriction = sideways;
+       WheelFrictionCurve sideways = wheelCollider.sidewaysFriction;
+    sideways.stiffness = sidewaysGrip;
+    sideways.extremumSlip = 0.4f;
+    sideways.extremumValue = 1f;
+    sideways.asymptoteSlip = 0.8f;
+    sideways.asymptoteValue = 0.5f;
+    wheelCollider.sidewaysFriction = sideways;
 
-        //Ajusta agarre hacia delante
-        WheelFrictionCurve forward = wheelCollider.forwardFriction;
-        forward.stiffness = forwardGrip;
-        wheelCollider.forwardFriction = forward;
+    WheelFrictionCurve forward = wheelCollider.forwardFriction;
+    forward.stiffness = forwardGrip;
+    forward.extremumSlip = 0.4f;
+    forward.extremumValue = 1f;
+    forward.asymptoteSlip = 0.8f;
+    forward.asymptoteValue = 0.5f;
+    wheelCollider.forwardFriction = forward;
     }
 }

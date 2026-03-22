@@ -43,7 +43,7 @@ public class PatientSpawner : MonoBehaviour
 
             if (slope <= maxSlope)
             {
-                Vector3 spawnPosition = hit.point;
+                Vector3 spawnPosition = hit.point + Vector3.up * 1f;
 
                 PatientDeathTime npc = Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
 

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1587649014890494528}
   - component: {fileID: 1808497400082075594}
   - component: {fileID: 6985968892208060949}
-  - component: {fileID: 7359859659396896780}
   - component: {fileID: 5382713541919062787}
+  - component: {fileID: 5158682763459151533}
   m_Layer: 0
   m_Name: Paciente
   m_TagString: Untagged
@@ -138,21 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7359859659396896780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297902738064353503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca3ffe1a2c7afa45957db7f718a3d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refcamilla: {fileID: 0}
-  salaespera: {fileID: 0}
-  panelwin: {fileID: 0}
 --- !u!114 &5382713541919062787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +158,16 @@ MonoBehaviour:
   normalTime: 300
   hardTime: 150
   spawner: {fileID: 2553039957644161658, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
+--- !u!114 &5158682763459151533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297902738064353503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47ad07ef9595ea47ab8080fb6696df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refcamilla: {fileID: 0}
