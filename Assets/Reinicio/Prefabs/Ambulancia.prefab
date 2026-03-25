@@ -88,8 +88,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
-  sidewaysGrip: 2
-  forwardGrip: 1.5
+  sidewaysGrip: 0.7
+  forwardGrip: 1.1
 --- !u!1 &350197155713170695
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambulance: {fileID: 7970679838002777143}
   Available: 1
+  ControlsStearing: 1
   visuals: {fileID: 7630515112137877625}
   player1: {fileID: 0}
   player2: {fileID: 0}
@@ -580,8 +581,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
-  sidewaysGrip: 2
-  forwardGrip: 1.5
+  sidewaysGrip: 0.7
+  forwardGrip: 1.1
 --- !u!1 &1438241067994080681
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ambulance: {fileID: 7970679838002777143}
   Available: 1
+  ControlsStearing: 0
   visuals: {fileID: 5194499292674901169}
   player1: {fileID: 0}
   player2: {fileID: 0}
@@ -1213,8 +1215,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
-  sidewaysGrip: 2
-  forwardGrip: 1.5
+  sidewaysGrip: 0.7
+  forwardGrip: 1.1
 --- !u!1 &4856570948900176786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,8 +1591,8 @@ Rigidbody:
   m_GameObject: {fileID: 6382346669758010068}
   serializedVersion: 4
   m_Mass: 1500
-  m_Drag: 1
-  m_AngularDrag: 5
+  m_Drag: 0.2
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1600,12 +1602,12 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7970679838002777143
 MonoBehaviour:
@@ -1619,12 +1621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f7d55c20f8b0f478b2ffcad78829e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 2000
+  motorTorque: 4000
   brakeTorque: 2000
-  maxSpeed: 50
-  steerinRange: 30
-  steeringRangeAtMaxSpeed: 30
-  centreOfGravityOffset: -1
+  maxSpeed: 100
+  steerinRange: 35
+  steeringRangeAtMaxSpeed: 22
+  centreOfGravityOffset: 1.5
   autoBrakeForce: 3000
   stopThreshold: 0.5
   spawnpoint: {fileID: 0}
@@ -2579,5 +2581,5 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
-  sidewaysGrip: 2
-  forwardGrip: 1.5
+  sidewaysGrip: 0.7
+  forwardGrip: 1.1

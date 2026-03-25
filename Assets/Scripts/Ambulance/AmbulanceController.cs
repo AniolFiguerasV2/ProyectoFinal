@@ -20,6 +20,7 @@ public class AmbulanceController : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rb;
+    private bool p1Controlstearing;
 
     private bool _allplayersin;
     public bool Allplayersin
@@ -73,9 +74,18 @@ public class AmbulanceController : MonoBehaviour
         Vector2 inputPlayer1 = carControls.Player1.Move.ReadValue<Vector2>();
         Vector2 inputPlayer2 = carControls.Player2.Move.ReadValue<Vector2>();
 
-
-        float vInput = inputPlayer1.y;
-        float hInput = inputPlayer2.x;
+        float vInput = 0;
+        float hInput = 0;
+        if (p1Controlstearing)
+        {
+            vInput = inputPlayer2.y;
+            hInput = inputPlayer1.x;
+        }
+        else
+        {
+            vInput = inputPlayer1.y;
+            hInput = inputPlayer2.x;
+        }
 
         float forwardSpeed = Vector3.Dot(transform.forward, rb.linearVelocity);
         float speedFactor =Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
@@ -134,7 +144,7 @@ public class AmbulanceController : MonoBehaviour
     }
 
 
-    public void EnterVehicle(InteractPlayers player)
+    public void EnterVehicle(InteractPlayers player, bool controlsstearing)
     {
         player.transform.position = rb.transform.position;
         player.DrivenMode();
@@ -147,6 +157,14 @@ public class AmbulanceController : MonoBehaviour
         {
             Allplayersin = true;
             autoBraking = false;
+            if (player.CompareTag("Player1") && controlsstearing)
+            {
+                p1Controlstearing = true;
+            }
+            else
+            {
+                p1Controlstearing = false;
+            }
         }
     }
 
