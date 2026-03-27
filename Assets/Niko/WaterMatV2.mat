@@ -117,7 +117,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FoamCutout: 0.14
-    - _FoamDepth: 4.78
+    - _FoamDepth: 5.42
     - _FoamFalloff: 3.95
     - _FoamShoreWidth: 0.91
     - _FoamTiling: 1
