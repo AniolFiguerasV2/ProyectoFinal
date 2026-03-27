@@ -4131,6 +4131,7 @@ MonoBehaviour:
   player2: {fileID: 5189765719122592164}
   middleObject: {fileID: 840169061}
   pickedHeight: 0.5
+  maxDistance: 5
 --- !u!1001 &840834543
 PrefabInstance:
   m_ObjectHideFlags: 0
