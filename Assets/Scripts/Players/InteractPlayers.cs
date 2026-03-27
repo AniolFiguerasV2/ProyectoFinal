@@ -69,7 +69,7 @@ public class InteractPlayers : MonoBehaviour
         currentAmbulance = currentEntry.ambulance;
         currentEntry.Available = false;
         currentEntry.visuals.SetActive(false);
-        currentAmbulance.EnterVehicle(this);
+        currentAmbulance.EnterVehicle(this, currentEntry.ControlsStearing);
 
         isInsideVehicle = true;
     }

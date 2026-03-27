@@ -4,6 +4,7 @@ public class AmbulanceEntry : MonoBehaviour
 {
     public AmbulanceController ambulance;
     public bool Available = true;
+    public bool ControlsStearing = false;
     public GameObject visuals;
 
     [Header("Jugadores")]
@@ -105,5 +106,8 @@ public class AmbulanceEntry : MonoBehaviour
                 playerInside = 0;
         }
     }
+
+
+
 }
 
