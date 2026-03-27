@@ -9,7 +9,6 @@ public class PutPatientStrecher : MonoBehaviour
             Transform camilla = collision.transform;
             Vector3 offset = new Vector3(0f, 0.5f, 0f);
             transform.position = camilla.position + offset;
-            transform.SetParent(camilla);
         }
     }
 
