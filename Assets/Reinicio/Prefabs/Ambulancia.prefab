@@ -88,8 +88,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
-  sidewaysGrip: 0.7
-  forwardGrip: 1.1
+  sidewaysGrip: 3
+  forwardGrip: 2.55
 --- !u!1 &350197155713170695
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,8 +581,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 0
   motorized: 1
-  sidewaysGrip: 0.7
-  forwardGrip: 1.1
+  sidewaysGrip: 3
+  forwardGrip: 2.55
 --- !u!1 &1438241067994080681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,8 +1215,8 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
-  sidewaysGrip: 0.7
-  forwardGrip: 1.1
+  sidewaysGrip: 3
+  forwardGrip: 2.55
 --- !u!1 &4856570948900176786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,8 +1591,8 @@ Rigidbody:
   m_GameObject: {fileID: 6382346669758010068}
   serializedVersion: 4
   m_Mass: 1500
-  m_Drag: 0.2
-  m_AngularDrag: 0.5
+  m_Drag: 0.17
+  m_AngularDrag: 0.085
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1602,7 +1602,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -1621,13 +1621,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f7d55c20f8b0f478b2ffcad78829e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 4000
-  brakeTorque: 2000
-  maxSpeed: 100
-  steerinRange: 35
-  steeringRangeAtMaxSpeed: 22
-  centreOfGravityOffset: 1.5
-  autoBrakeForce: 3000
+  motorTorque: 3400
+  brakeTorque: 3400
+  maxSpeed: 34
+  steerinRange: 51
+  steeringRangeAtMaxSpeed: 17
+  centreOfGravityOffset: -1.7
+  autoBrakeForce: 5100
   stopThreshold: 0.5
   spawnpoint: {fileID: 0}
   autoBraking: 0
@@ -2581,5 +2581,5 @@ MonoBehaviour:
   wheelCollider: {fileID: 0}
   steerable: 1
   motorized: 1
-  sidewaysGrip: 0.7
-  forwardGrip: 1.1
+  sidewaysGrip: 3
+  forwardGrip: 2.55

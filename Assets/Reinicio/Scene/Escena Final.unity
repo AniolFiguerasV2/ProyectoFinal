@@ -29791,54 +29791,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2607492858183596845, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: sidewaysGrip
-      value: 0.75
+    - target: {fileID: 4605065742067758908, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
       objectReference: {fileID: 0}
-    - target: {fileID: 3904922154328811938, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: sidewaysGrip
-      value: 1.25
+    - target: {fileID: 4605065742067758908, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13052616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605065742067758908, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6382346669758010068, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: m_Name
       value: Ambulancia
       objectReference: {fileID: 0}
-    - target: {fileID: 7113367365460759289, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: sidewaysGrip
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7561571452026529816, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: sidewaysGrip
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: maxSpeed
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: spawnpoint
       value: 
       objectReference: {fileID: 1777267093}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: brakeTorque
-      value: 7000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: motorTorque
-      value: 4500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: steerinRange
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: autoBrakeForce
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
-      propertyPath: steeringRangeAtMaxSpeed
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8823178080174720404, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.67
