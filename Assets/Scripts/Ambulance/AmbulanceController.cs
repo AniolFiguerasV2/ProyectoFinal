@@ -45,6 +45,8 @@ public class AmbulanceController : MonoBehaviour
     public int RequiredPlayerin = 2;
     private PlayerActions carControls;
 
+    public StartTutorialManager tutorialManager;
+
     void Awake()
     {
         carControls = new PlayerActions();
@@ -164,6 +166,10 @@ public class AmbulanceController : MonoBehaviour
             else
             {
                 p1Controlstearing = false;
+            }
+            if (tutorialManager != null)
+            {
+                tutorialManager.ShowDrivingTutorial();
             }
         }
     }

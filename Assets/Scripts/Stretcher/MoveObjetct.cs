@@ -18,6 +18,10 @@ public class MoveObject : MonoBehaviour
     public Animator animator1;
     public bool interactPlayed = false;
 
+    [Header("Tutorial camilla")]
+    public StartTutorialManager tutorialManager;
+    private bool stretcherTutorialShown = false;
+
     private void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -39,6 +43,11 @@ public class MoveObject : MonoBehaviour
                 interactPlayed = true;
             }
 
+            if (!stretcherTutorialShown && tutorialManager != null)
+            {
+                tutorialManager.ShowStretcherTutorial();
+                stretcherTutorialShown = true;
+            }
         }
         else
         {
@@ -48,7 +57,7 @@ public class MoveObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 10)
+        if (other.gameObject.layer == 10)
         {
             IsInside = true;
         }
@@ -59,7 +68,6 @@ public class MoveObject : MonoBehaviour
         if (other.gameObject.layer == 10)
         {
             IsInside = false;
-            
         }
     }
 }
