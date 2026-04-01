@@ -22,6 +22,10 @@ public class MoveObject : MonoBehaviour
     public StartTutorialManager tutorialManager;
     private bool stretcherTutorialShown = false;
 
+    [Header("UI de interacción")]
+    public GameObject player1UI;
+    public GameObject player2UI;
+
     private void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -35,6 +39,12 @@ public class MoveObject : MonoBehaviour
             transform.position = middleObject.position;
             transform.rotation = middleObject.rotation;
             body.linearVelocity = Vector3.zero;
+
+            if (player1UI != null)
+                player1UI.SetActive(false);
+
+            if (player2UI != null)
+                player2UI.SetActive(false);
 
             if (!interactPlayed)
             {

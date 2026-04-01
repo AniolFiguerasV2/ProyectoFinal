@@ -563,6 +563,8 @@ MonoBehaviour:
   animator1: {fileID: 2045194261}
   interactPlayed: 0
   tutorialManager: {fileID: 1624255043}
+  player1UI: {fileID: 796482469}
+  player2UI: {fileID: 1531222202}
 --- !u!54 &26391209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1577,6 +1579,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1265533849}
+  - {fileID: 831854530}
   m_Father: {fileID: 1725288246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6808,18 +6811,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831854529}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8333333, y: 0.8333333, z: 0.8333333}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2131529082}
-  m_Father: {fileID: 904925520}
+  m_Father: {fileID: 252207010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 211.49998}
+  m_SizeDelta: {x: 1760, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831854531
 MonoBehaviour:
@@ -7496,7 +7499,6 @@ RectTransform:
   m_Children:
   - {fileID: 575888228}
   - {fileID: 930160597}
-  - {fileID: 831854530}
   - {fileID: 640320091}
   - {fileID: 1752097701}
   - {fileID: 796482473}
