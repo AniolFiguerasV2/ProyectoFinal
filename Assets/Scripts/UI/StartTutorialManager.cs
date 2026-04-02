@@ -67,7 +67,7 @@ public class StartTutorialManager : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f; // por si estaba pausado
-        SceneManager.LoadScene("Escena Final1"); 
+        SceneManager.LoadScene("Escena Final"); 
     }
 
     public void ShowDrivingTutorial()

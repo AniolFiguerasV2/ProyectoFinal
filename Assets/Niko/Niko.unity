@@ -1007,6 +1007,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1120,6 +1140,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1259,6 +1299,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1315,6 +1375,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1889,6 +1969,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2031,6 +2131,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3162299336950127534, guid: 2b728f2adc288574d9c761e554d477bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.000003
+      objectReference: {fileID: 0}
+    - target: {fileID: -3162299336950127534, guid: 2b728f2adc288574d9c761e554d477bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00000084771057
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b728f2adc288574d9c761e554d477bc, type: 3}
       propertyPath: m_Name
       value: Tunel
@@ -2148,6 +2256,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2643,6 +2771,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2699,6 +2847,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2864,6 +3032,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2920,6 +3108,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3685,6 +3893,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3848,6 +4076,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4978,6 +5226,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5584,6 +5852,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5999,6 +6287,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6382,6 +6690,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6545,6 +6873,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7088,6 +7436,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7144,6 +7512,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7742,6 +8130,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7798,6 +8206,26 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
       propertyPath: m_Name
       value: Farola (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958438921693756439, guid: 776c78bc1a66e73438cc682fdd0ee1ed, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
