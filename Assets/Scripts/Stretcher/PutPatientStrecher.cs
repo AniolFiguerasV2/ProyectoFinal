@@ -7,8 +7,32 @@ public class PutPatientStrecher : MonoBehaviour
         if (collision.gameObject.CompareTag("Strecher"))
         {
             Transform camilla = collision.transform;
-            Vector3 offset = new Vector3(0f, 0.5f, 0f);
-            transform.position = camilla.position + offset;
+            Transform slot = camilla.Find("ZonaPaciente");
+            if (slot != null)
+            {
+                transform.SetParent(slot);
+                transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+                transform.SetParent(camilla);
+                transform.localPosition = new Vector3(0f, 0.5f, 0f);
+            }
+
+            transform.localRotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+            Collider col = GetComponent<Collider>();
+            if (col != null)
+            {
+                col.isTrigger = true;
+            }
         }
     }
 
