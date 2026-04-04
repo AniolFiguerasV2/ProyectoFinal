@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7828505107495608192}
   - component: {fileID: 4572321058451109674}
   - component: {fileID: 5120833526881319627}
-  - component: {fileID: 391741032212690052}
+  - component: {fileID: 3321670334423649056}
   m_Layer: 0
   m_Name: CochesNPC_A
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 9c617adef89befd469458fbee13f946e, type: 3}
---- !u!114 &391741032212690052
+--- !u!114 &3321670334423649056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5248860060214738951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bb8ed3038650d144b481a33a069f314, type: 3}
+  m_Script: {fileID: 11500000, guid: 2de999807b96e4743a808259a7c6fb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 25
   rotationSpeed: 6
-  findWaypointRadius: 40
+  findWaypointRadius: 50
   alignmentPriority: 0.7
   distancePriority: 0.3

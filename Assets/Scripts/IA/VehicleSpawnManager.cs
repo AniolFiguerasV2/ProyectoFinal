@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class VehicleSpawnManager : MonoBehaviour
 {
     [Header("Vehicle Settings")]
-    [SerializeField] private GameObject vehiclePrefab;
+    [SerializeField] private List<GameObject> vehiclePrefabs;
 
     [SerializeField] private int maxVehicles = 5;
 
-    [SerializeField] private float spawnInterval = 5f;
-
-    [SerializeField] private List<Transform> viewPoints;
+    [Header("Spawn Timing")]
+    [SerializeField] private float minSpawnTime = 2f;
+    [SerializeField] private float maxSpawnTime = 5f;
 
     [Header("Spawn Points")]
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
@@ -19,28 +20,34 @@ public class VehicleSpawnManager : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating(nameof(SpawnVehicle), 2f, spawnInterval);
+        StartCoroutine(SpawnRoutine());
     }
 
-    void SpawnVehicle()
+    IEnumerator SpawnRoutine()
+    {
+        while (true)
+        {
+            float waitTime = Random.Range(minSpawnTime, maxSpawnTime);
+            yield return new WaitForSeconds(waitTime);
+
+            TrySpawnVehicle();
+        }
+    }
+
+    void TrySpawnVehicle()
     {
         CleanList();
 
         if (activeVehicles.Count >= maxVehicles)
             return;
-        if (spawnPoints.Count == 0)
+
+        if (spawnPoints.Count == 0 || vehiclePrefabs.Count == 0)
             return;
 
         Transform spawn = spawnPoints[Random.Range(0, spawnPoints.Count)];
+        GameObject prefab = vehiclePrefabs[Random.Range(0, vehiclePrefabs.Count)];
 
-        GameObject vehicle = Instantiate(vehiclePrefab, spawn.position, spawn.rotation);
-
-        VehicleMovements movements = vehicle.GetComponent<VehicleMovements>();
-
-        if(movements != null)
-        {
-            movements.SetWayPoints(viewPoints);
-        }
+        GameObject vehicle = Instantiate(prefab, spawn.position, spawn.rotation);
 
         activeVehicles.Add(vehicle);
     }
@@ -49,8 +56,8 @@ public class VehicleSpawnManager : MonoBehaviour
     {
         for (int i = activeVehicles.Count - 1; i >= 0; i--)
         {
-            if (activeVehicles[i] == null) 
-            { 
+            if (activeVehicles[i] == null)
+            {
                 activeVehicles.RemoveAt(i);
             }
         }
