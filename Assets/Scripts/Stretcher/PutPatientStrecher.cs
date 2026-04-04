@@ -43,7 +43,7 @@ public class PutPatientStrecher : MonoBehaviour
         {
             Destroy(gameObject);
             //Logica de sumar tiempo al contar del tiempo
-            //Logica de sumar puntuacion a la score
+            ScoreManager.Instance.AddPatientScore(GetComponent<PatientDeathTime>());
         }
     }
 }

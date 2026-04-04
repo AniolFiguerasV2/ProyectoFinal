@@ -22620,6 +22620,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4721542239415901038, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1149444423}
+    - targetCorrespondingSourceObject: {fileID: 4721542239415901038, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1149444424}
   m_SourcePrefab: {fileID: 100100000, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
 --- !u!114 &1149444421 stripped
 MonoBehaviour:
@@ -22655,6 +22658,23 @@ MonoBehaviour:
   stretcherTutorialPanel1: {fileID: 331167013}
   stretcherTutorialPanel2: {fileID: 1737640257}
   panels: []
+--- !u!114 &1149444424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149444422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f82047416c6454b8fee800ce406668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 373853993}
+  easyPoints: 100
+  normalPoints: 250
+  hardPoints: 500
+  maxMultiplier: 2
 --- !u!1 &1149446449
 GameObject:
   m_ObjectHideFlags: 0

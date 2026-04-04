@@ -48,6 +48,7 @@ public class PatientDeathTime : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= lifetime)
         {
+            ScoreManager.Instance.PenalizePatientDeath(this);
             spawner.NotifyNPCDeath(this);
             Destroy(gameObject);
         }
