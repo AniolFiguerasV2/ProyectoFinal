@@ -8,6 +8,10 @@ TagManager:
   - Player2
   - Strecher
   - Hospital
+  - Undefined
+  - Building
+  - Car
+  - NPC
   layers:
   - Default
   - TransparentFX

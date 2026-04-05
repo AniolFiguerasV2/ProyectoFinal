@@ -53,9 +53,17 @@ public class InteractPlayers : MonoBehaviour
         {
             if (chargeStrecher.IsInside)
             {
-                Debug.Log(strecher.transform.position);
                 strecher.transform.position = spawnStrecher.transform.position;
                 IsOutC = false;
+            }
+            if (chargeStrecher.IsInside && chargeStrecher.hasPatient && !chargeStrecher.alreadyScored)
+            {
+                ScoreManager.Instance.AddPoints(100);
+                TimerGame.instance.AddTime(60);
+                GameManager.Instance.PatientDelivered();
+
+                chargeStrecher.alreadyScored = true;
+                chargeStrecher.hasPatient = false;
             }
         }
     }

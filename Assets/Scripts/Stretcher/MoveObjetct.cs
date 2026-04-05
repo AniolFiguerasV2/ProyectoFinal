@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
+    public bool hasPatient = false;
     public Handles handle1;
     public Handles handle2;
 
@@ -21,6 +22,7 @@ public class MoveObject : MonoBehaviour
     [Header("Tutorial camilla")]
     public StartTutorialManager tutorialManager;
     private bool stretcherTutorialShown = false;
+    public bool alreadyScored = false;
 
     [Header("UI de interacción")]
     public GameObject player1UI;
@@ -78,6 +80,16 @@ public class MoveObject : MonoBehaviour
         if (other.gameObject.layer == 10)
         {
             IsInside = false;
+        }
+    }
+
+    void TryScore()
+    {
+        if (IsInside && hasPatient && !alreadyScored)
+        {
+            alreadyScored = true;
+
+            ScoreManager.Instance.AddPoints(100);
         }
     }
 }

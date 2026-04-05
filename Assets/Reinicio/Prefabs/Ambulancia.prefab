@@ -887,6 +887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2964560717278766274}
   - component: {fileID: 1677371102032154378}
+  - component: {fileID: 7150613773558663973}
   m_Layer: 10
   m_Name: BackDoor
   m_TagString: Untagged
@@ -932,6 +933,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7150613773558663973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114552434960908562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ee3103c1e7724408a0f265375786bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  player1UI: {fileID: 0}
+  player2UI: {fileID: 0}
 --- !u!1 &3615752548335398746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1557,7 @@ GameObject:
   - component: {fileID: 8823178080174720404}
   - component: {fileID: 3980924559477548426}
   - component: {fileID: 7970679838002777143}
+  - component: {fileID: 3790226833000929112}
   m_Layer: 0
   m_Name: Ambulancia
   m_TagString: Untagged
@@ -1632,6 +1650,20 @@ MonoBehaviour:
   spawnpoint: {fileID: 0}
   autoBraking: 0
   RequiredPlayerin: 2
+  tutorialManager: {fileID: 0}
+--- !u!114 &3790226833000929112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382346669758010068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda26c06b194524caab04b16e524a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitCooldown: 1
 --- !u!1 &6439278702109118895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,13 +2415,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8045427813544427211}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 10, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4413433579318250085}
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!20 &2088367811418804359
 Camera:
   m_ObjectHideFlags: 0

@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class PutPatientStrecher : MonoBehaviour
 {
+    private MoveObject currentMove;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Strecher"))
         {
+            MoveObject move = collision.gameObject.GetComponent<MoveObject>();
+            if(move != null)
+            {
+                move.hasPatient = true;
+                currentMove = move;
+            }
             Transform camilla = collision.transform;
             Transform slot = camilla.Find("ZonaPaciente");
             if (slot != null)
@@ -41,9 +48,16 @@ public class PutPatientStrecher : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hospital"))
         {
+            if(currentMove != null)
+            {
+                currentMove.hasPatient = false;
+                currentMove.alreadyScored = false;
+            }
             Destroy(gameObject);
             //Logica de sumar tiempo al contar del tiempo
-            ScoreManager.Instance.AddPatientScore(GetComponent<PatientDeathTime>());
+            ScoreManager.Instance.AddPoints(300);
+            
+            
         }
     }
 }

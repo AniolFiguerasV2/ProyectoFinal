@@ -83,4 +83,10 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
+    public void AddPoints(int points)
+    {
+        score += points;
+        UpdateUI();
+    }
 }
