@@ -17,17 +17,17 @@ public class PutPatientStrecher : MonoBehaviour
             Transform slot = camilla.Find("ZonaPaciente");
             if (slot != null)
             {
-                transform.SetParent(slot);
+                transform.SetParent(slot, true);
                 transform.localPosition = Vector3.zero;
             }
             else
             {
-                transform.SetParent(camilla);
+                transform.SetParent(camilla, true);
                 transform.localPosition = new Vector3(0f, 0.5f, 0f);
-            }
 
-            transform.localRotation = Quaternion.identity;
-            transform.localScale = Vector3.one;
+            }
+            
+            //transform.localScale = Vector3.one;
             Rigidbody rb = GetComponent<Rigidbody>();
             if (rb != null)
             {
