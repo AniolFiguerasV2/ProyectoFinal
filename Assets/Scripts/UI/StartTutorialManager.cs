@@ -15,6 +15,12 @@ public class StartTutorialManager : MonoBehaviour
     private bool drivingTutorialShown = false;
     private bool stretcherTutorialShown = false;
 
+    [Header("Menú de pausa")]
+    public GameObject pausePanel;
+    public GameObject optionsPanel;
+
+    private bool isPaused = false;
+
     private void Start()
     {
         Time.timeScale = 0f;
@@ -26,6 +32,28 @@ public class StartTutorialManager : MonoBehaviour
 
         stretcherTutorialPanel1.SetActive(false);
         stretcherTutorialPanel2.SetActive(false);
+
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // evitar conflictos con tutoriales
+            if (tutorialPanel1.activeSelf || tutorialPanel2.activeSelf ||
+                drivingTutorialPanel1.activeSelf ||
+                stretcherTutorialPanel1.activeSelf || stretcherTutorialPanel2.activeSelf)
+            {
+                return;
+            }
+
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
     }
 
     public void ShowSecondTutorial()
@@ -113,5 +141,41 @@ public class StartTutorialManager : MonoBehaviour
         stretcherTutorialPanel1.SetActive(false);
         stretcherTutorialPanel2.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        optionsPanel.SetActive(false);
+
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
+
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    public void OpenOptions()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        pausePanel.SetActive(true);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu Principal"); 
     }
 }

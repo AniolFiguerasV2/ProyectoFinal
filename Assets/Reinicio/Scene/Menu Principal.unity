@@ -1900,6 +1900,8 @@ MonoBehaviour:
   - {fileID: 1259496925}
   - {fileID: 1726795287}
   - {fileID: 1254337051}
+  pausePanel: {fileID: 0}
+  optionsPanel: {fileID: 0}
 --- !u!4 &1451770436
 Transform:
   m_ObjectHideFlags: 0
