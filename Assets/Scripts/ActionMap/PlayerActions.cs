@@ -313,7 +313,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""983db166-d249-4456-9204-50ea19c04f6d"",
-                    ""path"": ""<XInputController>/leftStick"",
+                    ""path"": ""<XInputController>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";GamePad"",
