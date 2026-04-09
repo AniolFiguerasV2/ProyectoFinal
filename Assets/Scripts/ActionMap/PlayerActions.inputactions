@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "6d101eb4-cd8c-4fed-a9b3-1d16f80d2867",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -93,7 +102,7 @@
                 {
                     "name": "",
                     "id": "a586d134-6b8d-4ff0-9ecd-528b02c47f4f",
-                    "path": "<XInputController>/leftStick",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": ";GamePad",
@@ -114,11 +123,11 @@
                 },
                 {
                     "name": "",
-                    "id": "1dbac762-8f9f-42a7-b0a7-0d4b2656744f",
-                    "path": "<XInputController>/leftShoulder",
+                    "id": "104a4c61-1e68-4046-b140-adaee93dc5cc",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyBoard",
+                    "groups": "",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -136,12 +145,34 @@
                 },
                 {
                     "name": "",
-                    "id": "77429d6b-3e0f-447e-b8c5-0ea44fc1530c",
-                    "path": "<XInputController>/leftTrigger",
+                    "id": "11a01d5c-9092-437d-8a28-65b4d8c37699",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "655b3d89-a1c0-49ad-8844-5589dc5c5060",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b556295-82f0-4d9c-b01e-7a63962f8203",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -173,6 +204,15 @@
                     "name": "Grab",
                     "type": "Button",
                     "id": "6f7ae0d2-4a7c-405f-bb76-083991a540e4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "7d483f77-3b79-485a-9e68-72cb8072df45",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -237,11 +277,11 @@
                 },
                 {
                     "name": "",
-                    "id": "983db166-d249-4456-9204-50ea19c04f6d",
-                    "path": "<XInputController>/rightStick",
+                    "id": "9fd08784-01a8-43d9-accd-ccfe5c2c49bd",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";GamePad",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -259,11 +299,11 @@
                 },
                 {
                     "name": "",
-                    "id": "f19b1eff-658d-49b3-b310-b6a62ce96e86",
-                    "path": "<XInputController>/rightShoulder",
+                    "id": "ee39af9f-2d02-4f30-9597-f15bb2d75ade",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";GamePad",
+                    "groups": "",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -271,7 +311,7 @@
                 {
                     "name": "",
                     "id": "96405eb4-9939-4028-aa39-cdbe52bd6ef4",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyBoard",
@@ -281,12 +321,34 @@
                 },
                 {
                     "name": "",
-                    "id": "0e66eb69-f3dd-4ccc-9328-6c17be1a244a",
-                    "path": "<XInputController>/rightTrigger",
+                    "id": "7e824189-ad40-49db-b15b-0a08026405a9",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4fea5917-50ea-44c9-8a5f-86595d498f05",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9674855d-c44c-40b9-b3ee-9c1220e065ea",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

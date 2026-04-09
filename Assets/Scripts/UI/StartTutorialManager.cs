@@ -39,7 +39,7 @@ public class StartTutorialManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (CoopInputManager.Instance != null && CoopInputManager.Instance.PausePressed())
         {
             // evitar conflictos con tutoriales
             if (tutorialPanel1.activeSelf || tutorialPanel2.activeSelf ||

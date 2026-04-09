@@ -118,6 +118,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d101eb4-cd8c-4fed-a9b3-1d16f80d2867"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -179,7 +188,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a586d134-6b8d-4ff0-9ecd-528b02c47f4f"",
-                    ""path"": ""<XInputController>/leftStick"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";GamePad"",
@@ -200,11 +209,11 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1dbac762-8f9f-42a7-b0a7-0d4b2656744f"",
-                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""id"": ""104a4c61-1e68-4046-b140-adaee93dc5cc"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";KeyBoard"",
+                    ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -222,12 +231,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""77429d6b-3e0f-447e-b8c5-0ea44fc1530c"",
-                    ""path"": ""<XInputController>/leftTrigger"",
+                    ""id"": ""11a01d5c-9092-437d-8a28-65b4d8c37699"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""655b3d89-a1c0-49ad-8844-5589dc5c5060"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b556295-82f0-4d9c-b01e-7a63962f8203"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -259,6 +290,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""name"": ""Grab"",
                     ""type"": ""Button"",
                     ""id"": ""6f7ae0d2-4a7c-405f-bb76-083991a540e4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7d483f77-3b79-485a-9e68-72cb8072df45"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -323,11 +363,11 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""983db166-d249-4456-9204-50ea19c04f6d"",
-                    ""path"": ""<XInputController>/rightStick"",
+                    ""id"": ""9fd08784-01a8-43d9-accd-ccfe5c2c49bd"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
+                    ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -345,11 +385,11 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f19b1eff-658d-49b3-b310-b6a62ce96e86"",
-                    ""path"": ""<XInputController>/rightShoulder"",
+                    ""id"": ""ee39af9f-2d02-4f30-9597-f15bb2d75ade"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
+                    ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -357,7 +397,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""96405eb4-9939-4028-aa39-cdbe52bd6ef4"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyBoard"",
@@ -367,12 +407,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0e66eb69-f3dd-4ccc-9328-6c17be1a244a"",
-                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""id"": ""7e824189-ad40-49db-b15b-0a08026405a9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fea5917-50ea-44c9-8a5f-86595d498f05"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9674855d-c44c-40b9-b3ee-9c1220e065ea"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -536,11 +598,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Interact = m_Player1.FindAction("Interact", throwIfNotFound: true);
         m_Player1_Grab = m_Player1.FindAction("Grab", throwIfNotFound: true);
+        m_Player1_Pause = m_Player1.FindAction("Pause", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Interact = m_Player2.FindAction("Interact", throwIfNotFound: true);
         m_Player2_Grab = m_Player2.FindAction("Grab", throwIfNotFound: true);
+        m_Player2_Pause = m_Player2.FindAction("Pause", throwIfNotFound: true);
         // Ambulance
         m_Ambulance = asset.FindActionMap("Ambulance", throwIfNotFound: true);
         m_Ambulance_Movement = m_Ambulance.FindAction("Movement", throwIfNotFound: true);
@@ -629,6 +693,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Interact;
     private readonly InputAction m_Player1_Grab;
+    private readonly InputAction m_Player1_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player1".
     /// </summary>
@@ -652,6 +717,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player1/Grab".
         /// </summary>
         public InputAction @Grab => m_Wrapper.m_Player1_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action "Player1/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Player1_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -687,6 +756,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -707,6 +779,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -747,6 +822,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Interact;
     private readonly InputAction m_Player2_Grab;
+    private readonly InputAction m_Player2_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player2".
     /// </summary>
@@ -770,6 +846,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player2/Grab".
         /// </summary>
         public InputAction @Grab => m_Wrapper.m_Player2_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action "Player2/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Player2_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -805,6 +885,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -825,6 +908,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -1008,6 +1094,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrab(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player2" which allows adding and removing callbacks.
@@ -1037,6 +1130,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrab(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Ambulance" which allows adding and removing callbacks.
