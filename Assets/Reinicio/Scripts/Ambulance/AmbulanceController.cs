@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AmbulanceController : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class AmbulanceController : MonoBehaviour
 
     public StartTutorialManager tutorialManager;
 
+    float vInput = 0;
+    float hInput = 0;
+
     void Awake()
     {
         carControls = new PlayerActions();
@@ -62,6 +66,25 @@ public class AmbulanceController : MonoBehaviour
         wheels = GetComponentsInChildren<WheelControl>();
     }
 
+
+    public void OnMovePlayer1(InputAction.CallbackContext context)
+    {
+        Vector2 movementVector = context.ReadValue<Vector2>();
+        if(p1Controlstearing)
+            hInput = movementVector.x;
+        else
+            vInput = movementVector.y;
+    }
+
+    public void OnMovePlayer2(InputAction.CallbackContext context)
+    {
+        Vector2 movementVector = context.ReadValue<Vector2>();
+        if (!p1Controlstearing)
+            hInput = movementVector.x;
+        else
+            vInput = movementVector.y;
+    }
+
     void FixedUpdate()
     {
         if (!Allplayersin)
@@ -72,12 +95,13 @@ public class AmbulanceController : MonoBehaviour
             }
             return;
         }
-
+        /*
         Vector2 inputPlayer1 = carControls.Player1.Move.ReadValue<Vector2>();
         Vector2 inputPlayer2 = carControls.Player2.Move.ReadValue<Vector2>();
 
-        float vInput = 0;
-        float hInput = 0;
+        Debug.Log($"Jugador 1: {inputPlayer1.x},{inputPlayer1.y}, Jugador 2: {inputPlayer2.x},{inputPlayer2.y}");
+
+
         if (p1Controlstearing)
         {
             vInput = inputPlayer2.y;
@@ -88,9 +112,12 @@ public class AmbulanceController : MonoBehaviour
             vInput = inputPlayer1.y;
             hInput = inputPlayer2.x;
         }
+        */
+
+        Debug.Log($"vInput: {vInput}, hInput: {hInput}");
 
         float forwardSpeed = Vector3.Dot(transform.forward, rb.linearVelocity);
-        float speedFactor =Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
+        float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
 
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, speedFactor);
         float currentSteerRange = Mathf.Lerp(steerinRange, steeringRangeAtMaxSpeed, speedFactor);
@@ -99,13 +126,13 @@ public class AmbulanceController : MonoBehaviour
 
         foreach (var wheel in wheels)
         {
-            if(wheel.steerable)
+            if (wheel.steerable)
             {
                 wheel.wheelCollider.steerAngle = hInput * currentSteerRange;
             }
-            if(isAccelerating)
+            if (isAccelerating)
             {
-                if(wheel.motorized)
+                if (wheel.motorized)
                 {
                     wheel.wheelCollider.motorTorque = vInput * currentMotorTorque;
                 }
@@ -138,7 +165,7 @@ public class AmbulanceController : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             foreach (var wheel in wheels)
             {
-                wheel.wheelCollider.brakeTorque = 0f;   
+                wheel.wheelCollider.brakeTorque = 0f;
             }
 
             autoBraking = false;
@@ -155,7 +182,7 @@ public class AmbulanceController : MonoBehaviour
         player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         player.playervisual.SetActive(false);
         currentPlayerin++;
-        if(currentPlayerin >= RequiredPlayerin)
+        if (currentPlayerin >= RequiredPlayerin)
         {
             Allplayersin = true;
             autoBraking = false;
@@ -188,7 +215,7 @@ public class AmbulanceController : MonoBehaviour
             Allplayersin = false;
             autoBraking = true;
         }
-        
+
     }
 
 
