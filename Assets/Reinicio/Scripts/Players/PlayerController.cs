@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    [SerializeField] private int playerId = 1;
+
     public float speed = 5f;
     public float gravityMultiplier = 0.5f;
     public float rotationSpeed = 10f;
@@ -18,25 +20,19 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        Vector2 movementVector = context.ReadValue<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
-
-        if (movementVector == Vector2.zero)
-        {
-            animator.SetFloat("Speed", 0);
-        }
-        else
-        {
-            animator.SetFloat("Speed", 1);
-        }
-    }
-
     private void FixedUpdate()
     {
+        Vector2 input = InputManager.Instance.GetMoveAxis(playerId);
+
+        float movementX = input.x;
+        float movementY = input.y;
+
         Vector3 movement = new Vector3(movementX, 0f, movementY);
+
+        if (input == Vector2.zero)
+            animator.SetFloat("Speed", 0);
+        else
+            animator.SetFloat("Speed", 1);
 
         if (movement.magnitude > 0.01f)
         {

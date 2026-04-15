@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class InteractPlayers : MonoBehaviour
 {
+    [SerializeField] private int playerId = 1;
+
     private bool isInsideVehicle = false;
     private bool inStretcherRange = false;
     public bool Isback = false;
@@ -28,18 +30,25 @@ public class InteractPlayers : MonoBehaviour
     {
         currentEntry = null;
     }
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        if (!context.performed) return;
 
-        if (isInsideVehicle)
+    private void Update()
+    {
+        if (InputManager.Instance.GetInteractDown(playerId))
+        {
+            HandleInteract();
+        }
+    }
+    
+    void HandleInteract()
+    {
+        if(isInsideVehicle)
             ExitVehicle();
         else
             TryEnterVehicle();
-            if (Isback)
-            {
-                Strecher();
-            }
+        if (Isback)
+        {
+            Strecher();
+        }
     }
 
     void Strecher()
@@ -67,10 +76,6 @@ public class InteractPlayers : MonoBehaviour
             }
         }
     }
-
-
-
-
     void TryEnterVehicle()
     {
         if (currentEntry == null) return;

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Handles : MonoBehaviour
 {
-    private PlayerActions players;
-
     private Transform player1Transform;
     private Transform player2Transform;
 
@@ -13,12 +11,6 @@ public class Handles : MonoBehaviour
     private int holder = 0;
 
     public bool IsBeingHeld => holder != 0;
-
-    private void Awake()
-    {
-        players = new PlayerActions();
-        players.Enable();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -57,27 +49,27 @@ public class Handles : MonoBehaviour
 
     private void Update()
     {
-        float grab1 = players.Player1.Grab.ReadValue<float>();
-        float grab2 = players.Player2.Grab.ReadValue<float>();
+        bool grab1 = InputManager.Instance.GetGrabHold(1);
+        bool grab2 = InputManager.Instance.GetGrabHold(2);
 
         if (holder == 0)
         {
-            if (player1InZone && grab1 > 0.5f)
+            if (player1InZone && grab1)
             {
                 Grab(1);
             }
-            else if (player2InZone && grab2 > 0.5f)
+            else if (player2InZone && grab2)
             {
                 Grab(2);
             }
         }
         else
         {
-            if (holder == 1 && grab1 < 0.5f)
+            if (holder == 1 && !grab1)
             {
                 Release();
             }
-            if (holder == 2 && grab2 < 0.5f)
+            if (holder == 2 && !grab2)
             {
                 Release();
             }

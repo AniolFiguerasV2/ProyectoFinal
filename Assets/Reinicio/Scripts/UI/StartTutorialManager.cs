@@ -39,7 +39,7 @@ public class StartTutorialManager : MonoBehaviour
 
     private void Update()
     {
-        if (CoopInputManager.Instance != null && CoopInputManager.Instance.PausePressed())
+        if (InputManager.Instance != null && InputManager.Instance.GetPausePressed())
         {
             // evitar conflictos con tutoriales
             if (tutorialPanel1.activeSelf || tutorialPanel2.activeSelf ||

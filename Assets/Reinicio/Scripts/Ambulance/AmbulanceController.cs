@@ -21,7 +21,17 @@ public class AmbulanceController : MonoBehaviour
 
     private WheelControl[] wheels;
     private Rigidbody rb;
+
     private bool p1Controlstearing;
+
+    public bool autoBraking = false;
+    private int currentPlayerin = 0;
+    public int RequiredPlayerin = 2;
+
+    public StartTutorialManager tutorialManager;
+
+    float vInput = 0;
+    float hInput = 0;
 
     private bool _allplayersin;
     public bool Allplayersin
@@ -41,21 +51,6 @@ public class AmbulanceController : MonoBehaviour
         }
     }
 
-    public bool autoBraking = false;
-    private int currentPlayerin = 0;
-    public int RequiredPlayerin = 2;
-    private PlayerActions carControls;
-
-    public StartTutorialManager tutorialManager;
-
-    float vInput = 0;
-    float hInput = 0;
-
-    void Awake()
-    {
-        carControls = new PlayerActions();
-    }
-
     void Start()
     {
         rb = GetComponentInParent<Rigidbody>();
@@ -66,27 +61,27 @@ public class AmbulanceController : MonoBehaviour
         wheels = GetComponentsInChildren<WheelControl>();
     }
 
-
-    public void OnMovePlayer1(InputAction.CallbackContext context)
-    {
-        Vector2 movementVector = context.ReadValue<Vector2>();
-        if(p1Controlstearing)
-            hInput = movementVector.x;
-        else
-            vInput = movementVector.y;
-    }
-
-    public void OnMovePlayer2(InputAction.CallbackContext context)
-    {
-        Vector2 movementVector = context.ReadValue<Vector2>();
-        if (!p1Controlstearing)
-            hInput = movementVector.x;
-        else
-            vInput = movementVector.y;
-    }
-
     void FixedUpdate()
     {
+        vInput = 0f;
+        hInput = 0f;
+
+        if (Allplayersin)
+        {
+            Vector2 inputP1 = InputManager.Instance.GetMoveAxis(1);
+            Vector2 inputP2 = InputManager.Instance.GetMoveAxis(2);
+
+            if (p1Controlstearing)
+            {
+                hInput = inputP1.x;
+                vInput = inputP2.y;
+            }
+            else
+            {
+                hInput = inputP2.x;
+                vInput = inputP1.y;
+            }
+        }
         if (!Allplayersin)
         {
             if (autoBraking)
@@ -95,26 +90,6 @@ public class AmbulanceController : MonoBehaviour
             }
             return;
         }
-        /*
-        Vector2 inputPlayer1 = carControls.Player1.Move.ReadValue<Vector2>();
-        Vector2 inputPlayer2 = carControls.Player2.Move.ReadValue<Vector2>();
-
-        Debug.Log($"Jugador 1: {inputPlayer1.x},{inputPlayer1.y}, Jugador 2: {inputPlayer2.x},{inputPlayer2.y}");
-
-
-        if (p1Controlstearing)
-        {
-            vInput = inputPlayer2.y;
-            hInput = inputPlayer1.x;
-        }
-        else
-        {
-            vInput = inputPlayer1.y;
-            hInput = inputPlayer2.x;
-        }
-        */
-
-        Debug.Log($"vInput: {vInput}, hInput: {hInput}");
 
         float forwardSpeed = Vector3.Dot(transform.forward, rb.linearVelocity);
         float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
@@ -178,9 +153,23 @@ public class AmbulanceController : MonoBehaviour
         player.transform.position = rb.transform.position;
         player.DrivenMode();
         player.transform.parent = rb.transform;
+
         player.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         player.playervisual.SetActive(false);
+
+        if(player.currentEntry != null)
+        {
+            if(player.CompareTag("Player1") && player.currentEntry.player1UI != null)
+            {
+                player.currentEntry.player1UI.SetActive(false);
+            }
+            if(player.CompareTag("Player2")  && player.currentEntry.player2UI != null)
+            {
+                player.currentEntry.player2UI.SetActive(false);
+            }
+        }
+
         currentPlayerin++;
         if (currentPlayerin >= RequiredPlayerin)
         {
@@ -206,26 +195,32 @@ public class AmbulanceController : MonoBehaviour
         player.transform.position = player.currentEntry.transform.position;
         player.WalkMode();
         player.transform.parent = null;
+
         player.gameObject.GetComponent<CapsuleCollider>().enabled = true;
         player.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         player.playervisual.SetActive(true);
+
+        if (player.currentEntry != null && player.currentEntry.Available)
+        {
+            if (player.CompareTag("Player1") && player.currentEntry.player1UI != null)
+            {
+                player.currentEntry.player1UI.SetActive(true);
+            }
+
+            if (player.CompareTag("Player2") && player.currentEntry.player2UI != null)
+            {
+                player.currentEntry.player2UI.SetActive(true);
+            }
+                
+        }
+
         currentPlayerin--;
-        if (currentPlayerin <= 0)
+
+        if (currentPlayerin < RequiredPlayerin)
         {
             Allplayersin = false;
             autoBraking = true;
         }
 
-    }
-
-
-    void OnEnable()
-    {
-        carControls.Enable();
-    }
-
-    void OnDisable()
-    {
-        carControls.Disable();
     }
 }

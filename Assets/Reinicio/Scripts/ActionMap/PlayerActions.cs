@@ -111,7 +111,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Grab"",
+                    ""name"": ""GrabStretcher"",
                     ""type"": ""Button"",
                     ""id"": ""1cb3805e-4ac3-4ae0-9b78-4dada22c430a"",
                     ""expectedControlType"": """",
@@ -120,18 +120,27 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""AmbulanceDrive"",
                     ""type"": ""Button"",
-                    ""id"": ""6d101eb4-cd8c-4fed-a9b3-1d16f80d2867"",
+                    ""id"": ""22003105-e810-48f7-a25a-2c053a920354"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AmbulanceSteer"",
+                    ""type"": ""Value"",
+                    ""id"": ""26ead9a6-b4e6-4450-9cdf-d93288ae98b4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""2D Vector"",
                     ""id"": ""cad67ba2-3c13-4aa4-8f92-266d5bb3aedb"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -164,9 +173,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""a8978a50-d735-4c69-9e26-032bb256f643"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""left"",
+                    ""id"": ""da0250c1-a5d5-4e36-b6c5-8a57e8ee9033"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyBoard"",
@@ -175,9 +184,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""da0250c1-a5d5-4e36-b6c5-8a57e8ee9033"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""right"",
+                    ""id"": ""a8978a50-d735-4c69-9e26-032bb256f643"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyBoard"",
@@ -225,40 +234,128 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyBoard"",
-                    ""action"": ""Grab"",
+                    ""action"": ""GrabStretcher"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""11a01d5c-9092-437d-8a28-65b4d8c37699"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";GamePad"",
+                    ""action"": ""GrabStretcher"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""4c8b6562-5c5c-4487-8197-19fd5ad9e18f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""d2c0b794-b5da-451d-8e1e-456569b53740"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""24c1f345-9ac3-4b72-bda6-51e353c639be"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GamepadTriggers"",
+                    ""id"": ""36981192-6bb5-43d0-8fd9-69f7012ec6fd"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""f7280301-92ba-4b7f-ba10-bd0792120f2e"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""25122818-01d4-4a65-a83d-ac9b6aa0f625"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Grab"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""713533ab-d3ad-4a4a-b960-ff6433226e3d"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""655b3d89-a1c0-49ad-8844-5589dc5c5060"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""name"": ""negative"",
+                    ""id"": ""030ffe4c-be9e-46f6-a737-4b3c47e34402"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Pause"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2fc0a959-d608-4e00-a63a-9a012c2d97fa"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7b556295-82f0-4d9c-b01e-7a63962f8203"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""5efff953-d168-48a1-b692-50f827e158bc"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Pause"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -287,7 +384,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Grab"",
+                    ""name"": ""GrabStretcher"",
                     ""type"": ""Button"",
                     ""id"": ""6f7ae0d2-4a7c-405f-bb76-083991a540e4"",
                     ""expectedControlType"": """",
@@ -296,18 +393,27 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""7d483f77-3b79-485a-9e68-72cb8072df45"",
+                    ""name"": ""AmbulanceDrive"",
+                    ""type"": ""Value"",
+                    ""id"": ""99d360c3-f161-43e3-94df-a24f86e9b9b8"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AmbulanceSteer"",
+                    ""type"": ""Value"",
+                    ""id"": ""798d0d03-921f-4776-abe1-90a2e51a2963"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Arrows"",
+                    ""name"": ""2D Vector"",
                     ""id"": ""64621bec-0749-4940-b475-87384d125fc7"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -397,224 +503,203 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""96405eb4-9939-4028-aa39-cdbe52bd6ef4"",
-                    ""path"": ""<Keyboard>/rightCtrl"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyBoard"",
-                    ""action"": ""Grab"",
+                    ""action"": ""GrabStretcher"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""7e824189-ad40-49db-b15b-0a08026405a9"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";GamePad"",
+                    ""action"": ""GrabStretcher"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""95440827-a2c1-4f88-ae0d-a240f9399681"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""475ca555-d2a0-4881-8044-b99415a8c7e8"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""75878c07-b844-490c-9c8b-3d752d0dcd40"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GamePadTriggers"",
+                    ""id"": ""2fcf8d3d-5b66-4a43-a19d-6cf2147e33fb"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""30e8e9e9-66ec-4cc2-896d-106cbea276f0"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4bc9d26d-17c6-4f63-ad6c-ba20e06eee1a"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Grab"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceDrive"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""3e5fbfb2-ed83-49f5-9afb-967061171452"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""4fea5917-50ea-44c9-8a5f-86595d498f05"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""name"": ""negative"",
+                    ""id"": ""1bb9ddfb-5b22-4b4f-a8e3-15723c2cf75c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Pause"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e4de9a53-292c-4392-8a0d-05a46271219f"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9674855d-c44c-40b9-b3ee-9c1220e065ea"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""f68e2d0f-6e54-46ea-8557-91aa534fc6f2"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Pause"",
+                    ""groups"": """",
+                    ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""Ambulance"",
-            ""id"": ""7ad4aa4a-f974-4d1f-8b4d-31682c758e1b"",
+            ""name"": ""Global"",
+            ""id"": ""a799ca62-46c2-4489-a95e-6724ffe35df5"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
-                    ""type"": ""Value"",
-                    ""id"": ""8c6e1a0b-03c4-41c9-a7f1-35322c65b277"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""8cf7c994-f3ba-4412-b427-b1c46a183b9e"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""8f4625e9-9503-40cd-aba6-f917674ca5a7"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""ed107b98-bd67-4645-8ff5-6fe4f1a5ea81"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""46a444ce-f9f4-4ac3-9ae7-b4266947db9d"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""8dfeca0e-fe76-4344-b036-bcb07d534292"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""7f6bd74a-1035-4e27-9a85-7326c2c41a87"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""460b147b-b0c1-463f-ac4d-06fbe000af81"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KeyBoard"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Xbox"",
-                    ""id"": ""65c0be9a-2c27-4d25-b802-3800f8448b34"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""13d77d01-1523-4d00-b6de-fee635b909fe"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""5730ca67-cdd7-4dbd-8824-2986de3f0424"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""45c9e329-295b-448e-8ee6-9e7164d7a4bc"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2fee1928-dfe8-41fa-8298-70aa0619f915"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""431fec57-160e-48df-9711-7c99ba8c59dc"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";GamePad"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
-    ""controlSchemes"": [
-        {
-            ""name"": ""KeyBoard"",
-            ""bindingGroup"": ""KeyBoard"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""GamePad"",
-            ""bindingGroup"": ""GamePad"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        }
-    ]
+    ""controlSchemes"": []
 }");
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Interact = m_Player1.FindAction("Interact", throwIfNotFound: true);
-        m_Player1_Grab = m_Player1.FindAction("Grab", throwIfNotFound: true);
-        m_Player1_Pause = m_Player1.FindAction("Pause", throwIfNotFound: true);
+        m_Player1_GrabStretcher = m_Player1.FindAction("GrabStretcher", throwIfNotFound: true);
+        m_Player1_AmbulanceDrive = m_Player1.FindAction("AmbulanceDrive", throwIfNotFound: true);
+        m_Player1_AmbulanceSteer = m_Player1.FindAction("AmbulanceSteer", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Interact = m_Player2.FindAction("Interact", throwIfNotFound: true);
-        m_Player2_Grab = m_Player2.FindAction("Grab", throwIfNotFound: true);
-        m_Player2_Pause = m_Player2.FindAction("Pause", throwIfNotFound: true);
-        // Ambulance
-        m_Ambulance = asset.FindActionMap("Ambulance", throwIfNotFound: true);
-        m_Ambulance_Movement = m_Ambulance.FindAction("Movement", throwIfNotFound: true);
+        m_Player2_GrabStretcher = m_Player2.FindAction("GrabStretcher", throwIfNotFound: true);
+        m_Player2_AmbulanceDrive = m_Player2.FindAction("AmbulanceDrive", throwIfNotFound: true);
+        m_Player2_AmbulanceSteer = m_Player2.FindAction("AmbulanceSteer", throwIfNotFound: true);
+        // Global
+        m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
+        m_Global_Pause = m_Global.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
     {
         UnityEngine.Debug.Assert(!m_Player1.enabled, "This will cause a leak and performance issues, PlayerActions.Player1.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Player2.enabled, "This will cause a leak and performance issues, PlayerActions.Player2.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Ambulance.enabled, "This will cause a leak and performance issues, PlayerActions.Ambulance.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Global.enabled, "This will cause a leak and performance issues, PlayerActions.Global.Disable() has not been called.");
     }
 
     /// <summary>
@@ -692,8 +777,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IPlayer1Actions> m_Player1ActionsCallbackInterfaces = new List<IPlayer1Actions>();
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Interact;
-    private readonly InputAction m_Player1_Grab;
-    private readonly InputAction m_Player1_Pause;
+    private readonly InputAction m_Player1_GrabStretcher;
+    private readonly InputAction m_Player1_AmbulanceDrive;
+    private readonly InputAction m_Player1_AmbulanceSteer;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player1".
     /// </summary>
@@ -714,13 +800,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player1_Interact;
         /// <summary>
-        /// Provides access to the underlying input action "Player1/Grab".
+        /// Provides access to the underlying input action "Player1/GrabStretcher".
         /// </summary>
-        public InputAction @Grab => m_Wrapper.m_Player1_Grab;
+        public InputAction @GrabStretcher => m_Wrapper.m_Player1_GrabStretcher;
         /// <summary>
-        /// Provides access to the underlying input action "Player1/Pause".
+        /// Provides access to the underlying input action "Player1/AmbulanceDrive".
         /// </summary>
-        public InputAction @Pause => m_Wrapper.m_Player1_Pause;
+        public InputAction @AmbulanceDrive => m_Wrapper.m_Player1_AmbulanceDrive;
+        /// <summary>
+        /// Provides access to the underlying input action "Player1/AmbulanceSteer".
+        /// </summary>
+        public InputAction @AmbulanceSteer => m_Wrapper.m_Player1_AmbulanceSteer;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -753,12 +843,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Grab.started += instance.OnGrab;
-            @Grab.performed += instance.OnGrab;
-            @Grab.canceled += instance.OnGrab;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
+            @GrabStretcher.started += instance.OnGrabStretcher;
+            @GrabStretcher.performed += instance.OnGrabStretcher;
+            @GrabStretcher.canceled += instance.OnGrabStretcher;
+            @AmbulanceDrive.started += instance.OnAmbulanceDrive;
+            @AmbulanceDrive.performed += instance.OnAmbulanceDrive;
+            @AmbulanceDrive.canceled += instance.OnAmbulanceDrive;
+            @AmbulanceSteer.started += instance.OnAmbulanceSteer;
+            @AmbulanceSteer.performed += instance.OnAmbulanceSteer;
+            @AmbulanceSteer.canceled += instance.OnAmbulanceSteer;
         }
 
         /// <summary>
@@ -776,12 +869,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Grab.started -= instance.OnGrab;
-            @Grab.performed -= instance.OnGrab;
-            @Grab.canceled -= instance.OnGrab;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
+            @GrabStretcher.started -= instance.OnGrabStretcher;
+            @GrabStretcher.performed -= instance.OnGrabStretcher;
+            @GrabStretcher.canceled -= instance.OnGrabStretcher;
+            @AmbulanceDrive.started -= instance.OnAmbulanceDrive;
+            @AmbulanceDrive.performed -= instance.OnAmbulanceDrive;
+            @AmbulanceDrive.canceled -= instance.OnAmbulanceDrive;
+            @AmbulanceSteer.started -= instance.OnAmbulanceSteer;
+            @AmbulanceSteer.performed -= instance.OnAmbulanceSteer;
+            @AmbulanceSteer.canceled -= instance.OnAmbulanceSteer;
         }
 
         /// <summary>
@@ -821,8 +917,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private List<IPlayer2Actions> m_Player2ActionsCallbackInterfaces = new List<IPlayer2Actions>();
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Interact;
-    private readonly InputAction m_Player2_Grab;
-    private readonly InputAction m_Player2_Pause;
+    private readonly InputAction m_Player2_GrabStretcher;
+    private readonly InputAction m_Player2_AmbulanceDrive;
+    private readonly InputAction m_Player2_AmbulanceSteer;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player2".
     /// </summary>
@@ -843,13 +940,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player2_Interact;
         /// <summary>
-        /// Provides access to the underlying input action "Player2/Grab".
+        /// Provides access to the underlying input action "Player2/GrabStretcher".
         /// </summary>
-        public InputAction @Grab => m_Wrapper.m_Player2_Grab;
+        public InputAction @GrabStretcher => m_Wrapper.m_Player2_GrabStretcher;
         /// <summary>
-        /// Provides access to the underlying input action "Player2/Pause".
+        /// Provides access to the underlying input action "Player2/AmbulanceDrive".
         /// </summary>
-        public InputAction @Pause => m_Wrapper.m_Player2_Pause;
+        public InputAction @AmbulanceDrive => m_Wrapper.m_Player2_AmbulanceDrive;
+        /// <summary>
+        /// Provides access to the underlying input action "Player2/AmbulanceSteer".
+        /// </summary>
+        public InputAction @AmbulanceSteer => m_Wrapper.m_Player2_AmbulanceSteer;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -882,12 +983,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Grab.started += instance.OnGrab;
-            @Grab.performed += instance.OnGrab;
-            @Grab.canceled += instance.OnGrab;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
+            @GrabStretcher.started += instance.OnGrabStretcher;
+            @GrabStretcher.performed += instance.OnGrabStretcher;
+            @GrabStretcher.canceled += instance.OnGrabStretcher;
+            @AmbulanceDrive.started += instance.OnAmbulanceDrive;
+            @AmbulanceDrive.performed += instance.OnAmbulanceDrive;
+            @AmbulanceDrive.canceled += instance.OnAmbulanceDrive;
+            @AmbulanceSteer.started += instance.OnAmbulanceSteer;
+            @AmbulanceSteer.performed += instance.OnAmbulanceSteer;
+            @AmbulanceSteer.canceled += instance.OnAmbulanceSteer;
         }
 
         /// <summary>
@@ -905,12 +1009,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Grab.started -= instance.OnGrab;
-            @Grab.performed -= instance.OnGrab;
-            @Grab.canceled -= instance.OnGrab;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
+            @GrabStretcher.started -= instance.OnGrabStretcher;
+            @GrabStretcher.performed -= instance.OnGrabStretcher;
+            @GrabStretcher.canceled -= instance.OnGrabStretcher;
+            @AmbulanceDrive.started -= instance.OnAmbulanceDrive;
+            @AmbulanceDrive.performed -= instance.OnAmbulanceDrive;
+            @AmbulanceDrive.canceled -= instance.OnAmbulanceDrive;
+            @AmbulanceSteer.started -= instance.OnAmbulanceSteer;
+            @AmbulanceSteer.performed -= instance.OnAmbulanceSteer;
+            @AmbulanceSteer.canceled -= instance.OnAmbulanceSteer;
         }
 
         /// <summary>
@@ -945,29 +1052,29 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     /// </summary>
     public Player2Actions @Player2 => new Player2Actions(this);
 
-    // Ambulance
-    private readonly InputActionMap m_Ambulance;
-    private List<IAmbulanceActions> m_AmbulanceActionsCallbackInterfaces = new List<IAmbulanceActions>();
-    private readonly InputAction m_Ambulance_Movement;
+    // Global
+    private readonly InputActionMap m_Global;
+    private List<IGlobalActions> m_GlobalActionsCallbackInterfaces = new List<IGlobalActions>();
+    private readonly InputAction m_Global_Pause;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Ambulance".
+    /// Provides access to input actions defined in input action map "Global".
     /// </summary>
-    public struct AmbulanceActions
+    public struct GlobalActions
     {
         private @PlayerActions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public AmbulanceActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public GlobalActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Ambulance/Movement".
+        /// Provides access to the underlying input action "Global/Pause".
         /// </summary>
-        public InputAction @Movement => m_Wrapper.m_Ambulance_Movement;
+        public InputAction @Pause => m_Wrapper.m_Global_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Ambulance; }
+        public InputActionMap Get() { return m_Wrapper.m_Global; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -975,9 +1082,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="AmbulanceActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="GlobalActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(AmbulanceActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(GlobalActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -985,14 +1092,14 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="AmbulanceActions" />
-        public void AddCallbacks(IAmbulanceActions instance)
+        /// <seealso cref="GlobalActions" />
+        public void AddCallbacks(IGlobalActions instance)
         {
-            if (instance == null || m_Wrapper.m_AmbulanceActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_AmbulanceActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
+            if (instance == null || m_Wrapper.m_GlobalActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_GlobalActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -1001,21 +1108,21 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="AmbulanceActions" />
-        private void UnregisterCallbacks(IAmbulanceActions instance)
+        /// <seealso cref="GlobalActions" />
+        private void UnregisterCallbacks(IGlobalActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AmbulanceActions.UnregisterCallbacks(IAmbulanceActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />.
         /// </summary>
-        /// <seealso cref="AmbulanceActions.UnregisterCallbacks(IAmbulanceActions)" />
-        public void RemoveCallbacks(IAmbulanceActions instance)
+        /// <seealso cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />
+        public void RemoveCallbacks(IGlobalActions instance)
         {
-            if (m_Wrapper.m_AmbulanceActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_GlobalActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -1025,47 +1132,21 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="AmbulanceActions.AddCallbacks(IAmbulanceActions)" />
-        /// <seealso cref="AmbulanceActions.RemoveCallbacks(IAmbulanceActions)" />
-        /// <seealso cref="AmbulanceActions.UnregisterCallbacks(IAmbulanceActions)" />
-        public void SetCallbacks(IAmbulanceActions instance)
+        /// <seealso cref="GlobalActions.AddCallbacks(IGlobalActions)" />
+        /// <seealso cref="GlobalActions.RemoveCallbacks(IGlobalActions)" />
+        /// <seealso cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />
+        public void SetCallbacks(IGlobalActions instance)
         {
-            foreach (var item in m_Wrapper.m_AmbulanceActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_GlobalActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_AmbulanceActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_GlobalActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="AmbulanceActions" /> instance referencing this action map.
+    /// Provides a new <see cref="GlobalActions" /> instance referencing this action map.
     /// </summary>
-    public AmbulanceActions @Ambulance => new AmbulanceActions(this);
-    private int m_KeyBoardSchemeIndex = -1;
-    /// <summary>
-    /// Provides access to the input control scheme.
-    /// </summary>
-    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
-    public InputControlScheme KeyBoardScheme
-    {
-        get
-        {
-            if (m_KeyBoardSchemeIndex == -1) m_KeyBoardSchemeIndex = asset.FindControlSchemeIndex("KeyBoard");
-            return asset.controlSchemes[m_KeyBoardSchemeIndex];
-        }
-    }
-    private int m_GamePadSchemeIndex = -1;
-    /// <summary>
-    /// Provides access to the input control scheme.
-    /// </summary>
-    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
-    public InputControlScheme GamePadScheme
-    {
-        get
-        {
-            if (m_GamePadSchemeIndex == -1) m_GamePadSchemeIndex = asset.FindControlSchemeIndex("GamePad");
-            return asset.controlSchemes[m_GamePadSchemeIndex];
-        }
-    }
+    public GlobalActions @Global => new GlobalActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player1" which allows adding and removing callbacks.
     /// </summary>
@@ -1088,19 +1169,26 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Grab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "GrabStretcher" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnGrab(InputAction.CallbackContext context);
+        void OnGrabStretcher(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "AmbulanceDrive" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnPause(InputAction.CallbackContext context);
+        void OnAmbulanceDrive(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "AmbulanceSteer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAmbulanceSteer(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player2" which allows adding and removing callbacks.
@@ -1124,12 +1212,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Grab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "GrabStretcher" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnGrab(InputAction.CallbackContext context);
+        void OnGrabStretcher(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "AmbulanceDrive" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAmbulanceDrive(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "AmbulanceSteer" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAmbulanceSteer(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Global" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="GlobalActions.AddCallbacks(IGlobalActions)" />
+    /// <seealso cref="GlobalActions.RemoveCallbacks(IGlobalActions)" />
+    public interface IGlobalActions
+    {
         /// <summary>
         /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1137,20 +1247,5 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
-    }
-    /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Ambulance" which allows adding and removing callbacks.
-    /// </summary>
-    /// <seealso cref="AmbulanceActions.AddCallbacks(IAmbulanceActions)" />
-    /// <seealso cref="AmbulanceActions.RemoveCallbacks(IAmbulanceActions)" />
-    public interface IAmbulanceActions
-    {
-        /// <summary>
-        /// Method invoked when associated input action "Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMovement(InputAction.CallbackContext context);
     }
 }
