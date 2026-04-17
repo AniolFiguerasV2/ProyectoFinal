@@ -28,8 +28,6 @@ public class AmbulanceController : MonoBehaviour
     private int currentPlayerin = 0;
     public int RequiredPlayerin = 2;
 
-    public StartTutorialManager tutorialManager;
-
     float vInput = 0;
     float hInput = 0;
 
@@ -183,11 +181,8 @@ public class AmbulanceController : MonoBehaviour
             {
                 p1Controlstearing = false;
             }
-            if (tutorialManager != null)
-            {
-                tutorialManager.ShowDrivingTutorial();
-            }
         }
+        ControlHintsManager.Instance.ShowDrivingHints();
     }
 
     public void ExitVehicle(InteractPlayers player)
@@ -221,6 +216,7 @@ public class AmbulanceController : MonoBehaviour
             Allplayersin = false;
             autoBraking = true;
         }
+        ControlHintsManager.Instance.ShowOnFootHints();
 
     }
 }

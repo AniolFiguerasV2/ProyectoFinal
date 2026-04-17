@@ -1,5 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
@@ -19,14 +21,13 @@ public class MoveObject : MonoBehaviour
     public Animator animator1;
     public bool interactPlayed = false;
 
-    [Header("Tutorial camilla")]
-    public StartTutorialManager tutorialManager;
-    private bool stretcherTutorialShown = false;
     public bool alreadyScored = false;
 
     [Header("UI de interacción")]
     public GameObject player1UI;
     public GameObject player2UI;
+
+    private bool wasHolding = false;
 
     private void Start()
     {
@@ -36,7 +37,10 @@ public class MoveObject : MonoBehaviour
 
     void Update()
     {
-        if (handle1.IsBeingHeld && handle2.IsBeingHeld)
+        bool isHolding = handle1.IsBeingHeld || handle2.IsBeingHeld;
+        bool bothHolding = handle1.IsBeingHeld && handle2.IsBeingHeld;
+
+        if (bothHolding)
         {
             transform.position = middleObject.position;
             transform.rotation = middleObject.rotation;
@@ -54,17 +58,21 @@ public class MoveObject : MonoBehaviour
                 animator1.SetTrigger("Intercat");
                 interactPlayed = true;
             }
-
-            if (!stretcherTutorialShown && tutorialManager != null)
-            {
-                tutorialManager.ShowStretcherTutorial();
-                stretcherTutorialShown = true;
-            }
+             ControlHintsManager.Instance.ShowStretcherCarryHints();                      
         }
         else
         {
             interactPlayed = false;
         }
+        if (wasHolding && !isHolding)
+        {
+            if (ControlHintsManager.Instance != null)
+                ControlHintsManager.Instance.ShowOnFootHints();
+        }
+
+        wasHolding = isHolding;
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -88,7 +96,6 @@ public class MoveObject : MonoBehaviour
         if (IsInside && hasPatient && !alreadyScored)
         {
             alreadyScored = true;
-
             ScoreManager.Instance.AddPoints(100);
         }
     }

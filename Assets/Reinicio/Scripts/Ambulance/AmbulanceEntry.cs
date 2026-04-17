@@ -40,7 +40,6 @@ public class AmbulanceEntry : MonoBehaviour
                     player1UI.SetActive(true);
             }
         }
-
         // PLAYER 2
         if (other.gameObject == player2)
         {
@@ -49,11 +48,12 @@ public class AmbulanceEntry : MonoBehaviour
                 player2InRange = true;
 
                 if (player2UI != null)
-                    player2UI.SetActive(true);
+                    player2UI.SetActive(true); 
             }
         }
-    }
+        ControlHintsManager.Instance.ShowAmbulanceEnterHints();
 
+    }
     private void OnTriggerExit(Collider other)
     {
         // PLAYER 1
@@ -74,9 +74,7 @@ public class AmbulanceEntry : MonoBehaviour
                 player2UI.SetActive(false);
 
         }
+        ControlHintsManager.Instance.ShowOnFootHints();
     }
-
-
-
 }
 
