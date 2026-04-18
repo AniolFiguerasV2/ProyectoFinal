@@ -48,9 +48,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4572321058451109674, guid: 7054aadd8bdae6d48b65e127aa9ea681, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c6bf5bd92165c8d4d93200c10cf43fd5, type: 2}
     - target: {fileID: 5248860060214738951, guid: 7054aadd8bdae6d48b65e127aa9ea681, type: 3}
       propertyPath: m_Name
-      value: CochesNPC_Base
+      value: CochesNPC_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
