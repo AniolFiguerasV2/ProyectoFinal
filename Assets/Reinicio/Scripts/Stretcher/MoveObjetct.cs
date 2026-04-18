@@ -75,22 +75,6 @@ public class MoveObject : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 10)
-        {
-            IsInside = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.layer == 10)
-        {
-            IsInside = false;
-        }
-    }
-
     void TryScore()
     {
         if (IsInside && hasPatient && !alreadyScored)

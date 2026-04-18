@@ -11,21 +11,29 @@ public class GameManager : MonoBehaviour
     private int patientsDelivered = 0;
     public int totalPatientsToWin = 3;
 
+    private bool gameFinished = false;
+
     private void Awake()
     {
         Instance = this;
     }
     public void PatientDelivered()
     {
+        if (gameFinished) return;
+
         patientsDelivered++;
 
         if (patientsDelivered >= totalPatientsToWin)
         {
+            gameFinished = true;
             WinGame();
         }
     }
     public void PatientDied()
     {
+        if(gameFinished) return;
+
+        gameFinished = true;
         LoseGame();
     }
 

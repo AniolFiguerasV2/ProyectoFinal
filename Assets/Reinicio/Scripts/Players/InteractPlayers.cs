@@ -8,7 +8,6 @@ public class InteractPlayers : MonoBehaviour
     private bool isInsideVehicle = false;
     private bool inStretcherRange = false;
     public bool Isback = false;
-    public bool IsOutC = false;
 
     public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
@@ -24,6 +23,7 @@ public class InteractPlayers : MonoBehaviour
     //Objeto de camilla 
     public GameObject strecher;
     public PlayerController movementscript;
+    public int PlayerId => playerId;
 
 
     public void Start()
@@ -53,28 +53,31 @@ public class InteractPlayers : MonoBehaviour
 
     void Strecher()
     {
-        if (!IsOutC)
+        if (chargeStrecher.IsInside)
         {
-            strecher.transform.position = backDoor.transform.position;
-            IsOutC = true;
+            strecher.transform.SetPositionAndRotation(
+                backDoor.position,
+                backDoor.rotation
+            );
+            chargeStrecher.IsInside = false;
         }
         else
         {
-            if (chargeStrecher.IsInside)
-            {
-                strecher.transform.position = spawnStrecher.transform.position;
-                IsOutC = false;
-            }
+            strecher.transform.SetPositionAndRotation(
+                spawnStrecher.position,
+                spawnStrecher.rotation
+            );
+            chargeStrecher.IsInside = true;
             if (chargeStrecher.IsInside && chargeStrecher.hasPatient && !chargeStrecher.alreadyScored)
             {
                 ScoreManager.Instance.AddPoints(100);
-                TimerGame.instance.AddTime(60);
-                GameManager.Instance.PatientDelivered();
 
                 chargeStrecher.alreadyScored = true;
-                chargeStrecher.hasPatient = false;
             }
         }
+
+        chargeStrecher.body.linearVelocity = Vector3.zero;
+        chargeStrecher.body.angularVelocity = Vector3.zero;
     }
     void TryEnterVehicle()
     {

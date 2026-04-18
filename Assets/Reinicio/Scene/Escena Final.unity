@@ -8380,7 +8380,6 @@ MonoBehaviour:
   animator: {fileID: 933617460}
   animator1: {fileID: 2045194261}
   interactPlayed: 0
-  tutorialManager: {fileID: 1149444423}
   alreadyScored: 0
   player1UI: {fileID: 1186967774}
   player2UI: {fileID: 1861737513}
@@ -29008,11 +29007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5184bb83ac00e647a73e3b53490169d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialPanel1: {fileID: 780616459}
-  tutorialPanel2: {fileID: 1014395693}
-  drivingTutorialPanel1: {fileID: 551323212}
-  stretcherTutorialPanel1: {fileID: 331167013}
-  stretcherTutorialPanel2: {fileID: 1737640257}
   panels: []
   pausePanel: {fileID: 213833500}
   optionsPanel: {fileID: 734355281}
@@ -41220,7 +41214,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.042015076, y: 0.6816597, z: 0}
-  m_LocalScale: {x: 3.0925107, y: 0.11361, z: 1.3553696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 364430783}
@@ -57144,7 +57138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: 2
   Isback: 0
-  IsOutC: 0
   currentEntry: {fileID: 0}
   chargeStrecher: {fileID: 364430786}
   spawnStrecher: {fileID: 1777267094}
@@ -57340,7 +57333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: 1
   Isback: 0
-  IsOutC: 0
   currentEntry: {fileID: 0}
   chargeStrecher: {fileID: 364430786}
   spawnStrecher: {fileID: 1777267094}

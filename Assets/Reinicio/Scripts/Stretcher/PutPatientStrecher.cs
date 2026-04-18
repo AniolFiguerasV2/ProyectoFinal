@@ -51,7 +51,8 @@ public class PutPatientStrecher : MonoBehaviour
             if(currentMove != null)
             {
                 currentMove.hasPatient = false;
-                currentMove.alreadyScored = false;
+                GameManager.Instance.PatientDelivered();
+                TimerGame.instance.AddTime(60);
             }
             Destroy(gameObject);
             //Logica de sumar tiempo al contar del tiempo

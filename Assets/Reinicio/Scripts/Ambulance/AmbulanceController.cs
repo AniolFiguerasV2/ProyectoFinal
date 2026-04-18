@@ -22,11 +22,11 @@ public class AmbulanceController : MonoBehaviour
     private WheelControl[] wheels;
     private Rigidbody rb;
 
-    private bool p1Controlstearing;
 
     public bool autoBraking = false;
     private int currentPlayerin = 0;
     public int RequiredPlayerin = 2;
+    int steeringPlayerId = -1;
 
     float vInput = 0;
     float hInput = 0;
@@ -69,15 +69,15 @@ public class AmbulanceController : MonoBehaviour
             Vector2 inputP1 = InputManager.Instance.GetMoveAxis(1);
             Vector2 inputP2 = InputManager.Instance.GetMoveAxis(2);
 
-            if (p1Controlstearing)
+            if (steeringPlayerId != -1)
             {
-                hInput = inputP1.x;
-                vInput = inputP2.y;
-            }
-            else
-            {
-                hInput = inputP2.x;
-                vInput = inputP1.y;
+                int accelPlayerId = (steeringPlayerId == 1) ? 2 : 1;
+
+                Vector2 steeringInput = InputManager.Instance.GetMoveAxis(steeringPlayerId);
+                Vector2 accelInput = InputManager.Instance.GetMoveAxis(accelPlayerId);
+
+                hInput = steeringInput.x;
+                vInput = accelInput.y;
             }
         }
         if (!Allplayersin)
@@ -169,18 +169,14 @@ public class AmbulanceController : MonoBehaviour
         }
 
         currentPlayerin++;
+        if (controlsstearing)
+        {
+            steeringPlayerId = player.GetComponent<InteractPlayers>().PlayerId;
+        }
         if (currentPlayerin >= RequiredPlayerin)
         {
             Allplayersin = true;
             autoBraking = false;
-            if (player.CompareTag("Player1") && controlsstearing)
-            {
-                p1Controlstearing = true;
-            }
-            else
-            {
-                p1Controlstearing = false;
-            }
         }
         ControlHintsManager.Instance.ShowDrivingHints();
     }
@@ -210,7 +206,10 @@ public class AmbulanceController : MonoBehaviour
         }
 
         currentPlayerin--;
-
+        if (player.GetComponent<InteractPlayers>().PlayerId == steeringPlayerId)
+        {
+            steeringPlayerId = -1;
+        }
         if (currentPlayerin < RequiredPlayerin)
         {
             Allplayersin = false;
