@@ -7175,7 +7175,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1592289577806853853, guid: f990e72e87a06d143b041340e8167e41, type: 3}
       propertyPath: m_AngularSpeed
-      value: 70
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3051969509955629210, guid: f990e72e87a06d143b041340e8167e41, type: 3}
       propertyPath: m_Name
@@ -12173,6 +12173,7 @@ MonoBehaviour:
   nextWayPoint: -1
   carnavmesh: {fileID: 494582473}
   distanceToAchieveCheckpoint: 3
+  maxSpeed: 10
 --- !u!195 &494582473
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -27300,7 +27301,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.42
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 143e7a4bc6134004db68a8170c4d85b6, type: 2}
   m_BuildHeightMesh: 0

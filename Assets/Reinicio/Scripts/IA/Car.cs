@@ -9,6 +9,8 @@ public class Car : MonoBehaviour
     [SerializeField] private NavMeshAgent carnavmesh;
     [SerializeField] float distanceToAchieveCheckpoint = 3.0f;
 
+    [SerializeField] float maxSpeed = 10.0f;
+
     void Start()
     {
         GoToNextWaypoint();
@@ -18,6 +20,15 @@ public class Car : MonoBehaviour
     {
         if (HasReachWayPoint())
             GoToNextWaypoint();
+
+        Vector3 directionVector = (carnavmesh.steeringTarget - carnavmesh.transform.position).normalized;
+        float dotProduct = Vector3.Dot(carnavmesh.transform.forward, directionVector);
+        float factor = Mathf.Max(Mathf.Abs(dotProduct), 0.5f);
+        float maxSpeedPerDirection = maxSpeed * factor;
+
+        float maxSpeedPerTargetDistance = carnavmesh.remainingDistance > 10.0f ? maxSpeed : maxSpeed * 0.5f;
+
+        carnavmesh.speed = Mathf.Min(maxSpeedPerDirection, maxSpeedPerTargetDistance);
     }
 
     bool HasReachWayPoint()
