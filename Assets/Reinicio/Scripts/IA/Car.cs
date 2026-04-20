@@ -4,10 +4,10 @@ using UnityEngine.AI;
 public class Car : MonoBehaviour
 {
     [SerializeField] private RutaCoches ruta;
+    [SerializeField] int nextWayPoint = 0;
+
     [SerializeField] private NavMeshAgent carnavmesh;
     [SerializeField] float distanceToAchieveCheckpoint = 3.0f;
-
-    int nextWayPoint = -1;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class Car : MonoBehaviour
 
     void GoToNextWaypoint()
     {
-        nextWayPoint = (nextWayPoint + 1) % ruta.GetNumWaypoints();
         carnavmesh.SetDestination(ruta.GetWaypointPosition(nextWayPoint));
+        nextWayPoint = (nextWayPoint + 1) % ruta.GetNumWaypoints();
     }
 }
