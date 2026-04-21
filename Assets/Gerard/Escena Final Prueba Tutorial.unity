@@ -12088,6 +12088,7 @@ MonoBehaviour:
   nextWayPoint: -1
   carnavmesh: {fileID: 494582473}
   distanceToAchieveCheckpoint: 3
+  maxSpeed: 10
 --- !u!195 &494582473
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -26722,7 +26723,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.42
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 143e7a4bc6134004db68a8170c4d85b6, type: 2}
   m_BuildHeightMesh: 0
@@ -56615,7 +56616,7 @@ Transform:
   m_GameObject: {fileID: 2096333291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77, y: -0.776, z: 179.56}
+  m_LocalPosition: {x: 78, y: -0.776, z: 203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57735,14 +57736,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8491427034782760440}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 933617459}
   m_Father: {fileID: 2096333292}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &1084347734475445112
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -58061,14 +58062,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5189765719122592164}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2.07, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2045194260}
   m_Father: {fileID: 2096333292}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4891605255059582390
 MonoBehaviour:
   m_ObjectHideFlags: 0
