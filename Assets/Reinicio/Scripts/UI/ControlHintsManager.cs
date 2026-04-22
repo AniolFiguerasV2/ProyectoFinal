@@ -23,7 +23,7 @@ public class ControlHintsManager : MonoBehaviour
 
     private void Start()
     {
-        ShowOnFootHints();
+        
     }
 
     public void ShowHints(string message)
@@ -43,7 +43,7 @@ public class ControlHintsManager : MonoBehaviour
 
     public void ShowOnFootHints()
     {
-        ShowHints("Move: Stick L \nInteract: Y \nHold: A");
+        ShowHints("Move: Left Stick\nInteract: Y\nHold: A");
     }
 
     public void ShowAmbulanceEnterHints()
