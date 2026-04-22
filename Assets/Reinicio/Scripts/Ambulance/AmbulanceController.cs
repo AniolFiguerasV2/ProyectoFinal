@@ -22,6 +22,8 @@ public class AmbulanceController : MonoBehaviour
     private WheelControl[] wheels;
     private Rigidbody rb;
 
+    public GuidedTutorialManager guidedTutorialManager;
+
 
     public bool autoBraking = false;
     private int currentPlayerin = 0;
@@ -183,9 +185,14 @@ public class AmbulanceController : MonoBehaviour
             Debug.Log("Ahora sí se activa cámara ambulancia");
             Allplayersin = true;
             autoBraking = false;
-        }
 
-        ControlHintsManager.Instance.ShowDrivingHints();
+            ControlHintsManager.Instance.ShowDrivingHints();
+
+            if (guidedTutorialManager != null)
+            {
+                guidedTutorialManager.ShowDrivingStep();
+            }
+        }
     }
 
     public void ExitVehicle(InteractPlayers player)

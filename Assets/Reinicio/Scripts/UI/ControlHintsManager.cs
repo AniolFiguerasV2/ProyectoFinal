@@ -21,11 +21,6 @@ public class ControlHintsManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void ShowHints(string message)
     {
         if (hintsPanel != null)
@@ -39,6 +34,11 @@ public class ControlHintsManager : MonoBehaviour
     {
         if (hintsPanel != null)
             hintsPanel.SetActive(false);
+    }
+
+    public void ShowStartHints()
+    {
+        ShowHints("Move: Left Stick");
     }
 
     public void ShowOnFootHints()

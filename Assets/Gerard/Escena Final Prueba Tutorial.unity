@@ -11249,9 +11249,10 @@ MonoBehaviour:
   objectivePanel: {fileID: 1685338351}
   objectiveText: {fileID: 194235631}
   controlHintsManager: {fileID: 528451843}
-  patientUI: {fileID: 119572098}
   scoreUI: {fileID: 1431998088}
   timerUI: {fileID: 1657754826}
+  pacienteUIManager: {fileID: 749689602}
+  ambulanceArrow: {fileID: 5796645059121429168}
 --- !u!4 &528451842
 Transform:
   m_ObjectHideFlags: 0
@@ -52740,6 +52741,10 @@ PrefabInstance:
       propertyPath: tutorialManager
       value: 
       objectReference: {fileID: 1149444423}
+    - target: {fileID: 7970679838002777143, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+      propertyPath: guidedTutorialManager
+      value: 
+      objectReference: {fileID: 528451841}
     - target: {fileID: 8823178080174720404, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.67
@@ -52802,6 +52807,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+--- !u!1 &5796645059121429168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4728275398719243099, guid: bb32927f3c1ec0245a99104f51e50f91, type: 3}
+  m_PrefabInstance: {fileID: 5796645059121429167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8491427034782760440
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,15 @@ public class GuidedTutorialManager : MonoBehaviour
     [Header("UI Controles")]
     public ControlHintsManager controlHintsManager;
 
-    [Header("UI a ocultar al inicio")]
-    public GameObject patientUI;
+    [Header("UI generales")]
     public GameObject scoreUI;
     public GameObject timerUI;
+
+    [Header("UI pacientes")]
+    public PacienteUIManager pacienteUIManager;
+
+    [Header("Objetos del mundo")]
+    public GameObject ambulanceArrow;
 
     private void Start()
     {
@@ -22,14 +27,17 @@ public class GuidedTutorialManager : MonoBehaviour
 
     public void StartFirstStep()
     {
-        if (patientUI != null)
-            patientUI.SetActive(false);
-
         if (scoreUI != null)
             scoreUI.SetActive(false);
 
         if (timerUI != null)
             timerUI.SetActive(false);
+
+        if (pacienteUIManager != null)
+            pacienteUIManager.DisablePacienteUI();
+
+        if (ambulanceArrow != null)
+            ambulanceArrow.SetActive(false);
 
         if (objectivePanel != null)
             objectivePanel.SetActive(true);
@@ -38,14 +46,26 @@ public class GuidedTutorialManager : MonoBehaviour
             objectiveText.text = "Go to the ambulance";
 
         if (controlHintsManager != null)
-            controlHintsManager.ShowOnFootHints(); 
+            controlHintsManager.ShowStartHints();
+    }
+
+    public void ShowDrivingStep()
+    {
+        if (ambulanceArrow != null)
+            ambulanceArrow.SetActive(true);
+
+        if (pacienteUIManager != null)
+            pacienteUIManager.EnablePacienteUI();
+
+        if (objectivePanel != null)
+            objectivePanel.SetActive(true);
+
+        if (objectiveText != null)
+            objectiveText.text = "Press X to select a patient and go pick them up";
     }
 
     public void ShowGameplayUI()
     {
-        if (patientUI != null)
-            patientUI.SetActive(true);
-
         if (scoreUI != null)
             scoreUI.SetActive(true);
 
