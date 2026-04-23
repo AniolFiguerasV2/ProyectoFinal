@@ -22,6 +22,8 @@ public class AmbulanceController : MonoBehaviour
     private WheelControl[] wheels;
     private Rigidbody rb;
 
+    public GuidedTutorialManager guidedTutorialManager;
+
 
     public bool autoBraking = false;
     private int currentPlayerin = 0;
@@ -148,6 +150,8 @@ public class AmbulanceController : MonoBehaviour
 
     public void EnterVehicle(InteractPlayers player, bool controlsstearing)
     {
+        Debug.Log("Antes de entrar, currentPlayerin = " + currentPlayerin);
+
         player.transform.position = rb.transform.position;
         player.DrivenMode();
         player.transform.parent = rb.transform;
@@ -156,29 +160,39 @@ public class AmbulanceController : MonoBehaviour
         player.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         player.playervisual.SetActive(false);
 
-        if(player.currentEntry != null)
+        if (player.currentEntry != null)
         {
-            if(player.CompareTag("Player1") && player.currentEntry.player1UI != null)
+            if (player.CompareTag("Player1") && player.currentEntry.player1UI != null)
             {
                 player.currentEntry.player1UI.SetActive(false);
             }
-            if(player.CompareTag("Player2")  && player.currentEntry.player2UI != null)
+            if (player.CompareTag("Player2") && player.currentEntry.player2UI != null)
             {
                 player.currentEntry.player2UI.SetActive(false);
             }
         }
 
         currentPlayerin++;
+        Debug.Log("Después de entrar, currentPlayerin = " + currentPlayerin + " / RequiredPlayerin = " + RequiredPlayerin);
+
         if (controlsstearing)
         {
             steeringPlayerId = player.GetComponent<InteractPlayers>().PlayerId;
         }
+
         if (currentPlayerin >= RequiredPlayerin)
         {
+            Debug.Log("Ahora sí se activa cámara ambulancia");
             Allplayersin = true;
             autoBraking = false;
+
+            ControlHintsManager.Instance.ShowDrivingHints();
+
+            if (guidedTutorialManager != null)
+            {
+                guidedTutorialManager.ShowDrivingStep();
+            }
         }
-        ControlHintsManager.Instance.ShowDrivingHints();
     }
 
     public void ExitVehicle(InteractPlayers player)

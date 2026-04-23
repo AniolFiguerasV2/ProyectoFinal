@@ -3,17 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class StartTutorialManager : MonoBehaviour
 {
-    /*public GameObject tutorialPanel1;
-    public GameObject tutorialPanel2;
-
-    public GameObject drivingTutorialPanel1;
-
-    public GameObject stretcherTutorialPanel1;
-    public GameObject stretcherTutorialPanel2;
-
-    
-    private bool drivingTutorialShown = false;
-    private bool stretcherTutorialShown = false;*/
     public GameObject[] panels;
 
     [Header("Menú de pausa")]
@@ -25,15 +14,6 @@ public class StartTutorialManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-
-        /*tutorialPanel1.SetActive(true);
-        tutorialPanel2.SetActive(false);
-
-        drivingTutorialPanel1.SetActive(false);
-
-        stretcherTutorialPanel1.SetActive(false);
-        stretcherTutorialPanel2.SetActive(false);*/
-
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
     }
@@ -48,21 +28,6 @@ public class StartTutorialManager : MonoBehaviour
                 PauseGame();
         }
     }
-
-    /*public void ShowSecondTutorial()
-    {
-        tutorialPanel1.SetActive(false);
-        tutorialPanel2.SetActive(true);
-    }
-
-    public void EndTutorial()
-    {
-        tutorialPanel1.SetActive(false);
-        tutorialPanel2.SetActive(false);
-        Time.timeScale = 1f;
-    }*/
-
-
     public void ShowPanel(GameObject panelToShow)
     {
         // Desactivar todos
@@ -84,58 +49,11 @@ public class StartTutorialManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
-
     public void StartGame()
     {
         Time.timeScale = 1f; // por si estaba pausado
         SceneManager.LoadScene("Escena Final"); 
     }
-
-   /* public void ShowDrivingTutorial()
-    {
-        if (drivingTutorialShown) return;
-
-        drivingTutorialShown = true;
-
-        Time.timeScale = 0f;
-        drivingTutorialPanel1.SetActive(true);
-    }
-
-    public void ShowSecondDrivingTutorial()
-    {
-        drivingTutorialPanel1.SetActive(false);
-    }
-
-    public void EndDrivingTutorial()
-    {
-        drivingTutorialPanel1.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public void ShowStretcherTutorial()
-    {
-        if (stretcherTutorialShown) return;
-
-        stretcherTutorialShown = true;
-
-        Time.timeScale = 0f;
-        stretcherTutorialPanel1.SetActive(true);
-        stretcherTutorialPanel2.SetActive(false);
-    }
-
-    public void ShowSecondStretcherTutorial()
-    {
-        stretcherTutorialPanel1.SetActive(false);
-        stretcherTutorialPanel2.SetActive(true);
-    }
-
-    public void EndStretcherTutorial()
-    {
-        stretcherTutorialPanel1.SetActive(false);
-        stretcherTutorialPanel2.SetActive(false);
-        Time.timeScale = 1f;
-    }*/
-
     public void PauseGame()
     {
         pausePanel.SetActive(true);

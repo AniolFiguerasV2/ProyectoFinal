@@ -21,11 +21,6 @@ public class ControlHintsManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        ShowOnFootHints();
-    }
-
     public void ShowHints(string message)
     {
         if (hintsPanel != null)
@@ -41,9 +36,14 @@ public class ControlHintsManager : MonoBehaviour
             hintsPanel.SetActive(false);
     }
 
+    public void ShowStartHints()
+    {
+        ShowHints("Move: Left Stick");
+    }
+
     public void ShowOnFootHints()
     {
-        ShowHints("Move: Stick L \nInteract: Y \nHold: A");
+        ShowHints("Move: Left Stick\nInteract: Y\nHold: A");
     }
 
     public void ShowAmbulanceEnterHints()
