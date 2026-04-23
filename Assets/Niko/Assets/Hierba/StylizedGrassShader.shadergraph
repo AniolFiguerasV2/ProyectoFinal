@@ -487,20 +487,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "496957bc837b4a2e881342a14bbda314"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "20560713c44c4c8fa30fa4c430025c89"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "5142aa2805e54d0181c56d839b2551f8"
                 },
                 "m_SlotId": 0
@@ -1381,8 +1367,8 @@
     "m_ObjectId": "0837c40f76ec4bb38597abcb94038e68",
     "m_Title": "Height Blend",
     "m_Position": {
-        "x": -2033.333251953125,
-        "y": 235.3334503173828
+        "x": -2033.0,
+        "y": 235.0
     }
 }
 
@@ -4275,7 +4261,7 @@
     "m_ObjectId": "8643af65dcfa44f2a1c869ec91ec8613",
     "m_Title": "Depth",
     "m_Position": {
-        "x": -2498.666748046875,
+        "x": -2498.0,
         "y": -410.0
     }
 }
@@ -6623,8 +6609,8 @@
     "m_ObjectId": "d91da8c6d15e43a0a6d9dea77360edd6",
     "m_Title": "GrassSway",
     "m_Position": {
-        "x": -2650.666259765625,
-        "y": -1982.0001220703125
+        "x": -2650.0,
+        "y": -1982.0
     }
 }
 
@@ -7673,8 +7659,8 @@
     "m_ObjectId": "fa273004583c411b9963f89b431ed5ac",
     "m_Title": "WindNoiseTexture",
     "m_Position": {
-        "x": -2718.000244140625,
-        "y": -2760.666748046875
+        "x": -2718.0,
+        "y": -2761.0
     }
 }
 

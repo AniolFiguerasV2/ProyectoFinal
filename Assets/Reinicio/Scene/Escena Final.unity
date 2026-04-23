@@ -1667,10 +1667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ee3103c1e7724408a0f265375786bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 8491427034782760440}
-  player2: {fileID: 5189765719122592164}
-  player1UI: {fileID: 1186967774}
-  player2UI: {fileID: 1861737513}
 --- !u!114 &65101932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43419,7 +43415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: PolybrushMesh8988240
+    name: PolybrushMesh105960
     vertices:
     - {x: -1.5514798, y: 0.25332353, z: -0.000000038146972}
     - {x: -1.5514798, y: 0.53647417, z: -0.000000038146972}
@@ -60507,10 +60503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ee3103c1e7724408a0f265375786bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 8491427034782760440}
-  player2: {fileID: 5189765719122592164}
-  player1UI: {fileID: 1186967774}
-  player2UI: {fileID: 1861737513}
 --- !u!114 &2024729894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62065,7 +62057,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PolybrushMesh8988240
+  m_Name: PolybrushMesh105960
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
