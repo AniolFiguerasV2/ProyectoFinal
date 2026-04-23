@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/Reinicio/Scene/Escena Final.unity
     guid: ff9b3a4ffebd5884ea3b22a817daf3ab
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c87b215bdcdb5dd4a92d89084081459e, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
