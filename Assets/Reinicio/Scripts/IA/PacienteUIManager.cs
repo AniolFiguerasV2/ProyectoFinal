@@ -96,21 +96,33 @@ public class PacienteUIManager : MonoBehaviour
         selectionFrame.offsetMax = Vector2.zero;
     }
 
+    public void DisablePacienteUI()
+    {
+        uiEnabled = false;
+
+        if (selectionFrame != null)
+            selectionFrame.gameObject.SetActive(false);
+
+        if (widgetParent != null)
+            widgetParent.gameObject.SetActive(false);
+    }
+
     public void EnablePacienteUI()
     {
         uiEnabled = true;
-        gameObject.SetActive(true);
+
+        if (widgetParent != null)
+            widgetParent.gameObject.SetActive(true);
+
+        if (selectionFrame != null)
+            selectionFrame.gameObject.SetActive(true);
 
         if (widgets.Count > 0)
         {
             selectedIndex = 0;
             MoveSelection();
+            PointArrowToSelectedPatient();
         }
-    }
-
-    public void DisablePacienteUI()
-    {
-        uiEnabled = false;
-        gameObject.SetActive(false);
+        Debug.Log("Paciente UI ACTIVADA");
     }
 }

@@ -53,11 +53,14 @@ public class GuidedTutorialManager : MonoBehaviour
 
     public void ShowDrivingStep()
     {
+        Debug.Log("ShowDrivingStep llamado");
         if (ambulanceArrow != null)
             ambulanceArrow.SetActive(true);
 
         if (pacienteUIManager != null)
             pacienteUIManager.EnablePacienteUI();
+        else
+            Debug.LogWarning("PacienteUIManager no asignado en GuidedTutorialManager");
 
         if (objectivePanel != null)
             objectivePanel.SetActive(true);

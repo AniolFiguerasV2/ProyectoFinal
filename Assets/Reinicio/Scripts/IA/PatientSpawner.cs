@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +8,11 @@ public class PatientSpawner : MonoBehaviour
     [SerializeField] private int maxNPCs = 3;
     [SerializeField] private float spawnRadius = 40f;
     [SerializeField] private float spawnHeight = 100f;
-    //[SerializeField] private LayerMask defaultLayer;
     [SerializeField] private float maxSlope = 45f;
+
+    [Header("Tutorial")]
+    [SerializeField] private bool startWithTutorialPatient = true;
+    [SerializeField] private int tutorialNPCs = 1;
 
     public List<PatientDeathTime> patients = new();
 
@@ -19,20 +21,32 @@ public class PatientSpawner : MonoBehaviour
 
     public static PatientSpawner Instance { get; private set; }
 
+    private bool normalModeActive = false;
+
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             return;
         }
+
         Destroy(this);
     }
 
     private void Start()
     {
-        RefillNPCS();
+        if (startWithTutorialPatient)
+        {
+            SpawnUntilCount(tutorialNPCs);
+        }
+        else
+        {
+            normalModeActive = true;
+            RefillNPCS();
+        }
     }
+
     private void TrySpawnNPC()
     {
         Vector3 randomPos = GetRandomPoint();
@@ -55,6 +69,7 @@ public class PatientSpawner : MonoBehaviour
             }
         }
     }
+
     private Vector3 GetRandomPoint()
     {
         Vector2 randomCircle = Random.insideUnitCircle * spawnRadius;
@@ -65,15 +80,34 @@ public class PatientSpawner : MonoBehaviour
     {
         patients.Remove(deathNPC);
 
-        RefillNPCS();
+        if (normalModeActive)
+        {
+            RefillNPCS();
+        }
     }
 
     private void RefillNPCS()
     {
-        while (patients.Count < maxNPCs)
+        SpawnUntilCount(maxNPCs);
+    }
+
+    private void SpawnUntilCount(int targetCount)
+    {
+        int safety = 0;
+
+        while (patients.Count < targetCount && safety < 100)
         {
             TrySpawnNPC();
+            safety++;
         }
+    }
+
+    public void ActivateNormalPatientMode()
+    {
+        if (normalModeActive) return;
+
+        normalModeActive = true;
+        RefillNPCS();
     }
 }
 /*

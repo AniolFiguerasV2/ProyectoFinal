@@ -54,6 +54,12 @@ public class PutPatientStrecher : MonoBehaviour
                 GameManager.Instance.PatientDelivered();
                 TimerGame.instance.AddTime(60);
             }
+
+            if (PatientSpawner.Instance != null)
+            {
+                PatientSpawner.Instance.ActivateNormalPatientMode();
+            }
+
             Destroy(gameObject);
             //Logica de sumar tiempo al contar del tiempo
             ScoreManager.Instance.AddPoints(300);
