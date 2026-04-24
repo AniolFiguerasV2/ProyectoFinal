@@ -15,14 +15,14 @@ public class PatientDeathTime : MonoBehaviour
 
     private float lifetime;
     public float Lifetime => lifetime;
-    public float Timer => timer;
+
     private float timer = 0f;
+    public float Timer => timer;
 
     public PatientSpawner spawner;
 
     private void Start()
     {
-
         float numeroRandom = Random.Range(0f, easyDificulty + normalDificulty + hardDificulty);
 
         if (numeroRandom <= easyDificulty)
@@ -33,11 +33,10 @@ public class PatientDeathTime : MonoBehaviour
         {
             lifetime = normalTime;
         }
-        else if (numeroRandom <= easyDificulty + normalDificulty + hardDificulty)
+        else
         {
             lifetime = hardTime;
         }
-
 
         if (debugTime)
             lifetime *= 0.01f;
@@ -46,6 +45,7 @@ public class PatientDeathTime : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+
         if (timer >= lifetime)
         {
             ScoreManager.Instance.PenalizePatientDeath(this);
@@ -53,5 +53,15 @@ public class PatientDeathTime : MonoBehaviour
             spawner.NotifyNPCDeath(this);
             Destroy(gameObject);
         }
+    }
+
+    public void SetLifetime(float newLifetime)
+    {
+        lifetime = newLifetime;
+    }
+
+    public void SetTimer(float newTimer)
+    {
+        timer = newTimer;
     }
 }
