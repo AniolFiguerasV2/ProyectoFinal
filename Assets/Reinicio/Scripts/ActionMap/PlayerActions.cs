@@ -136,6 +136,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SelectPatient"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8b494cd-c08b-49c9-81b0-eb5188c80bea"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -358,6 +367,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99399942-d322-4761-8fe9-6dc309975686"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPatient"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ae6e5c5-077a-422c-ac2f-afeadf43b4e7"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPatient"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -409,6 +440,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SelectPatient"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff59862d-3699-420e-b3e1-64dfde50193e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -631,6 +671,28 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""AmbulanceSteer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9881b245-ff60-4f63-a956-93fbc2d49107"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPatient"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37751d3f-080b-468c-a91c-0abc1db948af"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectPatient"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -683,6 +745,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Player1_GrabStretcher = m_Player1.FindAction("GrabStretcher", throwIfNotFound: true);
         m_Player1_AmbulanceDrive = m_Player1.FindAction("AmbulanceDrive", throwIfNotFound: true);
         m_Player1_AmbulanceSteer = m_Player1.FindAction("AmbulanceSteer", throwIfNotFound: true);
+        m_Player1_SelectPatient = m_Player1.FindAction("SelectPatient", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
@@ -690,6 +753,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Player2_GrabStretcher = m_Player2.FindAction("GrabStretcher", throwIfNotFound: true);
         m_Player2_AmbulanceDrive = m_Player2.FindAction("AmbulanceDrive", throwIfNotFound: true);
         m_Player2_AmbulanceSteer = m_Player2.FindAction("AmbulanceSteer", throwIfNotFound: true);
+        m_Player2_SelectPatient = m_Player2.FindAction("SelectPatient", throwIfNotFound: true);
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Pause = m_Global.FindAction("Pause", throwIfNotFound: true);
@@ -780,6 +844,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_GrabStretcher;
     private readonly InputAction m_Player1_AmbulanceDrive;
     private readonly InputAction m_Player1_AmbulanceSteer;
+    private readonly InputAction m_Player1_SelectPatient;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player1".
     /// </summary>
@@ -811,6 +876,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player1/AmbulanceSteer".
         /// </summary>
         public InputAction @AmbulanceSteer => m_Wrapper.m_Player1_AmbulanceSteer;
+        /// <summary>
+        /// Provides access to the underlying input action "Player1/SelectPatient".
+        /// </summary>
+        public InputAction @SelectPatient => m_Wrapper.m_Player1_SelectPatient;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -852,6 +921,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @AmbulanceSteer.started += instance.OnAmbulanceSteer;
             @AmbulanceSteer.performed += instance.OnAmbulanceSteer;
             @AmbulanceSteer.canceled += instance.OnAmbulanceSteer;
+            @SelectPatient.started += instance.OnSelectPatient;
+            @SelectPatient.performed += instance.OnSelectPatient;
+            @SelectPatient.canceled += instance.OnSelectPatient;
         }
 
         /// <summary>
@@ -878,6 +950,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @AmbulanceSteer.started -= instance.OnAmbulanceSteer;
             @AmbulanceSteer.performed -= instance.OnAmbulanceSteer;
             @AmbulanceSteer.canceled -= instance.OnAmbulanceSteer;
+            @SelectPatient.started -= instance.OnSelectPatient;
+            @SelectPatient.performed -= instance.OnSelectPatient;
+            @SelectPatient.canceled -= instance.OnSelectPatient;
         }
 
         /// <summary>
@@ -920,6 +995,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player2_GrabStretcher;
     private readonly InputAction m_Player2_AmbulanceDrive;
     private readonly InputAction m_Player2_AmbulanceSteer;
+    private readonly InputAction m_Player2_SelectPatient;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player2".
     /// </summary>
@@ -951,6 +1027,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player2/AmbulanceSteer".
         /// </summary>
         public InputAction @AmbulanceSteer => m_Wrapper.m_Player2_AmbulanceSteer;
+        /// <summary>
+        /// Provides access to the underlying input action "Player2/SelectPatient".
+        /// </summary>
+        public InputAction @SelectPatient => m_Wrapper.m_Player2_SelectPatient;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -992,6 +1072,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @AmbulanceSteer.started += instance.OnAmbulanceSteer;
             @AmbulanceSteer.performed += instance.OnAmbulanceSteer;
             @AmbulanceSteer.canceled += instance.OnAmbulanceSteer;
+            @SelectPatient.started += instance.OnSelectPatient;
+            @SelectPatient.performed += instance.OnSelectPatient;
+            @SelectPatient.canceled += instance.OnSelectPatient;
         }
 
         /// <summary>
@@ -1018,6 +1101,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @AmbulanceSteer.started -= instance.OnAmbulanceSteer;
             @AmbulanceSteer.performed -= instance.OnAmbulanceSteer;
             @AmbulanceSteer.canceled -= instance.OnAmbulanceSteer;
+            @SelectPatient.started -= instance.OnSelectPatient;
+            @SelectPatient.performed -= instance.OnSelectPatient;
+            @SelectPatient.canceled -= instance.OnSelectPatient;
         }
 
         /// <summary>
@@ -1189,6 +1275,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAmbulanceSteer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectPatient" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectPatient(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player2" which allows adding and removing callbacks.
@@ -1232,6 +1325,13 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAmbulanceSteer(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectPatient" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectPatient(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Global" which allows adding and removing callbacks.

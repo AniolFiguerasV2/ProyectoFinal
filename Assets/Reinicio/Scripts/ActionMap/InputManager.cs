@@ -149,4 +149,10 @@ public class InputManager : MonoBehaviour
         var act = globalMap.FindAction("Pause", false);
         return act != null && act.WasPressedThisFrame();
     }
+
+    public bool GetSelectPatientDown(int playerId)
+    {
+        var act = GetAction(playerId, "SelectPatient");
+        return act != null && act.WasPressedThisFrame();
+    }
 }

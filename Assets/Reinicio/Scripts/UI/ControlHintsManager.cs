@@ -35,12 +35,6 @@ public class ControlHintsManager : MonoBehaviour
         if (hintsPanel != null)
             hintsPanel.SetActive(false);
     }
-
-    public void ShowStartHints()
-    {
-        ShowHints("Move: Left Stick");
-    }
-
     public void ShowOnFootHints()
     {
         ShowHints("Move: Left Stick\nInteract: Y\nHold: A");
@@ -53,7 +47,7 @@ public class ControlHintsManager : MonoBehaviour
 
     public void ShowDrivingHints()
     {
-        ShowHints("Pilot: Stick (L) up / down\nCopilot: Stick (L) left / right\nPausa: Start");
+        ShowHints("Pilot: Stick (L) forward / back\nCopilot: Stick (L) left / right\nPausa: Start");
     }
 
     public void ShowStretcherSpawnHints()

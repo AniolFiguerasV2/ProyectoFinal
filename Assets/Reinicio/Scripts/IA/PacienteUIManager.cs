@@ -32,9 +32,14 @@ public class PacienteUIManager : MonoBehaviour
 
             lastPatientCount = spawner.patients.Count;
             MoveSelection();
+            PointArrowToSelectedPatient();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        bool selectPatientInput =
+    Input.GetKeyDown(KeyCode.Tab) ||
+    (InputManager.Instance != null && InputManager.Instance.GetSelectPatientDown(1)); 
+
+        if (selectPatientInput)
         {
             if (widgets.Count == 0) return;
 
@@ -44,13 +49,19 @@ public class PacienteUIManager : MonoBehaviour
                 selectedIndex = 0;
 
             MoveSelection();
+            PointArrowToSelectedPatient();
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+    void PointArrowToSelectedPatient()
+    {
+        if (widgets.Count == 0) return;
+        if (arrowController == null) return;
+
+        PatientDeathTime selectedPatient = widgets[selectedIndex].GetPatient();
+
+        if (selectedPatient != null)
         {
-            if (widgets.Count == 0) return;
-
-            PatientDeathTime selectedPatient = widgets[selectedIndex].GetPatient();
             arrowController.SetTarget(selectedPatient.transform);
         }
     }

@@ -20,6 +20,8 @@ public class GuidedTutorialManager : MonoBehaviour
     [Header("Objetos del mundo")]
     public GameObject ambulanceArrow;
 
+    private Coroutine objectiveRoutine;
+
     private void Start()
     {
         StartFirstStep();
@@ -46,7 +48,7 @@ public class GuidedTutorialManager : MonoBehaviour
             objectiveText.text = "Go to the ambulance";
 
         if (controlHintsManager != null)
-            controlHintsManager.ShowStartHints();
+            controlHintsManager.ShowOnFootHints();
     }
 
     public void ShowDrivingStep()
@@ -60,8 +62,23 @@ public class GuidedTutorialManager : MonoBehaviour
         if (objectivePanel != null)
             objectivePanel.SetActive(true);
 
-        if (objectiveText != null)
-            objectiveText.text = "Press X to select a patient and go pick them up";
+        if (objectiveRoutine != null)
+            StopCoroutine(objectiveRoutine);
+
+        objectiveRoutine = StartCoroutine(DrivingObjectiveSequence());
+    }
+
+    private System.Collections.IEnumerator DrivingObjectiveSequence()
+    {
+        SetObjective("Press X to select a patient and go pick them up");
+
+        yield return new WaitForSeconds(5f);
+
+        SetObjective("Pilot: move forward and back. Copilot: turn left and right.");
+
+        yield return new WaitForSeconds(5f);
+
+        HideObjective();
     }
 
     public void ShowGameplayUI()

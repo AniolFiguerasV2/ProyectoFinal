@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SelectPatient",
+                    "type": "Button",
+                    "id": "c8b494cd-c08b-49c9-81b0-eb5188c80bea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -272,6 +281,28 @@
                     "action": "AmbulanceSteer",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99399942-d322-4761-8fe9-6dc309975686",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPatient",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ae6e5c5-077a-422c-ac2f-afeadf43b4e7",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPatient",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -323,6 +354,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SelectPatient",
+                    "type": "Button",
+                    "id": "ff59862d-3699-420e-b3e1-64dfde50193e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -543,6 +583,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "AmbulanceSteer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9881b245-ff60-4f63-a956-93fbc2d49107",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPatient",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37751d3f-080b-468c-a91c-0abc1db948af",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectPatient",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
