@@ -45,7 +45,7 @@ public class GuidedTutorialManager : MonoBehaviour
             objectivePanel.SetActive(true);
 
         if (objectiveText != null)
-            objectiveText.text = "Go to the ambulance";
+            objectiveText.text = "Get into the ambulance";
 
         if (controlHintsManager != null)
             controlHintsManager.ShowOnFootHints();
@@ -106,5 +106,22 @@ public class GuidedTutorialManager : MonoBehaviour
     {
         if (objectivePanel != null)
             objectivePanel.SetActive(false);
+    }
+
+    public void SetTemporaryObjective(string text, float duration)
+    {
+        if (objectiveRoutine != null)
+            StopCoroutine(objectiveRoutine);
+
+        objectiveRoutine = StartCoroutine(TemporaryObjectiveRoutine(text, duration));
+    }
+
+    private System.Collections.IEnumerator TemporaryObjectiveRoutine(string text, float duration)
+    {
+        SetObjective(text);
+
+        yield return new WaitForSeconds(duration);
+
+        HideObjective();
     }
 }

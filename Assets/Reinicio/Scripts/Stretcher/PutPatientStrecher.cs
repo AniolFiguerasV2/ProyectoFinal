@@ -48,11 +48,18 @@ public class PutPatientStrecher : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hospital"))
         {
-            if(currentMove != null)
+            if (currentMove != null)
             {
                 currentMove.hasPatient = false;
                 GameManager.Instance.PatientDelivered();
                 TimerGame.instance.AddTime(60);
+            }
+
+            PatientDeathTime patient = GetComponent<PatientDeathTime>();
+
+            if (patient != null && patient.spawner != null)
+            {
+                patient.spawner.NotifyNPCDeath(patient);
             }
 
             if (PatientSpawner.Instance != null)
@@ -60,11 +67,9 @@ public class PutPatientStrecher : MonoBehaviour
                 PatientSpawner.Instance.ActivateNormalPatientMode();
             }
 
-            Destroy(gameObject);
-            //Logica de sumar tiempo al contar del tiempo
             ScoreManager.Instance.AddPoints(300);
-            
-            
+
+            Destroy(gameObject);
         }
     }
 }

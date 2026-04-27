@@ -12,6 +12,7 @@ TagManager:
   - Building
   - Car
   - NPC
+  - Patient
   layers:
   - Default
   - TransparentFX
