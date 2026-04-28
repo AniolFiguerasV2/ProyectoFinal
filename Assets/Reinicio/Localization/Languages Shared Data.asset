@@ -31,6 +31,30 @@ MonoBehaviour:
     m_Key: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 1032556355067904
+    m_Key: OptionsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1036700486803456
+    m_Key: OptionsArt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038201414295552
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040028306317312
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1042159490899968
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1043916883304448
+    m_Key: Credit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

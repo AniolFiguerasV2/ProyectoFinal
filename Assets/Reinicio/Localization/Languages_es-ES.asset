@@ -27,11 +27,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5009706508288
-    m_Localized: "Cr\xE9ditos"
+    m_Localized: Creditos
     m_Metadata:
       m_Items: []
   - m_Id: 5414469427200
     m_Localized: Salida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1032556355067904
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1036700486803456
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038201414295552
+    m_Localized: Musica
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040028306317312
+    m_Localized: Atras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1042159490899968
+    m_Localized: Idiomas
     m_Metadata:
       m_Items: []
   references:

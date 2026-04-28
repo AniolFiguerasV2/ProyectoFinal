@@ -34,6 +34,26 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 1032556355067904
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1036700486803456
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1038201414295552
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1040028306317312
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1042159490899968
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
