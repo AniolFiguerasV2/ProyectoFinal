@@ -1,0 +1,726 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3055834120001618921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2175282289036571046}
+  m_Layer: 0
+  m_Name: grupo grande hierba
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2175282289036571046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3055834120001618921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.764406, y: 0.0076797903, z: 46.868034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7717271795909017257}
+  - {fileID: 4731081535048751871}
+  - {fileID: 9184073441155497318}
+  - {fileID: 1069526143177358958}
+  - {fileID: 3139758981864614468}
+  - {fileID: 4357368259625884354}
+  - {fileID: 2113009040517406679}
+  - {fileID: 3015249042715613057}
+  - {fileID: 5428401080797559786}
+  - {fileID: 7587473803802368123}
+  - {fileID: 3514387482530294247}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &146716705742130820
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6909733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4814682
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.99917716
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.040559523
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &2113009040517406679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 146716705742130820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1264505217358950205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.337286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6234894
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.116075955
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99324036
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &1069526143177358958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 1264505217358950205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2532060721215867793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.82308006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.1842575
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.45883995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8885189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &4357368259625884354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 2532060721215867793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3431259527689189556
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.3094234
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.65621185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6257601
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7800156
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &3514387482530294247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 3431259527689189556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3803710720457800471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.3782314
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9257111
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &3139758981864614468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 3803710720457800471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3928130156190500562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.804863
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.9001694
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9894577
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.14482199
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &3015249042715613057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 3928130156190500562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6056878133516331705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4054222
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8575592
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9993544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.035928093
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &5428401080797559786 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 6056878133516331705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6842086041607146412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.3259697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0179138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9611247
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.27611464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &4731081535048751871 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 6842086041607146412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6930959241401773109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.980257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.7402039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.957191
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28945708
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &9184073441155497318 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 6930959241401773109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8377422464285061114
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9119606
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4562225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98846066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15147798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &7717271795909017257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 8377422464285061114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8509493971429509416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2175282289036571046}
+    m_Modifications:
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1616364
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.0265884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.24465393
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9696105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792066370655348247, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+      propertyPath: m_Name
+      value: Grupo de hierba(Polybrush Clone)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+--- !u!4 &7587473803802368123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2259633387278602579, guid: f1488c4d8f3db12469dc21b9614ce058, type: 3}
+  m_PrefabInstance: {fileID: 8509493971429509416}
+  m_PrefabAsset: {fileID: 0}
