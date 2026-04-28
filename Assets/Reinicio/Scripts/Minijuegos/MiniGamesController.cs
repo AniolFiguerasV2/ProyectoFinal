@@ -6,6 +6,9 @@ public class MiniGamesController : MonoBehaviour
     [Header("Referencias")]
     public MoveObject moveObject;
 
+    [Header("MiniGamesReferences")]
+    public MiniGame1 miniGame1;
+
     private PatientDeathTime patient;
     private PatientDeathTime cachedPatient;
 
@@ -18,6 +21,9 @@ public class MiniGamesController : MonoBehaviour
 
     private bool activated = false;
     private bool lifetimeCapped = false;
+
+    private bool miniGameActive = false;
+    private bool miniGameFinished = false;
 
     void Update()
     {
@@ -55,7 +61,38 @@ public class MiniGamesController : MonoBehaviour
 
         if (remaining < 40f)
         {
-            // minijuegos
+            if (!miniGameActive && !miniGameFinished && miniGame1 != null)
+            {
+                StartMiniGame();
+            }
+        }
+    }
+
+    void StartMiniGame()
+    {
+        miniGameActive = true;
+
+        miniGame1.gameObject.SetActive(true);
+
+        miniGame1.OnMiniGameFinished += HandleMiniGameResult;
+    }
+
+    void HandleMiniGameResult(bool success)
+    {
+        miniGame1.OnMiniGameFinished -= HandleMiniGameResult;
+
+        miniGameActive = false;
+        miniGameFinished = true;
+
+        if (patient == null) return;
+
+        if (success)
+        {
+            patient.SetTimer(patient.Timer - 20f);
+        }
+        else
+        {
+            patient.SetTimer(patient.Timer + 10f);
         }
     }
 
@@ -69,6 +106,9 @@ public class MiniGamesController : MonoBehaviour
     {
         activated = false;
         lifetimeCapped = false;
+
+        miniGameActive = false;
+        miniGameFinished = false;
 
         patient = null;
         cachedPatient = null;

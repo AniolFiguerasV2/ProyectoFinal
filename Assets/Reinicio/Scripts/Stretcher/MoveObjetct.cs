@@ -1,7 +1,5 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using UnityEditor;
-using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
