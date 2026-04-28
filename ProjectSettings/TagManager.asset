@@ -12,6 +12,8 @@ TagManager:
   - Building
   - Car
   - NPC
+  - Patient
+  - Ambulancia
   layers:
   - Default
   - TransparentFX

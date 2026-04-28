@@ -11,9 +11,16 @@ public class Car : MonoBehaviour
 
     [SerializeField] float maxSpeed = 10.0f;
 
+    public float knockback = 1.5f;
+
+    Rigidbody rb;
+    Collider coll;
+
     void Start()
     {
         GoToNextWaypoint();
+        rb = GetComponent<Rigidbody>();
+        coll = GetComponent<Collider>();
     }
 
     void Update()
@@ -41,4 +48,15 @@ public class Car : MonoBehaviour
         carnavmesh.SetDestination(ruta.GetWaypointPosition(nextWayPoint));
         nextWayPoint = (nextWayPoint + 1) % ruta.GetNumWaypoints();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ambulancia"))
+        {
+            carnavmesh.enabled = false;
+            coll.isTrigger = false;
+            rb.isKinematic = false;
+            rb.linearVelocity = (transform.position - collision.transform.position).normalized * collision.collider.attachedRigidbody.linearVelocity.magnitude * knockback;
+        }
+    }
+
 }

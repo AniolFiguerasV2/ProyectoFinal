@@ -23,16 +23,9 @@ public class PacienteUIManager : MonoBehaviour
         if (!uiEnabled) return;
         if (spawner == null) return;
 
-        if (spawner.patients.Count > lastPatientCount)
+        if (spawner.patients.Count != lastPatientCount)
         {
-            for (int i = lastPatientCount; i < spawner.patients.Count; i++)
-            {
-                CreateWidget(spawner.patients[i]);
-            }
-
-            lastPatientCount = spawner.patients.Count;
-            MoveSelection();
-            PointArrowToSelectedPatient();
+            RebuildWidgets();
         }
 
         bool selectPatientInput =
@@ -80,37 +73,101 @@ public class PacienteUIManager : MonoBehaviour
         }
     }
 
+    void RebuildWidgets()
+    {
+        if (selectionFrame != null && widgetParent != null)
+        {
+            selectionFrame.SetParent(widgetParent, false);
+            selectionFrame.gameObject.SetActive(false);
+        }
+
+        foreach (PacienteInfo widget in widgets)
+        {
+            if (widget != null)
+                Destroy(widget.gameObject);
+        }
+
+        widgets.Clear();
+
+        for (int i = 0; i < spawner.patients.Count; i++)
+        {
+            CreateWidget(spawner.patients[i]);
+        }
+
+        lastPatientCount = spawner.patients.Count;
+        selectedIndex = 0;
+
+        if (widgets.Count > 0)
+        {
+            MoveSelection();
+            PointArrowToSelectedPatient();
+        }
+    }
+
     void MoveSelection()
     {
         if (widgets.Count == 0) return;
 
+        if (selectionFrame == null)
+        {
+            Debug.LogWarning("SelectionFrame no está asignado en PacienteUIManager");
+            return;
+        }
+
+        if (selectedIndex < 0)
+            selectedIndex = 0;
+
+        if (selectedIndex >= widgets.Count)
+            selectedIndex = widgets.Count - 1;
+
         RectTransform widgetRect = widgets[selectedIndex].GetComponent<RectTransform>();
 
-        selectionFrame.SetParent(widgetRect);
+        selectionFrame.gameObject.SetActive(true);
+
+        selectionFrame.SetParent(widgetRect, false);
         selectionFrame.SetAsLastSibling();
 
         selectionFrame.anchorMin = Vector2.zero;
         selectionFrame.anchorMax = Vector2.one;
-
         selectionFrame.offsetMin = Vector2.zero;
         selectionFrame.offsetMax = Vector2.zero;
-    }
 
-    public void EnablePacienteUI()
-    {
-        uiEnabled = true;
-        gameObject.SetActive(true);
+        selectionFrame.localScale = Vector3.one;
+        selectionFrame.localRotation = Quaternion.identity;
 
-        if (widgets.Count > 0)
-        {
-            selectedIndex = 0;
-            MoveSelection();
-        }
+        Debug.Log("SelectionFrame movido a: " + selectionFrame.parent.name);
     }
 
     public void DisablePacienteUI()
     {
         uiEnabled = false;
-        gameObject.SetActive(false);
+
+        if (selectionFrame != null)
+            selectionFrame.gameObject.SetActive(false);
+
+        if (widgetParent != null)
+            widgetParent.gameObject.SetActive(false);
+    }
+
+    public void EnablePacienteUI()
+    {
+        uiEnabled = true;
+
+        if (widgetParent != null)
+            widgetParent.gameObject.SetActive(true);
+
+        if (selectionFrame != null)
+            selectionFrame.gameObject.SetActive(true);
+
+        if (widgets.Count > 0)
+        {
+            selectedIndex = 0;
+            MoveSelection();
+            PointArrowToSelectedPatient();
+        }
+        else
+        {
+            Debug.LogWarning("No hay widgets todavía para colocar el SelectionFrame");
+        }
     }
 }

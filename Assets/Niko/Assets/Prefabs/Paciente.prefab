@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 5158682763459151533}
   m_Layer: 7
   m_Name: Paciente
-  m_TagString: Untagged
+  m_TagString: Patient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
