@@ -54,6 +54,30 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 1043916883304448
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741008505593856
+    m_Localized: Made By
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742312430821376
+    m_Localized: Programmers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1744797031653376
+    m_Localized: Artists
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746815997632512
+    m_Localized: 'Original Idea:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748284473794560
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
