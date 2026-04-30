@@ -37,7 +37,10 @@ public class ControlHintsManager : MonoBehaviour
     }
     public void ShowOnFootHints()
     {
-        ShowHints("Move: Left Stick\nInteract: Y\nHold: A");
+        ShowHints(
+            "Move:                    <sprite name=\"Botons_5\">\n" +
+            "Interact:                 <sprite name=\"Botons_4\">\n" +
+            "Hold:                    <sprite name=\"Botons_0\">");
     }
 
     public void ShowAmbulanceEnterHints()
@@ -47,7 +50,10 @@ public class ControlHintsManager : MonoBehaviour
 
     public void ShowDrivingHints()
     {
-        ShowHints("Pilot: Stick (L) forward / back\nCopilot: Stick (L) left / right\nPausa: Start");
+        ShowHints(
+            "Pilot: Forward / Back           <sprite name=\"Botons_5\">\n" +
+            "Copilot: Left / Right           <sprite name=\"Botons_5\">\n" +
+            "Pausa:           <sprite name=\"Botons_2\">");
     }
 
     public void ShowStretcherSpawnHints()
@@ -57,7 +63,7 @@ public class ControlHintsManager : MonoBehaviour
 
     public void ShowStretcherCarryHints()
     {
-        ShowHints("Move the stretcher: hold A + move");
+        ShowHints("Move the stretcher:\nHold               <sprite name=\"Botons_0\">  +                <sprite name=\"Botons_5\">");
     }
 }
 

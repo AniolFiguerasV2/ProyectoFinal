@@ -73,11 +73,11 @@ public class GuidedTutorialManager : MonoBehaviour
 
     private System.Collections.IEnumerator DrivingObjectiveSequence()
     {
-        SetObjective("Press X to select a patient and go pick them up");
+        SetObjective("Only P1 press <sprite name=\"Botons_3\"> to select a patient and go pick them up");
 
         yield return new WaitForSeconds(5f);
 
-        SetObjective("Pilot: move forward and back. Copilot: turn left and right.");
+        SetObjective("Pilot: Move forward and back\n Copilot: turn left and right");
 
         yield return new WaitForSeconds(5f);
 

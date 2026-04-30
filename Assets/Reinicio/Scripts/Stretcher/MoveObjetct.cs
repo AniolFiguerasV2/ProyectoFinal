@@ -38,17 +38,20 @@ public class MoveObject : MonoBehaviour
         bool isHolding = handle1.IsBeingHeld || handle2.IsBeingHeld;
         bool bothHolding = handle1.IsBeingHeld && handle2.IsBeingHeld;
 
-        if (bothHolding)
+        if (isHolding)
         {
-            transform.position = middleObject.position;
-            transform.rotation = middleObject.rotation;
-            body.linearVelocity = Vector3.zero;
-
             if (player1UI != null)
                 player1UI.SetActive(false);
 
             if (player2UI != null)
                 player2UI.SetActive(false);
+        }
+
+        if (bothHolding)
+        {
+            transform.position = middleObject.position;
+            transform.rotation = middleObject.rotation;
+            body.linearVelocity = Vector3.zero;
 
             if (!interactPlayed)
             {
@@ -56,12 +59,14 @@ public class MoveObject : MonoBehaviour
                 animator1.SetTrigger("Intercat");
                 interactPlayed = true;
             }
-             ControlHintsManager.Instance.ShowStretcherCarryHints();                      
+
+            ControlHintsManager.Instance.ShowStretcherCarryHints();
         }
         else
         {
             interactPlayed = false;
         }
+
         if (wasHolding && !isHolding)
         {
             if (ControlHintsManager.Instance != null)
@@ -69,8 +74,6 @@ public class MoveObject : MonoBehaviour
         }
 
         wasHolding = isHolding;
-
-
     }
 
     void TryScore()

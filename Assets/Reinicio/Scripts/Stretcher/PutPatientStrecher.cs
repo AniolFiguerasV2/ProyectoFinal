@@ -67,6 +67,16 @@ public class PutPatientStrecher : MonoBehaviour
                 PatientSpawner.Instance.ActivateNormalPatientMode();
             }
 
+            GuidedTutorialManager tutorial = FindObjectOfType<GuidedTutorialManager>();
+
+            if (tutorial != null)
+            {
+                tutorial.SetTemporaryObjective(
+                    "Pick up the remaining patients",
+                    7f
+                );
+            }
+
             ScoreManager.Instance.AddPoints(300);
 
             Destroy(gameObject);

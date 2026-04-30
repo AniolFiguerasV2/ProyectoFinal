@@ -190,7 +190,16 @@ public class AmbulanceController : MonoBehaviour
 
             if (guidedTutorialManager != null)
             {
-                guidedTutorialManager.ShowDrivingStep();
+                MoveObject stretcher = FindObjectOfType<MoveObject>();
+
+                if (stretcher != null && stretcher.hasPatient)
+                {
+                    guidedTutorialManager.SetTemporaryObjective("Return to the hospital and deliver the patient at the door",7f);
+                }
+                else
+                {
+                    guidedTutorialManager.ShowDrivingStep();
+                }
             }
         }
     }
