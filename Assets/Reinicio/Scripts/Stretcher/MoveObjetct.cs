@@ -31,6 +31,7 @@ public class MoveObject : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
         strecher.transform.position = spawpoint.transform.position;
+        IsInside = true;
     }
 
     void Update()

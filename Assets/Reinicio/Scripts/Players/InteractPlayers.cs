@@ -29,6 +29,9 @@ public class InteractPlayers : MonoBehaviour
     public void Start()
     {
         currentEntry = null;
+
+        if (chargeStrecher != null)
+            chargeStrecher.IsInside = true;
     }
 
     private void Update()

@@ -71,6 +71,7 @@ public class PutPatientStrecher : MonoBehaviour
 
             if (tutorial != null)
             {
+                tutorial.ShowGameplayUI();
                 tutorial.SetTemporaryObjective(
                     "Pick up the remaining patients",
                     7f
