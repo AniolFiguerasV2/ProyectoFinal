@@ -62,7 +62,9 @@ public class InteractPlayers : MonoBehaviour
                 backDoor.position,
                 backDoor.rotation
             );
+
             chargeStrecher.IsInside = false;
+
         }
         else
         {
@@ -70,7 +72,9 @@ public class InteractPlayers : MonoBehaviour
                 spawnStrecher.position,
                 spawnStrecher.rotation
             );
+
             chargeStrecher.IsInside = true;
+
             if (chargeStrecher.IsInside && chargeStrecher.hasPatient && !chargeStrecher.alreadyScored)
             {
                 ScoreManager.Instance.AddPoints(100);

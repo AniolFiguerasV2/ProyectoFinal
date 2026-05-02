@@ -18,6 +18,7 @@ public class AmbulanceController : MonoBehaviour
     public float stopThreshold = 0.5f; //Velocidad minima para ser considerado ser detenido
 
     public GameObject spawnpoint;
+    public AudioSource sirenSound;
 
     private WheelControl[] wheels;
     private Rigidbody rb;
@@ -42,10 +43,14 @@ public class AmbulanceController : MonoBehaviour
             if (value)
             {
                 CamerasManager.ActiveAmbulanceCamera();
+                if (sirenSound != null && !sirenSound.isPlaying)
+                    sirenSound.Play();
             }
             else
             {
                 CamerasManager.ActivePlayersCamera();
+                if (sirenSound != null && sirenSound.isPlaying)
+                    sirenSound.Stop();
             }
             _allplayersin = value;
         }

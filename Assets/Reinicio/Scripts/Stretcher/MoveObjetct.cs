@@ -58,6 +58,7 @@ public class MoveObject : MonoBehaviour
             {
                 animator.SetTrigger("Intercat");
                 animator1.SetTrigger("Intercat");
+
                 interactPlayed = true;
             }
 

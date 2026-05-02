@@ -11,6 +11,7 @@ public class Handles : MonoBehaviour
     private int holder = 0;
 
     public bool IsBeingHeld => holder != 0;
+    public AudioSource sonidoAgarrar;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -79,6 +80,10 @@ public class Handles : MonoBehaviour
     private void Grab(int player)
     {
         holder = player;
+        if (sonidoAgarrar != null)
+        {
+            sonidoAgarrar.PlayOneShot(sonidoAgarrar.clip);
+        }
     }
 
     private void Release()

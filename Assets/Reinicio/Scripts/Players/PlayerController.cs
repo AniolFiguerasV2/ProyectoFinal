@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float gravityMultiplier = 0.5f;
     public float rotationSpeed = 10f;
     public Animator animator;
+    public AudioSource sonidocorrer;
 
     private void Start()
     {
@@ -29,10 +30,25 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(movementX, 0f, movementY);
 
-        if (input == Vector2.zero)
+        if (input == Vector2.zero) { 
+
             animator.SetFloat("Speed", 0);
+
+            if (sonidocorrer.isPlaying)
+            {
+                sonidocorrer.Stop();
+            }
+        }
         else
+        {
             animator.SetFloat("Speed", 1);
+
+            if (!sonidocorrer.isPlaying)
+            {
+                sonidocorrer.Play();
+            }
+        }
+
 
         if (movement.magnitude > 0.01f)
         {
