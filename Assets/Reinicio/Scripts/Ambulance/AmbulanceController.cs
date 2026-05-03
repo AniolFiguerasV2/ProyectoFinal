@@ -24,6 +24,7 @@ public class AmbulanceController : MonoBehaviour
     private Rigidbody rb;
 
     public GuidedTutorialManager guidedTutorialManager;
+    public PlayerLabelController playerLabelController;
 
 
     public bool autoBraking = false;
@@ -188,8 +189,12 @@ public class AmbulanceController : MonoBehaviour
         if (currentPlayerin >= RequiredPlayerin)
         {
             Debug.Log("Ahora sí se activa cámara ambulancia");
+
             Allplayersin = true;
             autoBraking = false;
+
+            if (playerLabelController != null)
+                playerLabelController.SetInVehicle(steeringPlayerId);
 
             ControlHintsManager.Instance.ShowDrivingHints();
 
@@ -199,7 +204,10 @@ public class AmbulanceController : MonoBehaviour
 
                 if (stretcher != null && stretcher.hasPatient)
                 {
-                    guidedTutorialManager.SetTemporaryObjective("Return to the hospital and deliver the patient at the door",7f);
+                    guidedTutorialManager.SetTemporaryObjective(
+                        "Return to the hospital and deliver the patient at the door",
+                        7f
+                    );
                 }
                 else
                 {
@@ -242,6 +250,9 @@ public class AmbulanceController : MonoBehaviour
         {
             Allplayersin = false;
             autoBraking = true;
+
+            if (playerLabelController != null)
+                playerLabelController.SetOnFoot();
         }
         ControlHintsManager.Instance.ShowOnFootHints();
 
