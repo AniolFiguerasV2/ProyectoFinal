@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class StartTutorialManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class StartTutorialManager : MonoBehaviour
     [Header("Menú de pausa")]
     public GameObject pausePanel;
     public GameObject optionsPanel;
+    public GameObject resumeButton;
+    public GameObject optionsFirstButton;
 
     private bool isPaused = false;
 
@@ -61,6 +64,9 @@ public class StartTutorialManager : MonoBehaviour
 
         Time.timeScale = 0f;
         isPaused = true;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void ResumeGame()
@@ -76,12 +82,18 @@ public class StartTutorialManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
         optionsPanel.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
     }
 
     public void CloseOptions()
     {
         optionsPanel.SetActive(false);
         pausePanel.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void ReturnToMainMenu()
