@@ -7,17 +7,9 @@ public class InteractPlayers : MonoBehaviour
 
     private bool isInsideVehicle = false;
     private bool inStretcherRange = false;
-    public bool Isback = false;
 
     public AmbulanceEntry currentEntry;
     private AmbulanceController currentAmbulance;
-
-    public MoveObject chargeStrecher;
-
-    public Transform spawnStrecher;
-
-    //Objeto donde se spawneara la camilla
-    public Transform backDoor;
 
     public GameObject playervisual;
     //Objeto de camilla 
@@ -29,9 +21,6 @@ public class InteractPlayers : MonoBehaviour
     public void Start()
     {
         currentEntry = null;
-
-        if (chargeStrecher != null)
-            chargeStrecher.IsInside = true;
     }
 
     private void Update()
@@ -48,43 +37,6 @@ public class InteractPlayers : MonoBehaviour
             ExitVehicle();
         else
             TryEnterVehicle();
-        if (Isback)
-        {
-            Strecher();
-        }
-    }
-
-    void Strecher()
-    {
-        if (chargeStrecher.IsInside)
-        {
-            strecher.transform.SetPositionAndRotation(
-                backDoor.position,
-                backDoor.rotation
-            );
-
-            chargeStrecher.IsInside = false;
-
-        }
-        else
-        {
-            strecher.transform.SetPositionAndRotation(
-                spawnStrecher.position,
-                spawnStrecher.rotation
-            );
-
-            chargeStrecher.IsInside = true;
-
-            if (chargeStrecher.IsInside && chargeStrecher.hasPatient && !chargeStrecher.alreadyScored)
-            {
-                ScoreManager.Instance.AddPoints(100);
-
-                chargeStrecher.alreadyScored = true;
-            }
-        }
-
-        chargeStrecher.body.linearVelocity = Vector3.zero;
-        chargeStrecher.body.angularVelocity = Vector3.zero;
     }
     void TryEnterVehicle()
     {
@@ -115,10 +67,6 @@ public class InteractPlayers : MonoBehaviour
                 currentEntry = entry;
             }
         }
-        if (other.gameObject.layer == 10)
-        {
-            Isback = true;
-        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -129,10 +77,6 @@ public class InteractPlayers : MonoBehaviour
             {
                 currentEntry = null;
             }
-        }
-        if (other.gameObject.layer == 10)
-        {
-            Isback = false;
         }
     }
 

@@ -12,8 +12,9 @@ public class MoveObject : MonoBehaviour
 
     public bool ZonaCarga = false;
 
-    public bool IsInside = false;
+    public bool IsInside = true;
     public Transform middleObject;
+    public Transform backDoor;
     public Rigidbody body;
     public Animator animator;
     public Animator animator1;
@@ -26,6 +27,20 @@ public class MoveObject : MonoBehaviour
     public GameObject player2UI;
 
     private bool wasHolding = false;
+
+    public static MoveObject Instance;
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -78,12 +93,39 @@ public class MoveObject : MonoBehaviour
         wasHolding = isHolding;
     }
 
-    void TryScore()
+    public void SpawnStrecher()
     {
-        if (IsInside && hasPatient && !alreadyScored)
+        if (IsInside)
         {
-            alreadyScored = true;
-            ScoreManager.Instance.AddPoints(100);
+            strecher.transform.SetPositionAndRotation(
+                backDoor.position,
+                backDoor.rotation
+            );
+            IsInside = false;
         }
+
+        body.linearVelocity = Vector3.zero;
+        body.angularVelocity = Vector3.zero;
+    }
+
+    public void DespawnStrecher()
+    {
+        if (!IsInside)
+        {
+            strecher.transform.SetPositionAndRotation(
+                spawpoint.transform.position,
+                spawpoint.transform.rotation
+            );
+
+            IsInside = true;
+
+            if (IsInside && hasPatient && !alreadyScored)
+            {
+                ScoreManager.Instance.AddPoints(100);
+                alreadyScored = true;
+            }
+        }
+        body.linearVelocity = Vector3.zero;
+        body.angularVelocity = Vector3.zero;
     }
 }
