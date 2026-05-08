@@ -67,7 +67,7 @@ public class PutPatientStrecher : MonoBehaviour
                 PatientSpawner.Instance.ActivateNormalPatientMode();
             }
 
-            GuidedTutorialManager tutorial = FindObjectOfType<GuidedTutorialManager>();
+            GuidedTutorialManager tutorial = FindFirstObjectByType<GuidedTutorialManager>();
 
             if (tutorial != null)
             {

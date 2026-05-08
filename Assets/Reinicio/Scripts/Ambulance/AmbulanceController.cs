@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class AmbulanceController : MonoBehaviour
@@ -54,8 +55,12 @@ public class AmbulanceController : MonoBehaviour
                     sirenSound.Stop();
             }
             _allplayersin = value;
+
+            OnAllPlayersInChange.Invoke(_allplayersin);
         }
     }
+
+    public UnityEvent<bool> OnAllPlayersInChange;
 
     void Start()
     {

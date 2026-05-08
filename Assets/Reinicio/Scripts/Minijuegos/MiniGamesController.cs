@@ -1,146 +1,50 @@
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MiniGamesController : MonoBehaviour
 {
-    [Header("Referencias")]
+    [Header("References")]
     public MoveObject moveObject;
+    public AmbulanceController ambulanceController;
 
-    [Header("MiniGamesReferences")]
-    public MiniGame1 miniGame1;
+    [Header("MiniGames")]
+    public List<MiniGameBase> miniGamesList;
 
-    private PatientDeathTime patient;
-    private PatientDeathTime cachedPatient;
+    [Header("Private Var")]
+    private MiniGameBase currentMiniGame;
 
-    [Header("Canvases")]
-    public GameObject normalCanvas;
-    public GameObject patientAmbulanceCanvas;
-
-    [Header("UI")]
-    public TextMeshProUGUI timerText;
-
-    private bool activated = false;
-    private bool lifetimeCapped = false;
-
-    private bool miniGameActive = false;
-    private bool miniGameFinished = false;
-
-    void Update()
+    private void Start()
     {
-        cachedPatient = moveObject.GetComponentInChildren<PatientDeathTime>();
+        ambulanceController.OnAllPlayersInChange.AddListener(OnAllPlayersInChange);
+    }
 
-        if (cachedPatient == null)
+    private void OnAllPlayersInChange(bool allIn)
+    {
+        if(allIn)
         {
-            ResetToNormal();
-            return;
-        }
+            bool inAmbulance = moveObject.IsInside && moveObject.hasPatient;
+            bool playersInside = ambulanceController.Allplayersin;
 
-        patient = cachedPatient;
-
-        bool inAmbulance = moveObject.IsInside && moveObject.hasPatient;
-
-        UpdateTimerUI();
-
-        if (!inAmbulance)
-        {
-            if (activated)
-                ResetToNormal();
-
-            return;
-        }
-
-        if (!activated)
-        {
-            ActivateAmbulanceCanvas();
-            activated = true;
-
-            ApplyLifetimeCap();
-        }
-
-        float remaining = patient.Lifetime - patient.Timer;
-
-        if (remaining < 40f)
-        {
-            if (!miniGameActive && !miniGameFinished && miniGame1 != null)
+            if (inAmbulance && playersInside && currentMiniGame == null)
             {
-                StartMiniGame();
+                SelectRandomMiniGame();
             }
-        }
-    }
-
-    void StartMiniGame()
-    {
-        miniGameActive = true;
-
-        miniGame1.gameObject.SetActive(true);
-
-        miniGame1.OnMiniGameFinished += HandleMiniGameResult;
-    }
-
-    void HandleMiniGameResult(bool success)
-    {
-        miniGame1.OnMiniGameFinished -= HandleMiniGameResult;
-
-        miniGameActive = false;
-        miniGameFinished = true;
-
-        if (patient == null) return;
-
-        if (success)
-        {
-            patient.SetTimer(patient.Timer - 20f);
         }
         else
         {
-            patient.SetTimer(patient.Timer + 10f);
+            currentMiniGame.Fail();
         }
     }
 
-    void ActivateAmbulanceCanvas()
+    private void SelectRandomMiniGame()
     {
-        normalCanvas.SetActive(false);
-        patientAmbulanceCanvas.SetActive(true);
-    }
+        int index = Random.Range(0, miniGamesList.Count);
 
-    void ResetToNormal()
-    {
-        activated = false;
-        lifetimeCapped = false;
+        currentMiniGame = miniGamesList[index];
 
-        miniGameActive = false;
-        miniGameFinished = false;
-
-        patient = null;
-        cachedPatient = null;
-
-        patientAmbulanceCanvas.SetActive(false);
-        normalCanvas.SetActive(true);
-    }
-
-    void UpdateTimerUI()
-    {
-        float remaining = patient.Lifetime - patient.Timer;
-
-        int seconds = Mathf.CeilToInt(remaining);
-
-        if (timerText != null)
-        {
-            timerText.text = $"{seconds:00}";
-        }
-    }
-
-    void ApplyLifetimeCap()
-    {
-        if (patient == null || lifetimeCapped) return;
-
-        if (patient.Lifetime > 100f)
-        {
-            float excess = patient.Lifetime - 100f;
-
-            patient.SetLifetime(100f);
-            patient.SetTimer(Mathf.Max(0f, patient.Timer - excess));
-        }
-
-        lifetimeCapped = true;
+        //currentMiniGame.StartMinigame(Patient.GetComponent<PatientDeathTime>());
+        //falta singletone de patient
     }
 }
