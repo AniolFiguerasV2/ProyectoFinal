@@ -5,6 +5,12 @@ public class InteractPlayers : MonoBehaviour
 {
     [SerializeField] private int playerId = 1;
 
+    [Header("Camilla")]
+    public bool Isback = false;
+    public MoveObject chargeStrecher;
+    public Transform spawnStrecher;
+    public Transform backDoor;
+
     private bool isInsideVehicle = false;
     private bool inStretcherRange = false;
 
@@ -21,6 +27,9 @@ public class InteractPlayers : MonoBehaviour
     public void Start()
     {
         currentEntry = null;
+
+        if (chargeStrecher != null)
+            chargeStrecher.IsInside = true;
     }
 
     private void Update()
@@ -30,25 +39,77 @@ public class InteractPlayers : MonoBehaviour
             HandleInteract();
         }
     }
-    
+
     void HandleInteract()
     {
-        if(isInsideVehicle)
+        if (isInsideVehicle)
+        {
             ExitVehicle();
-        else
-            TryEnterVehicle();
+            return;
+        }
+
+        if (Isback)
+        {
+            Strecher();
+            return;
+        }
+
+        TryEnterVehicle();
     }
+
+    void Strecher()
+    {
+        if (!Isback) return;
+        if (chargeStrecher == null) return;
+        if (strecher == null) return;
+        if (spawnStrecher == null) return;
+        if (backDoor == null) return;
+
+        if (chargeStrecher.IsInside)
+        {
+            strecher.transform.SetPositionAndRotation(
+                backDoor.position,
+                backDoor.rotation
+            );
+
+            chargeStrecher.IsInside = false;
+        }
+        else
+        {
+            strecher.transform.SetPositionAndRotation(
+                spawnStrecher.position,
+                spawnStrecher.rotation
+            );
+
+            chargeStrecher.IsInside = true;
+
+            if (chargeStrecher.IsInside &&
+                chargeStrecher.hasPatient &&
+                !chargeStrecher.alreadyScored)
+            {
+                ScoreManager.Instance.AddPoints(100);
+                chargeStrecher.alreadyScored = true;
+            }
+        }
+
+        chargeStrecher.body.linearVelocity = Vector3.zero;
+        chargeStrecher.body.angularVelocity = Vector3.zero;
+    }
+
     void TryEnterVehicle()
     {
         if (currentEntry == null) return;
+
         currentAmbulance = currentEntry.ambulance;
         currentEntry.Available = false;
-        currentEntry.visuals.SetActive(false);
+
+        if (currentEntry.visuals != null)
+            currentEntry.visuals.SetActive(false);
+
         currentAmbulance.EnterVehicle(this, currentEntry.ControlsStearing);
 
         isInsideVehicle = true;
     }
-
     void ExitVehicle()
     {
         currentAmbulance.ExitVehicle(this);
