@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PatientDeathTime : MonoBehaviour
@@ -20,6 +21,19 @@ public class PatientDeathTime : MonoBehaviour
     public float Timer => timer;
 
     public PatientSpawner spawner;
+    public static PatientDeathTime Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {

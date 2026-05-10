@@ -25,6 +25,8 @@ public class Car : MonoBehaviour
 
     void Update()
     {
+        if (!carnavmesh.enabled || !carnavmesh.isOnNavMesh)
+            return;
         if (HasReachWayPoint())
             GoToNextWaypoint();
 

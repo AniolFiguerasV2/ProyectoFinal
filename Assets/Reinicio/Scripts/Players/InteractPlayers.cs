@@ -132,6 +132,7 @@ public class InteractPlayers : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (isInsideVehicle) return;
         if (other.TryGetComponent(out AmbulanceEntry entry))
         {
             if (currentEntry == entry)

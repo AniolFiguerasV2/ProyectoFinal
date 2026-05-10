@@ -8,12 +8,14 @@ public class MiniGamesController : MonoBehaviour
     [Header("References")]
     public MoveObject moveObject;
     public AmbulanceController ambulanceController;
+    //private PatientDeathTime patient;
 
     [Header("MiniGames")]
     public List<MiniGameBase> miniGamesList;
 
     [Header("Private Var")]
     private MiniGameBase currentMiniGame;
+
 
     private void Start()
     {
@@ -34,7 +36,11 @@ public class MiniGamesController : MonoBehaviour
         }
         else
         {
-            currentMiniGame.Fail();
+            if(currentMiniGame != null)
+            {
+                currentMiniGame.Fail();
+                currentMiniGame = null;
+            }
         }
     }
 
@@ -44,7 +50,7 @@ public class MiniGamesController : MonoBehaviour
 
         currentMiniGame = miniGamesList[index];
 
-        //currentMiniGame.StartMinigame(Patient.GetComponent<PatientDeathTime>());
+        currentMiniGame.StartMinigame(PatientDeathTime.Instance.GetComponent<PatientDeathTime>());
         //falta singletone de patient
     }
 }
