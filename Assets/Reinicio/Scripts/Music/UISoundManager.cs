@@ -13,24 +13,24 @@ public class UISoundManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
     public void PlaySelect()
     {
-        if (audioSource != null && selectClip != null)
-            audioSource.PlayOneShot(selectClip);
+        audioSource.PlayOneShot(selectClip);
     }
 
     public void PlayConfirm()
     {
-        if (audioSource != null && confirmClip != null)
-            audioSource.PlayOneShot(confirmClip);
+        audioSource.PlayOneShot(confirmClip);
     }
 
     public void PlayBack()
     {
-        if (audioSource != null && backClip != null)
-            audioSource.PlayOneShot(backClip);
+        audioSource.PlayOneShot(backClip);
     }
 }

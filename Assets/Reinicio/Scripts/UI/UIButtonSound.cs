@@ -1,15 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIButtonSound : MonoBehaviour, ISelectHandler, IPointerEnterHandler
+public class UIButtonSound : MonoBehaviour, ISelectHandler
 {
     public void OnSelect(BaseEventData eventData)
-    {
-        if (UISoundManager.Instance != null)
-            UISoundManager.Instance.PlaySelect();
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
     {
         if (UISoundManager.Instance != null)
             UISoundManager.Instance.PlaySelect();
