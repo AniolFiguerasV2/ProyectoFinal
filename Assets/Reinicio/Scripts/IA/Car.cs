@@ -52,7 +52,7 @@ public class Car : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ambulancia"))
+        if (collision.gameObject.CompareTag("Ambulance"))
         {
             carnavmesh.enabled = false;
             coll.isTrigger = false;

@@ -1,5 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NpcMovement : MonoBehaviour
@@ -12,18 +10,52 @@ public class NpcMovement : MonoBehaviour
     [Header("Pathfinding Parameters")]
     [SerializeField]
     float findWaypointRadius = 10f;
+
     [SerializeField]
-    [UnityEngine.Range(0f, 1f)]
+    [Range(0f, 1f)]
     float alignmentPriority = 0.7f;
+
     [SerializeField]
-    [UnityEngine.Range(0f, 1f)]
+    [Range(0f, 1f)]
     float distancePriority = 0.3f;
 
     Transform destination;
 
+    Rigidbody rb;
+
+    bool launched = false;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
+        // NPC estable mientras camina
+        rb.isKinematic = true;
+
         FindNextDestination();
+    }
+
+    void Update()
+    {
+        if (destination == null || launched)
+            return;
+
+        Vector3 dir = (destination.position - transform.position).normalized;
+
+        Quaternion targetRotation = Quaternion.LookRotation(dir);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.deltaTime
+        );
+
+        transform.position += dir * speed * Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, destination.position) <= minimumDistance)
+        {
+            FindNextDestination();
+        }
     }
 
     private void FindNextDestination()
@@ -41,6 +73,7 @@ public class NpcMovement : MonoBehaviour
         foreach (var item in waypoints)
         {
             Vector3 dir = item.transform.position - transform.position;
+
             float dist = dir.magnitude;
 
             if (dist < minimumDistance)
@@ -50,10 +83,14 @@ public class NpcMovement : MonoBehaviour
 
             float alignment = Vector3.Dot(transform.forward, dir);
 
-            // Closer = better score
-            float distanceScore = (alignmentPriority + distancePriority) - (dist / findWaypointRadius) * (alignmentPriority + distancePriority);
+            float distanceScore =
+                (alignmentPriority + distancePriority)
+                - (dist / findWaypointRadius)
+                * (alignmentPriority + distancePriority);
 
-            float score = alignment * alignmentPriority + distanceScore * distancePriority;
+            float score =
+                alignment * alignmentPriority
+                + distanceScore * distancePriority;
 
             if (score > bestScore)
             {
@@ -61,34 +98,34 @@ public class NpcMovement : MonoBehaviour
                 destination = item.transform;
             }
         }
-
     }
 
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (destination == null)
+        if (launched)
             return;
 
-        Vector3 dir = (destination.position - transform.position).normalized;
-
-        Quaternion targetRotation = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            targetRotation,
-            rotationSpeed * Time.deltaTime
-        );
-
-        /*transform.position = Vector3.MoveTowards(
-            transform.position,
-            destination.position,
-            speed * Time.deltaTime
-        );*/
-
-        transform.position += dir * speed * Time.deltaTime;
-
-        if (Vector3.Distance(transform.position, destination.position) <= minimumDistance)
+        if (collision.gameObject.CompareTag("Ambulance"))
         {
-            FindNextDestination();
+            launched = true;
+
+            // ACTIVAR físicas
+            rb.isKinematic = false;
+
+            Vector3 forceDir =
+                (transform.position - collision.transform.position).normalized;
+
+            float crashForce = collision.relativeVelocity.magnitude;
+
+            rb.AddForce(
+                forceDir * crashForce * 6f + Vector3.up * 5f,
+                ForceMode.Impulse
+            );
+
+            rb.AddTorque(
+                Random.insideUnitSphere * 15f,
+                ForceMode.Impulse
+            );
         }
     }
 }
