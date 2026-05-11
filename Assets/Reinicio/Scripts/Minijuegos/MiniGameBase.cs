@@ -29,7 +29,7 @@ public abstract class MiniGameBase : ScriptableObject
 
         if (lifeTime > normalLife)
         {
-            _patientOnStretcher.SetLifetime(normalLife);
+            //_patientOnStretcher.SetLifetime(normalLife);
         }
     }
 

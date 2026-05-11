@@ -22,11 +22,11 @@ public class ButtonsMiniGame : MiniGameBase
     public override void Fail()
     {
         base.Fail();
-        Destroy(uiInstance.gameObject);
+        //Destroy(uiInstance.gameObject);
     }
     public override void Succes()
     {
         base.Succes();
-        Destroy(uiInstance.gameObject);
+        //Destroy(uiInstance.gameObject);
     }
 }
