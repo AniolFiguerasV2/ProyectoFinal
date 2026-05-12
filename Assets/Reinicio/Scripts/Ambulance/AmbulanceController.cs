@@ -190,7 +190,6 @@ public class AmbulanceController : MonoBehaviour
         }
 
         currentPlayerin++;
-        Debug.Log("Después de entrar, currentPlayerin = " + currentPlayerin + " / RequiredPlayerin = " + RequiredPlayerin);
 
         if (controlsstearing)
         {
@@ -199,8 +198,6 @@ public class AmbulanceController : MonoBehaviour
 
         if (currentPlayerin >= RequiredPlayerin)
         {
-            Debug.Log("Ahora sí se activa cámara ambulancia");
-
             Allplayersin = true;
             autoBraking = false;
 

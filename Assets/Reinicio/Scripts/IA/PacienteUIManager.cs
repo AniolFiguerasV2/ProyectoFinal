@@ -134,8 +134,6 @@ public class PacienteUIManager : MonoBehaviour
 
         selectionFrame.localScale = Vector3.one;
         selectionFrame.localRotation = Quaternion.identity;
-
-        Debug.Log("SelectionFrame movido a: " + selectionFrame.parent.name);
     }
 
     public void DisablePacienteUI()
@@ -164,10 +162,6 @@ public class PacienteUIManager : MonoBehaviour
             selectedIndex = 0;
             MoveSelection();
             PointArrowToSelectedPatient();
-        }
-        else
-        {
-            Debug.LogWarning("No hay widgets todavía para colocar el SelectionFrame");
         }
     }
 }

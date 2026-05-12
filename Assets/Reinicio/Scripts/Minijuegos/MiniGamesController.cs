@@ -36,11 +36,12 @@ public class MiniGamesController : MonoBehaviour
         }
         else
         {
-            if(currentMiniGame != null)
+            if(currentMiniGame != null && !currentMiniGame.finished)
             {
                 currentMiniGame.Fail();
-                currentMiniGame = null;
             }
+
+            currentMiniGame = null;
         }
     }
 
@@ -48,9 +49,18 @@ public class MiniGamesController : MonoBehaviour
     {
         int index = Random.Range(0, miniGamesList.Count);
 
-        currentMiniGame = miniGamesList[index];
+        currentMiniGame = Instantiate(miniGamesList[index]);
+
+        currentMiniGame.OnMinigameFinished += HandleMiniGameFinished;
 
         currentMiniGame.StartMinigame(PatientDeathTime.Instance.GetComponent<PatientDeathTime>());
-        //falta singletone de patient
+    }
+
+    private void HandleMiniGameFinished(MiniGameBase game)
+    {
+        if (currentMiniGame == game)
+        {
+            currentMiniGame = null;
+        }
     }
 }

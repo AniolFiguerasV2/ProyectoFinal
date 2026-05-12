@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 
 
 public abstract class MiniGameBase : ScriptableObject
@@ -9,10 +10,14 @@ public abstract class MiniGameBase : ScriptableObject
     [Header("Patient Life")]
     public float normalLife = 100f;
     public float addLife = 40f;
-    public float removeLife = -40f;
+    public float removeLife = -10f;
 
     [Header("Referencias")]
     private PatientDeathTime _patientOnStretcher;
+
+    [NonSerialized] public bool finished;
+
+    public Action<MiniGameBase> OnMinigameFinished;
 
 
     public virtual void StartMinigame(PatientDeathTime patientDeathTime)
@@ -29,7 +34,7 @@ public abstract class MiniGameBase : ScriptableObject
 
         if (lifeTime > normalLife)
         {
-            //_patientOnStretcher.SetLifetime(normalLife);
+            _patientOnStretcher.SetLifetime(normalLife);
         }
     }
 
@@ -44,6 +49,8 @@ public abstract class MiniGameBase : ScriptableObject
         float removeLifeTime = Mathf.Max(0, _patientOnStretcher.Lifetime + removeLife);
 
         _patientOnStretcher.SetLifetime(removeLifeTime);
+
+        ActivateCanvas();
     }
 
     public void DesactivateCanvas()

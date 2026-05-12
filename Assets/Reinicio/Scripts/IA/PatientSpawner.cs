@@ -47,6 +47,12 @@ public class PatientSpawner : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        Debug.Log(patients.Count);
+        //AQUÍ DEJAN DE EXISTIR LOS NPCS
+    }
+
     private void TrySpawnNPC()
     {
         Vector3 randomPos = GetRandomPoint();
@@ -62,6 +68,7 @@ public class PatientSpawner : MonoBehaviour
                 PatientDeathTime npc = Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
 
                 npc.spawner = this;
+                //AQUÍ EXISTEN LOS NPCS
 
                 patients.Add(npc);
 
@@ -80,10 +87,13 @@ public class PatientSpawner : MonoBehaviour
     {
         patients.Remove(deathNPC);
 
-        if (normalModeActive)
+        if (!normalModeActive)
         {
-            RefillNPCS();
+            ActivateNormalPatientMode();
+            return;
         }
+
+        RefillNPCS();
     }
 
     private void RefillNPCS()
@@ -94,6 +104,11 @@ public class PatientSpawner : MonoBehaviour
     private void SpawnUntilCount(int targetCount)
     {
         int safety = 0;
+        foreach (var npc in patients)
+        {
+            Destroy(npc);
+        }
+        patients.Clear();
 
         while (patients.Count < targetCount && safety < 100)
         {

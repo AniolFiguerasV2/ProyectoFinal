@@ -4,6 +4,7 @@ public class MainUI : MonoBehaviour
 {
     public static MainUI instance;
     public GameObject normalCanvasPrefab;
+    public Canvas baseCanvas;
 
 
     private void Awake()
