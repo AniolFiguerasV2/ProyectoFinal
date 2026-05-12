@@ -19,7 +19,11 @@ public class AmbulanceController : MonoBehaviour
     public float stopThreshold = 0.5f; //Velocidad minima para ser considerado ser detenido
 
     public GameObject spawnpoint;
+
+    [Header("Audio")]
     public AudioSource sirenSound;
+    public AudioSource engineSound;
+    public float engineInputThreshold = 0.1f;
 
     private WheelControl[] wheels;
     private Rigidbody rb;
@@ -37,6 +41,7 @@ public class AmbulanceController : MonoBehaviour
     float hInput = 0;
 
     private bool _allplayersin;
+
     public bool Allplayersin
     {
         get => _allplayersin;
@@ -92,6 +97,7 @@ public class AmbulanceController : MonoBehaviour
                 hInput = steeringInput.x;
                 vInput = accelInput.y;
             }
+            HandleEngineSound();
         }
         if (!Allplayersin)
         {
@@ -261,5 +267,23 @@ public class AmbulanceController : MonoBehaviour
         }
         ControlHintsManager.Instance.ShowOnFootHints();
 
+    }
+
+    void HandleEngineSound()
+    {
+        if (engineSound == null) return;
+
+        bool pressingAccelerate = Mathf.Abs(vInput) > engineInputThreshold && Allplayersin;
+
+        if (pressingAccelerate)
+        {
+            if (!engineSound.isPlaying)
+                engineSound.Play();
+        }
+        else
+        {
+            if (engineSound.isPlaying)
+                engineSound.Stop();
+        }
     }
 }

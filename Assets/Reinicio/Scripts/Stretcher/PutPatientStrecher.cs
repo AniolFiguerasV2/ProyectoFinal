@@ -3,6 +3,8 @@ using UnityEngine;
 public class PutPatientStrecher : MonoBehaviour
 {
     private MoveObject currentMove;
+    [Header("Audio")]
+    public AudioClip patientDeliveredClip;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Strecher"))
@@ -75,6 +77,15 @@ public class PutPatientStrecher : MonoBehaviour
                 tutorial.SetTemporaryObjective(
                     "Pick up the remaining patients",
                     7f
+                );
+            }
+
+            if (patientDeliveredClip != null)
+            {
+                AudioSource.PlayClipAtPoint(
+                    patientDeliveredClip,
+                    transform.position,
+                    1f
                 );
             }
 

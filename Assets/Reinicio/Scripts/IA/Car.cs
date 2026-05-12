@@ -13,6 +13,10 @@ public class Car : MonoBehaviour
 
     public float knockback = 1.5f;
 
+    [Header("Audio")]
+    public AudioSource hornSource;
+    public AudioClip hornClip;
+
     Rigidbody rb;
     Collider coll;
 
@@ -54,10 +58,21 @@ public class Car : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ambulance"))
         {
+            if (hornSource != null && hornClip != null)
+            {
+                hornSource.PlayOneShot(hornClip);
+            }
+
             carnavmesh.enabled = false;
             coll.isTrigger = false;
             rb.isKinematic = false;
-            rb.linearVelocity = (transform.position - collision.transform.position).normalized * collision.collider.attachedRigidbody.linearVelocity.magnitude * knockback;
+
+            rb.linearVelocity =
+                (transform.position - collision.transform.position).normalized *
+                collision.collider.attachedRigidbody.linearVelocity.magnitude *
+                knockback;
+
+            Destroy(gameObject, 3f);
         }
     }
 

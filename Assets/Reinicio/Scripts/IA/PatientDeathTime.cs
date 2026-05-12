@@ -23,6 +23,9 @@ public class PatientDeathTime : MonoBehaviour
     public PatientSpawner spawner;
     public static PatientDeathTime Instance;
 
+    [Header("Audio")]
+    public AudioClip patientDeathClip;
+
     private void Awake()
     {
         if (Instance != null)
@@ -62,6 +65,15 @@ public class PatientDeathTime : MonoBehaviour
 
         if (timer >= lifetime)
         {
+            if (patientDeathClip != null)
+            {
+                AudioSource.PlayClipAtPoint(
+                    patientDeathClip,
+                    transform.position,
+                    1f
+                );
+            }
+
             ScoreManager.Instance.PenalizePatientDeath(this);
             GameManager.Instance.PatientDied();
             spawner.NotifyNPCDeath(this);

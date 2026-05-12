@@ -21,6 +21,9 @@ public class NpcMovement : MonoBehaviour
 
     Transform destination;
 
+    [Header("Audio")]
+    public AudioSource hitSound;
+
     Rigidbody rb;
 
     bool launched = false;
@@ -112,6 +115,11 @@ public class NpcMovement : MonoBehaviour
             // ACTIVAR físicas
             rb.isKinematic = false;
 
+            if (hitSound != null)
+            {
+                hitSound.Play();
+            }
+
             Vector3 forceDir =
                 (transform.position - collision.transform.position).normalized;
 
@@ -126,6 +134,8 @@ public class NpcMovement : MonoBehaviour
                 Random.insideUnitSphere * 15f,
                 ForceMode.Impulse
             );
+
+            Destroy(gameObject, 3f);
         }
     }
 }

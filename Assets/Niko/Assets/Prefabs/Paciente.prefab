@@ -191,6 +191,7 @@ MonoBehaviour:
   normalTime: 300
   hardTime: 150
   spawner: {fileID: 2553039957644161658, guid: 9b2bcb7fac85c284f99eda494d09d4fb, type: 3}
+  patientDeathClip: {fileID: 8300000, guid: 1049753a238b8c240b5d34241b3389a2, type: 3}
 --- !u!114 &5158682763459151533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47ad07ef9595ea47ab8080fb6696df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patientDeliveredClip: {fileID: 8300000, guid: a55351fe01198cc49a571e2df224f413, type: 3}
 --- !u!1001 &7000129476772248797
 PrefabInstance:
   m_ObjectHideFlags: 0
