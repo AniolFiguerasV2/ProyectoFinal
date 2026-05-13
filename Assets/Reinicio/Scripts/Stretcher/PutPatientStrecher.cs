@@ -3,8 +3,16 @@ using UnityEngine;
 public class PutPatientStrecher : MonoBehaviour
 {
     private MoveObject currentMove;
+    private MiniGamesController miniGamesController;
     [Header("Audio")]
     public AudioClip patientDeliveredClip;
+
+
+    private void Start()
+    {
+        miniGamesController = FindAnyObjectByType<MiniGamesController>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Strecher"))
@@ -13,7 +21,13 @@ public class PutPatientStrecher : MonoBehaviour
             if(move != null)
             {
                 move.hasPatient = true;
+                move.currentPatient = GetComponent<PatientDeathTime>();
                 currentMove = move;
+
+                if(miniGamesController != null)
+                {
+                    miniGamesController.StartMinigame(move.currentPatient);
+                }
             }
             Transform camilla = collision.transform;
             Transform slot = camilla.Find("ZonaPaciente");
@@ -53,6 +67,7 @@ public class PutPatientStrecher : MonoBehaviour
             if (currentMove != null)
             {
                 currentMove.hasPatient = false;
+                currentMove.currentPatient = null;
                 GameManager.Instance.PatientDelivered();
                 TimerGame.instance.AddTime(60);
             }

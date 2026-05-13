@@ -22,6 +22,8 @@ public class AmbulanceController : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource sirenSound;
+    public AudioSource playerSound1;
+    public AudioSource playerSound2;
     public AudioSource engineSound;
     public float engineInputThreshold = 0.1f;
 
@@ -52,12 +54,16 @@ public class AmbulanceController : MonoBehaviour
                 CamerasManager.ActiveAmbulanceCamera();
                 if (sirenSound != null && !sirenSound.isPlaying)
                     sirenSound.Play();
+                    playerSound1.Stop();
+                    playerSound2.Stop();
             }
             else
             {
                 CamerasManager.ActivePlayersCamera();
                 if (sirenSound != null && sirenSound.isPlaying)
                     sirenSound.Stop();
+                    playerSound1.Stop();
+                    playerSound2.Stop();
             }
             _allplayersin = value;
 
