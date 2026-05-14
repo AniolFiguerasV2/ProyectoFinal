@@ -4,6 +4,10 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour
 {
     public bool hasPatient = false;
+
+    [HideInInspector]
+    public PatientDeathTime currentPatient;
+
     public Handles handle1;
     public Handles handle2;
 

@@ -18,6 +18,7 @@ public class PacienteInfo : MonoBehaviour
     void Update()
     {
         if (patient == null){
+            Destroy(gameObject);
             return;
         }
 

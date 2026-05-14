@@ -21,22 +21,9 @@ public class PatientDeathTime : MonoBehaviour
     public float Timer => timer;
 
     public PatientSpawner spawner;
-    public static PatientDeathTime Instance;
 
     [Header("Audio")]
     public AudioClip patientDeathClip;
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
 
     private void Start()
     {

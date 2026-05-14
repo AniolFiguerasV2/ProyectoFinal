@@ -8,7 +8,6 @@ public class MiniGamesController : MonoBehaviour
     [Header("References")]
     public MoveObject moveObject;
     public AmbulanceController ambulanceController;
-    //private PatientDeathTime patient;
 
     [Header("MiniGames")]
     public List<MiniGameBase> miniGamesList;
@@ -16,46 +15,23 @@ public class MiniGamesController : MonoBehaviour
     [Header("Private Var")]
     private MiniGameBase currentMiniGame;
 
-
-    private void Start()
+    
+    public void StartMinigame(PatientDeathTime patient)
     {
-        ambulanceController.OnAllPlayersInChange.AddListener(OnAllPlayersInChange);
-    }
+        if (patient == null)
+            return;
+        if (currentMiniGame != null)
+            return;
 
-    private void OnAllPlayersInChange(bool allIn)
-    {
-        if(allIn)
-        {
-            bool inAmbulance = moveObject.IsInside && moveObject.hasPatient;
-            bool playersInside = ambulanceController.Allplayersin;
-
-            if (inAmbulance && playersInside && currentMiniGame == null)
-            {
-                SelectRandomMiniGame();
-            }
-        }
-        else
-        {
-            if(currentMiniGame != null && !currentMiniGame.finished)
-            {
-                currentMiniGame.Fail();
-            }
-
-            currentMiniGame = null;
-        }
-    }
-
-    private void SelectRandomMiniGame()
-    {
         int index = Random.Range(0, miniGamesList.Count);
 
         currentMiniGame = Instantiate(miniGamesList[index]);
 
         currentMiniGame.OnMinigameFinished += HandleMiniGameFinished;
 
-        currentMiniGame.StartMinigame(PatientDeathTime.Instance.GetComponent<PatientDeathTime>());
+        currentMiniGame.StartMinigame(patient);
     }
-
+   
     private void HandleMiniGameFinished(MiniGameBase game)
     {
         if (currentMiniGame == game)
