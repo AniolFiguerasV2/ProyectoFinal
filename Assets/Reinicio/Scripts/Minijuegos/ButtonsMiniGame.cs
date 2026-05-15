@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonsMiniGame : MiniGameBase
 {
     [Header("ButtonsMiniGame")]
-    public MiniGameUIBase uiprefab;
-    private MiniGameUIBase uiInstance;
+    public MiniGameUIButtons uiprefab;
+    private MiniGameUIButtons uiInstance;
 
     [Header("InputManager")]
     [NonSerialized] public int player1Id = 1;

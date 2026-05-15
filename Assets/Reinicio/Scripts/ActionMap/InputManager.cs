@@ -128,6 +128,16 @@ public class InputManager : MonoBehaviour
         return v > 0.5f;
     }
 
+    // --------- Botones de Minijuegos  ----------
+
+    public bool GetGrabDown(int playerId)
+    {
+        var act = GetAction(playerId, "GrabStretcher");
+
+        return act != null && act.WasPressedThisFrame();
+    }
+
+
     // --------- Conducir ambulancia ----------
     public float GetAmbulanceDriveAxis(int playerId)
     {
