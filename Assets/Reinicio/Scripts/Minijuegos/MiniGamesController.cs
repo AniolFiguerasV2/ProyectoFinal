@@ -36,6 +36,7 @@ public class MiniGamesController : MonoBehaviour
     {
         if (currentMiniGame == game)
         {
+            currentMiniGame.OnMinigameFinished -= HandleMiniGameFinished;
             currentMiniGame = null;
         }
     }

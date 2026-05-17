@@ -28,6 +28,7 @@ public class MiniGameUIButtons : MonoBehaviour
     public void Initialize(ButtonsMiniGame game)
     {
         buttonsminigame = game;
+        StartCoroutine(MainLoop());
     }
 
     void Start()
@@ -36,8 +37,6 @@ public class MiniGameUIButtons : MonoBehaviour
         player2Image = player2Circle.GetComponent<Image>();
         
         ResetVisuals();
-
-        StartCoroutine(MainLoop());
     }
 
     void Update()

@@ -23,7 +23,7 @@ public class PacienteUIManager : MonoBehaviour
         if (!uiEnabled) return;
         if (spawner == null) return;
 
-        if (spawner.patients.Count != lastPatientCount)
+        if (NeedRebuild())
         {
             RebuildWidgets();
         }
@@ -163,5 +163,21 @@ public class PacienteUIManager : MonoBehaviour
             MoveSelection();
             PointArrowToSelectedPatient();
         }
+    }
+
+    bool NeedRebuild()
+    {
+        if (spawner.patients.Count != widgets.Count)
+            return true;
+
+        foreach (PacienteInfo widget in widgets)
+        {
+            if (widget == null)
+                return true;
+
+            if (widget.GetPatient() == null)
+                return true;
+        }
+        return false;
     }
 }
