@@ -11,7 +11,6 @@ public class GuidedTutorialManager : MonoBehaviour
     public ControlHintsManager controlHintsManager;
 
     [Header("UI generales")]
-    public GameObject scoreUI;
     public GameObject timerUI;
 
     [Header("UI pacientes")]
@@ -29,9 +28,6 @@ public class GuidedTutorialManager : MonoBehaviour
 
     public void StartFirstStep()
     {
-        if (scoreUI != null)
-            scoreUI.SetActive(false);
-
         if (timerUI != null)
             timerUI.SetActive(false);
 
@@ -86,9 +82,6 @@ public class GuidedTutorialManager : MonoBehaviour
 
     public void ShowGameplayUI()
     {
-        if (scoreUI != null)
-            scoreUI.SetActive(true);
-
         if (timerUI != null)
             timerUI.SetActive(true);
     }

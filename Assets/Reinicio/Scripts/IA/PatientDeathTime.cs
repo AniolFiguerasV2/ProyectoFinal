@@ -61,7 +61,6 @@ public class PatientDeathTime : MonoBehaviour
                 );
             }
 
-            ScoreManager.Instance.PenalizePatientDeath(this);
             GameManager.Instance.PatientDied();
             spawner.NotifyNPCDeath(this);
             Destroy(gameObject);

@@ -104,8 +104,6 @@ public class PutPatientStrecher : MonoBehaviour
                 );
             }
 
-            ScoreManager.Instance.AddPoints(300);
-
             Destroy(gameObject);
         }
     }

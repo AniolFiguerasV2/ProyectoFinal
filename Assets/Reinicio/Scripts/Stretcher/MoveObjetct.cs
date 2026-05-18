@@ -26,8 +26,6 @@ public class MoveObject : MonoBehaviour
     public Animator animator1;
     public bool interactPlayed = false;
 
-    public bool alreadyScored = false;
-
     [Header("UI de interacción")]
     public GameObject player1UI;
     public GameObject player2UI;
@@ -71,9 +69,12 @@ public class MoveObject : MonoBehaviour
 
         if (bothHolding)
         {
-            transform.position = middleObject.position;
-            transform.rotation = middleObject.rotation;
+            body.MovePosition(middleObject.position);
+            body.MoveRotation(middleObject.rotation);
+            //transform.position = middleObject.position;
+            //transform.rotation = middleObject.rotation;
             body.linearVelocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
 
             if (!interactPlayed)
             {
@@ -125,11 +126,6 @@ public class MoveObject : MonoBehaviour
 
             IsInside = true;
 
-            if (IsInside && hasPatient && !alreadyScored)
-            {
-                ScoreManager.Instance.AddPoints(100);
-                alreadyScored = true;
-            }
         }
         body.linearVelocity = Vector3.zero;
         body.angularVelocity = Vector3.zero;

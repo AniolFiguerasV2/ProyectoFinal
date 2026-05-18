@@ -173,8 +173,6 @@ public class AmbulanceController : MonoBehaviour
 
     public void EnterVehicle(InteractPlayers player, bool controlsstearing)
     {
-        Debug.Log("Antes de entrar, currentPlayerin = " + currentPlayerin);
-
         player.transform.position = rb.transform.position;
         player.DrivenMode();
         player.transform.parent = rb.transform;

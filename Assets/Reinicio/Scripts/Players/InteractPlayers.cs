@@ -82,14 +82,6 @@ public class InteractPlayers : MonoBehaviour
             );
 
             chargeStrecher.IsInside = true;
-
-            if (chargeStrecher.IsInside &&
-                chargeStrecher.hasPatient &&
-                !chargeStrecher.alreadyScored)
-            {
-                ScoreManager.Instance.AddPoints(100);
-                chargeStrecher.alreadyScored = true;
-            }
         }
 
         chargeStrecher.body.linearVelocity = Vector3.zero;

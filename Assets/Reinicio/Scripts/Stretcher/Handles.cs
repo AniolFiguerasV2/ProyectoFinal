@@ -1,3 +1,4 @@
+using UnityEditor.Localization.Plugins.XLIFF.Common;
 using UnityEngine;
 
 public class Handles : MonoBehaviour
@@ -10,7 +11,12 @@ public class Handles : MonoBehaviour
 
     private int holder = 0;
 
+    private Transform currentHolderTransform;
+
     public bool IsBeingHeld => holder != 0;
+
+    public float maxDistanceFromHandle = 1.5f;
+
     public AudioSource sonidoAgarrar;
 
     private void OnTriggerEnter(Collider other)
@@ -32,62 +38,72 @@ public class Handles : MonoBehaviour
         if (other.CompareTag("Player1"))
         {
             player1InZone = false;
-            if (holder == 1)
-            {
-                Release();
-            }
         }
 
         if (other.CompareTag("Player2"))
         {
             player2InZone = false;
-            if (holder == 2)
-            {
-                Release();
-            }
         }
     }
 
     private void Update()
     {
-        bool grab1 = InputManager.Instance.GetGrabDown(1);
-        bool grab2 = InputManager.Instance.GetGrabDown(2);
+        HandlePlayerInput(1, player1InZone);
+        HandlePlayerInput(2, player2InZone);
 
-        if (grab1)
-        {
-            if (holder == 0 && player1InZone)
-            {
-                Grab(1);
-            }
-            else if (holder == 1)
-            {
-                Release();
-            }
-        }
-        if(grab2)
-        {
-            if (holder == 0 && player2InZone)
-            {
-                Grab(2);
-            }
-            else if (holder == 2)
-            { 
-                Release();
-            }
-        }
+        LimitPlayerDistance();
     }
 
     private void Grab(int player)
     {
         holder = player;
+
+        currentHolderTransform = (player == 1) ? player1Transform : player2Transform;
+
         if (sonidoAgarrar != null)
         {
             sonidoAgarrar.PlayOneShot(sonidoAgarrar.clip);
         }
     }
 
+    private void HandlePlayerInput(int player, bool inZone)
+    {
+        bool grab = InputManager.Instance.GetGrabDown(player);
+
+        if (!grab) return;
+
+        if (holder == 0 && inZone)
+        {
+            Grab(player);
+        }
+        else if (holder == player)
+        {
+            Release();
+        }
+    }
+
+    private void LimitPlayerDistance()
+    {
+        if (currentHolderTransform == null) return;
+
+        Vector3 handlePosition = transform.position;
+
+        Vector3 direction =
+            currentHolderTransform.position - handlePosition;
+
+        float distance = direction.magnitude;
+
+        if (distance > maxDistanceFromHandle)
+        {
+            currentHolderTransform.position =
+                handlePosition +
+                direction.normalized * maxDistanceFromHandle;
+        }
+    }
+
     private void Release()
     {
         holder = 0;
+        currentHolderTransform = null;
     }
 }

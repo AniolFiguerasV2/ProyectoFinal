@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalLife: 100
   addLife: 40
-  removeLife: -40
+  removeLife: -10
   uiprefab: {fileID: 819662717515861685, guid: eb4d99b97a7ff3d40a5ba26ecaf2de51, type: 3}
