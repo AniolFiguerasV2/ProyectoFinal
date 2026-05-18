@@ -50,28 +50,28 @@ public class Handles : MonoBehaviour
 
     private void Update()
     {
-        bool grab1 = InputManager.Instance.GetGrabHold(1);
-        bool grab2 = InputManager.Instance.GetGrabHold(2);
+        bool grab1 = InputManager.Instance.GetGrabDown(1);
+        bool grab2 = InputManager.Instance.GetGrabDown(2);
 
-        if (holder == 0)
+        if (grab1)
         {
-            if (player1InZone && grab1)
+            if (holder == 0 && player1InZone)
             {
                 Grab(1);
             }
-            else if (player2InZone && grab2)
-            {
-                Grab(2);
-            }
-        }
-        else
-        {
-            if (holder == 1 && !grab1)
+            else if (holder == 1)
             {
                 Release();
             }
-            if (holder == 2 && !grab2)
+        }
+        if(grab2)
+        {
+            if (holder == 0 && player2InZone)
             {
+                Grab(2);
+            }
+            else if (holder == 2)
+            { 
                 Release();
             }
         }

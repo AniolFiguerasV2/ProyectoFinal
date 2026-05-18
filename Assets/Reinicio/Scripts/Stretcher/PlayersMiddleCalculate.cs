@@ -16,25 +16,44 @@ public class PlayersMiddleCalculate : MonoBehaviour
         Vector3 pos1 = player1.transform.position;
         Vector3 pos2 = player2.transform.position;
 
-        float distance = Vector3.Distance(pos1, pos2);
+        bool bothHolding =
+            MoveObject.Instance.handle1.IsBeingHeld &&
+            MoveObject.Instance.handle2.IsBeingHeld;
 
-        if (distance > maxDistance)
+        if (bothHolding)
         {
-            Vector3 middle = (pos1 + pos2) / 2f;
-            Vector3 dir = (pos1 - pos2).normalized;
+            Vector3 difference = pos1 - pos2;
 
-            player1.transform.position = middle + dir * (maxDistance / 2f);
-            player2.transform.position = middle - dir * (maxDistance / 2f);
+            float distance = difference.magnitude;
 
-            pos1 = player1.transform.position;
-            pos2 = player2.transform.position;
+            if (distance > maxDistance)
+            {
+                Vector3 direction = difference.normalized;
+
+                Vector3 middle = (pos1 + pos2) * 0.5f;
+
+                pos1 = middle + direction * (maxDistance * 0.5f);
+                pos2 = middle - direction * (maxDistance * 0.5f);
+
+                player1.transform.position = pos1;
+                player2.transform.position = pos2;
+            }
         }
 
-        middleObject.transform.position = (pos1 + pos2)/2f;
+        middleObject.transform.position = (pos1 + pos2) / 2f;
 
-        middleObject.transform.position = new Vector3(middleObject.transform.position.x, pickedHeight, middleObject.transform.position.z);
+        middleObject.transform.position = new Vector3(
+            middleObject.transform.position.x,
+            pickedHeight,
+            middleObject.transform.position.z
+        );
 
-        Vector3 direction = pos1 - pos2;
-        middleObject.transform.rotation = Quaternion.LookRotation(direction);
+        Vector3 directionLook = pos1 - pos2;
+
+        if (directionLook != Vector3.zero)
+        {
+            middleObject.transform.rotation =
+                Quaternion.LookRotation(directionLook);
+        }
     }
 }

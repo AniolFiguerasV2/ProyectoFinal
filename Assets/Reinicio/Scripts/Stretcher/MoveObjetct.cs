@@ -14,6 +14,8 @@ public class MoveObject : MonoBehaviour
     public GameObject strecher;
     public GameObject spawpoint;
 
+    public float maxCarryDistance = 5f;
+
     public bool ZonaCarga = false;
 
     public bool IsInside = true;
