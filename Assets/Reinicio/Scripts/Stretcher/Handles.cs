@@ -14,6 +14,7 @@ public class Handles : MonoBehaviour
     private Transform currentHolderTransform;
 
     public bool IsBeingHeld => holder != 0;
+    public Transform HolderPlayerTransform => holder == 1 ? player1Transform : holder == 2 ? player2Transform : null;
 
     public float maxDistanceFromHandle = 1.5f;
 

@@ -36,7 +36,7 @@ public class MoveObject : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(this.gameObject);
         }
@@ -69,12 +69,8 @@ public class MoveObject : MonoBehaviour
 
         if (bothHolding)
         {
-            body.MovePosition(middleObject.position);
-            body.MoveRotation(middleObject.rotation);
-            //transform.position = middleObject.position;
-            //transform.rotation = middleObject.rotation;
-            body.linearVelocity = Vector3.zero;
-            body.angularVelocity = Vector3.zero;
+            transform.position = middleObject.position;
+            transform.rotation = Quaternion.LookRotation(handle1.HolderPlayerTransform.position - handle2.HolderPlayerTransform.position);
 
             if (!interactPlayed)
             {
