@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject winPanel;
 
     private int patientsDelivered = 0;
-    public int totalPatientsToWin = 3;
+    public int totalPatientsToWin = 5;
 
     private bool gameFinished = false;
 

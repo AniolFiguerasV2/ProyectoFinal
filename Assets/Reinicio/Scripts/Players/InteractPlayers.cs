@@ -48,7 +48,7 @@ public class InteractPlayers : MonoBehaviour
             return;
         }
 
-        if (Isback)
+        if (Isback && !chargeStrecher.handle1.IsBeingHeld && !chargeStrecher.handle2.IsBeingHeld)
         {
             Strecher();
             return;

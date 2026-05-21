@@ -9,6 +9,7 @@ public class PatientSpawner : MonoBehaviour
     [SerializeField] private float spawnRadius = 40f;
     [SerializeField] private float spawnHeight = 100f;
     [SerializeField] private float maxSlope = 45f;
+    [SerializeField] private LayerMask groundLayer;
 
     [Header("Tutorial")]
     [SerializeField] private bool startWithTutorialPatient = true;
@@ -47,11 +48,11 @@ public class PatientSpawner : MonoBehaviour
         }
     }
 
-    private void TrySpawnNPC()
+    private bool TrySpawnNPC()
     {
         Vector3 randomPos = GetRandomPoint();
 
-        if (Physics.Raycast(randomPos, Vector3.down, out RaycastHit hit, spawnHeight * 2f) && hit.collider.gameObject.layer == 11)
+        if (Physics.Raycast(randomPos, Vector3.down, out RaycastHit hit, spawnHeight * 2f, groundLayer))
         {
             float slope = Vector3.Angle(hit.normal, Vector3.up);
 
@@ -59,15 +60,29 @@ public class PatientSpawner : MonoBehaviour
             {
                 Vector3 spawnPosition = hit.point + Vector3.up * 1f;
 
+                float checkRadius = 1.5f;
+
+                Collider[] collider = Physics.OverlapSphere(spawnPosition, checkRadius);
+
+                foreach (Collider col in collider)
+                {
+                    if (col.CompareTag("Building"))
+                    {
+                        return false;
+                    }
+                }
+
                 PatientDeathTime npc = Instantiate(npcPrefab, spawnPosition, Quaternion.identity);
 
                 npc.spawner = this;
 
                 patients.Add(npc);
 
-                return;
+                return true;
             }
         }
+
+        return false;
     }
 
     private Vector3 GetRandomPoint()
@@ -102,9 +117,9 @@ public class PatientSpawner : MonoBehaviour
 
         patients.RemoveAll(p => p == null);
 
-        while (patients.Count < targetCount && safety < 100)
+        while (patients.Count < targetCount && safety < 500)
         {
-            TrySpawnNPC();
+            bool spawned = TrySpawnNPC();
             safety++;
         }
     }

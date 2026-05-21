@@ -24,8 +24,9 @@ public class PutPatientStrecher : MonoBehaviour
                 move.currentPatient = GetComponent<PatientDeathTime>();
                 currentMove = move;
 
-                if(miniGamesController != null)
+                if(miniGamesController != null && miniGamesController.gameObject.activeInHierarchy)
                 {
+
                     miniGamesController.StartMinigame(move.currentPatient);
                 }
             }
@@ -69,7 +70,6 @@ public class PutPatientStrecher : MonoBehaviour
                 currentMove.hasPatient = false;
                 currentMove.currentPatient = null;
                 GameManager.Instance.PatientDelivered();
-                TimerGame.instance.AddTime(60);
             }
 
             PatientDeathTime patient = GetComponent<PatientDeathTime>();
