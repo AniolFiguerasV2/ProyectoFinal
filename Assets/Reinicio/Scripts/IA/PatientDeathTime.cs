@@ -18,6 +18,7 @@ public class PatientDeathTime : MonoBehaviour
     public float Lifetime => lifetime;
 
     private float timer = 0f;
+    private bool paused = false;
     public float Timer => timer;
 
     public PatientSpawner spawner;
@@ -48,7 +49,10 @@ public class PatientDeathTime : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        if (!paused)
+        {
+            timer += Time.deltaTime;
+        }
 
         if (timer >= lifetime)
         {
@@ -75,5 +79,10 @@ public class PatientDeathTime : MonoBehaviour
     public void SetTimer(float newTimer)
     {
         timer = newTimer;
+    }
+
+    public void PauserTimer(bool value)
+    {
+        paused = value;
     }
 }
