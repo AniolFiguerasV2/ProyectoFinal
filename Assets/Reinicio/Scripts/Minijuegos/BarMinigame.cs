@@ -50,8 +50,8 @@ public class BarMinigame : MiniGameBase
 
     public void HandleInputs()
     {
-        bool p1Pressed = InputManager.Instance.GetGrabDown(player1Id);
-        bool p2Pressed = InputManager.Instance.GetGrabDown(player2Id);
+        bool p1Pressed = InputManager.Instance.GetInteractDown(player1Id);
+        bool p2Pressed = InputManager.Instance.GetInteractDown(player2Id);
 
         if (!p1Pressed && !p2Pressed)
             return;

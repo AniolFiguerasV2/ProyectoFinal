@@ -63,8 +63,8 @@ public class ButtonsMiniGame : MiniGameBase
     {
         if(roundResolved) return;
 
-        bool p1Pressed = InputManager.Instance.GetGrabHold(player1Id);
-        bool p2Pressed = InputManager.Instance.GetGrabHold(player2Id);
+        bool p1Pressed = InputManager.Instance.GetInteractDown(player1Id);
+        bool p2Pressed = InputManager.Instance.GetInteractDown(player2Id);
 
         if(inGreen)
         {

@@ -133,14 +133,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.009108865, g: 0.9622642, b: 0.004538993, a: 1}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 476116163, guid: 7b49e9a7ede8f494f86ac85ee1526971, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -292,7 +292,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.47500002}
   m_AnchorMax: {x: 0.5, y: 0.47500002}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7058260073480349071
 CanvasRenderer:
@@ -385,7 +385,9 @@ MonoBehaviour:
   syringe: {fileID: 3605448061902461997}
   syringe2: {fileID: 7510700029209938248}
   speed: 400
-  timeWaiting: 0.2
+  leftX: -600
+  rightX: 600
+  centerMargin: 80
 --- !u!1 &4454107713773861291
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +464,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1987107782, guid: f382cbe2e9c202642b5d308ab68a7bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9e98ece6c1af3849a18904cab3c11b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -549,7 +551,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1987107782, guid: f382cbe2e9c202642b5d308ab68a7bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9e98ece6c1af3849a18904cab3c11b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -618,14 +620,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.009108865, g: 0.9622642, b: 0.004538993, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 476116163, guid: 7b49e9a7ede8f494f86ac85ee1526971, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
