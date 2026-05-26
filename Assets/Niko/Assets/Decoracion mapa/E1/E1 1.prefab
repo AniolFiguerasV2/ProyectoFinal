@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: E1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0deb489aac73a734590112212b45bbce, type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     - target: {fileID: 1108044908253519925, guid: 0deb489aac73a734590112212b45bbce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

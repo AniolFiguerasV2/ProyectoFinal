@@ -1034,7 +1034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4c70f1d1c36230841b37f78ae043068b, type: 3}
       propertyPath: m_Name
-      value: Variante Edificio 5
+      value: Variante Edificio 1a
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c70f1d1c36230841b37f78ae043068b, type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4c70f1d1c36230841b37f78ae043068b, type: 3}
       propertyPath: m_StaticEditorFlags
