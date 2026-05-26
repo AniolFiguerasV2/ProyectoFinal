@@ -20,8 +20,6 @@ public class MiniGamesFailUI : MonoBehaviour
 
     public void UpdateFails(int currentFails, int maxFails)
     {
-        int remaining = maxFails - currentFails;
-
-        currentFailsText.text = "Llevas: " + currentFails + " de " + remaining + " Fallos";
+        currentFailsText.text = "Llevas: " + currentFails + " de " + maxFails + " Fallos";
     }
 }
