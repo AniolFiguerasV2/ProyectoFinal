@@ -64,5 +64,20 @@ public abstract class MiniGameBase : ScriptableObject
     {
         MainUI.instance.normalCanvasPrefab.SetActive(true);
     }
+    protected void ShowFailsUI(int currentFails, int maxFails)
+    {
+        MainUI.instance.failsUI.Show();
+        MainUI.instance.failsUI.UpdateFails(currentFails, maxFails);
+    }
+
+    protected void UpdateFailsUI(int currentFails, int maxFails)
+    {
+        MainUI.instance.failsUI.UpdateFails(currentFails, maxFails);
+    }
+
+    protected void HideFailsUI()
+    {
+        MainUI.instance.failsUI.Hide();
+    }
     protected abstract void PrepareUIMinigame();
 }

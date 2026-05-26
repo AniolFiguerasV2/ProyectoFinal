@@ -44,17 +44,21 @@ public class ButtonsMiniGame : MiniGameBase
         p1PressedInGreen = false;
         p2PressedInGreen = false;
 
+        ShowFailsUI(failCounter, maxFails);
+
         base.StartMinigame(patientDeathTime);
     }
 
     public override void Fail()
     {
+        HideFailsUI();
         base.Fail();
         Destroy(uiInstance.gameObject);
     }
 
     public override void Succes()
     {
+        HideFailsUI();
         base.Succes();
         Destroy(uiInstance.gameObject);
     }
@@ -117,6 +121,9 @@ public class ButtonsMiniGame : MiniGameBase
     {
         successCounter = 0;
         failCounter++;
+
+        UpdateFailsUI(failCounter, maxFails);
+
         Debug.Log("Llevas " + failCounter+ " Fallos");
 
         if(failCounter >= maxFails)

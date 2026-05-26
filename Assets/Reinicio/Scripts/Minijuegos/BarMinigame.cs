@@ -36,6 +36,8 @@ public class BarMinigame : MiniGameBase
         player1Success = false;
         player2Success = false;
 
+        ShowFailsUI(failCounter, maxFails);
+
         base.StartMinigame(patientDeathTime);
 
         isActive = true;
@@ -60,14 +62,28 @@ public class BarMinigame : MiniGameBase
 
         if (p1Pressed)
         {
-            if (success) player1Success = true;
-            else failCounter++;
+            if (success)
+            {
+                player1Success = true;
+            }
+            else
+            {
+                failCounter++;
+                UpdateFailsUI(failCounter, maxFails);
+            }
         }
 
         if (p2Pressed)
         {
-            if (success) player2Success = true;
-            else failCounter++;
+            if (success)
+            {
+                player2Success = true;
+            }
+            else
+            {
+                failCounter++;
+                UpdateFailsUI(failCounter, maxFails);
+            }
         }
 
         if (player1Success && player2Success)
@@ -91,6 +107,8 @@ public class BarMinigame : MiniGameBase
         
         finished = true;
         isActive = false;
+
+        HideFailsUI();
 
         if (success) 
         {
